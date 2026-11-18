@@ -1,0 +1,19 @@
+{
+  "id": "19",
+  "name": "Jasper AI",
+  "slug": "jasper-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$49.00",
+  "image": "https://img.icons8.com/color/96/chatgpt.png",
+  "bgColor": "#f0f4ff",
+  "description": "AI content creation platform for marketers. Generate blog posts, ads, emails, and social media content instantly.",
+  "features": [
+    "AI content generation",
+    "Blog post writing",
+    "Social media content",
+    "Email marketing copy",
+    "Ad copy creation",
+    "SEO-optimized content"
+  ],
+  "category": "AI Tools"
+}

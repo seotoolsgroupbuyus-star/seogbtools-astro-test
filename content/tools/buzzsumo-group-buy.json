@@ -1,0 +1,19 @@
+{
+  "id": "26",
+  "name": "Buzzsumo",
+  "slug": "buzzsumo-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$99.00",
+  "image": "https://img.icons8.com/color/96/graph.png",
+  "bgColor": "#f0f4ff",
+  "description": "Content research and social media analytics tool. Find trending content, analyze competitors, and discover influencers.",
+  "features": [
+    "Content research",
+    "Trending topics discovery",
+    "Competitor analysis",
+    "Influencer identification",
+    "Social media analytics",
+    "Content alerts"
+  ],
+  "category": "Content Marketing"
+}

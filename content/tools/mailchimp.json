@@ -1,0 +1,19 @@
+{
+  "id": "20",
+  "name": "Mailchimp",
+  "slug": "mailchimp",
+  "price": "$4.99",
+  "originalPrice": "$13.00",
+  "image": "https://img.icons8.com/color/96/email.png",
+  "bgColor": "#f0f4ff",
+  "description": "All-in-one marketing platform for email campaigns, automation, and customer insights. Grow your business with email marketing.",
+  "features": [
+    "Email campaign builder",
+    "Marketing automation",
+    "Audience segmentation",
+    "A/B testing",
+    "Analytics and reporting",
+    "Landing page builder"
+  ],
+  "category": "Marketing Tools"
+}

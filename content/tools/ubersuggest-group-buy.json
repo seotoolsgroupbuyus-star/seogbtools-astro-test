@@ -1,0 +1,19 @@
+{
+  "id": "10",
+  "name": "Ubersuggest",
+  "slug": "ubersuggest-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$29.00",
+  "image": "https://img.icons8.com/color/96/analytics.png",
+  "bgColor": "#f0f4ff",
+  "description": "Keyword research and SEO tool by Neil Patel. Comprehensive SEO suite for keyword research and content ideas.",
+  "features": [
+    "Keyword research and suggestions",
+    "SEO audit tool",
+    "Backlink checker",
+    "Content ideas generator",
+    "Competitor analysis",
+    "Rank tracking"
+  ],
+  "category": "SEO Tools"
+}

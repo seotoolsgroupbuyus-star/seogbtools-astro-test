@@ -1,0 +1,19 @@
+{
+  "id": "17",
+  "name": "Adobe Creative",
+  "slug": "adobe-creative",
+  "price": "$9.99",
+  "originalPrice": "$52.99",
+  "image": "https://img.icons8.com/color/96/adobe-creative-cloud.png",
+  "bgColor": "#f0f4ff",
+  "description": "Complete creative suite with Photoshop, Illustrator, Premiere Pro, and 20+ professional design and video tools.",
+  "features": [
+    "Photoshop for image editing",
+    "Illustrator for vector graphics",
+    "Premiere Pro for video editing",
+    "After Effects for motion graphics",
+    "InDesign for layout design",
+    "Access to all Adobe apps"
+  ],
+  "category": "Design Tools"
+}

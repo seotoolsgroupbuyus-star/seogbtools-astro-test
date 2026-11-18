@@ -1,0 +1,19 @@
+{
+  "id": "29",
+  "name": "Freepik Premium",
+  "slug": "freepik-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$9.99",
+  "image": "https://img.icons8.com/color/96/image.png",
+  "bgColor": "#f0f4ff",
+  "description": "Premium graphics, photos, vectors, and PSD files. Unlimited downloads of high-quality design resources.",
+  "features": [
+    "Unlimited downloads",
+    "Premium vectors and graphics",
+    "Stock photos",
+    "PSD templates",
+    "Icons and illustrations",
+    "No attribution required"
+  ],
+  "category": "Design Tools"
+}

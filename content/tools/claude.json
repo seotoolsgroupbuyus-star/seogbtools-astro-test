@@ -1,0 +1,19 @@
+{
+  "id": "7",
+  "name": "Claude",
+  "slug": "claude",
+  "price": "$4.99",
+  "originalPrice": "$20.00",
+  "image": "/tools/claude-logo.svg",
+  "bgColor": "#f0f4ff",
+  "description": "Advanced AI assistant by Anthropic. Safe, helpful, and honest AI for writing, analysis, and conversation.",
+  "features": [
+    "Advanced AI capabilities",
+    "Long context understanding",
+    "Safe and ethical AI",
+    "Code analysis and writing",
+    "Creative writing assistance",
+    "Research and analysis tools"
+  ],
+  "category": "AI Tools"
+}

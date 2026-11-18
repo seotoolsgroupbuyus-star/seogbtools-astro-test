@@ -1,0 +1,19 @@
+{
+  "id": "42",
+  "name": "SEO Profiler",
+  "slug": "seo-profiler-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$69.95",
+  "image": "/tools/seoprofiler-logo.svg",
+  "bgColor": "#ecfdf5",
+  "description": "Unlock SEO Profiler's full suite of SEO tools at an affordable price with SEO Profiler Group Buy. Get access to keyword research, backlink analysis, site audits, and more, all at a fraction of the cost.",
+  "features": [
+    "Keyword research and rank tracking",
+    "Backlink analysis and link opportunities",
+    "Site audits and on-page recommendations",
+    "Competitor analysis and benchmarking",
+    "SEO reports and project workflows",
+    "Technical and content SEO insights"
+  ],
+  "category": "SEO Tools"
+}

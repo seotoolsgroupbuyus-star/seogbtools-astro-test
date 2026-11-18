@@ -1,0 +1,7 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import ThemePage from '../components/ThemePage.astro';
+const html = fs.readFileSync(path.join(process.cwd(), '.generated', 'index.html'), 'utf8');
+---
+<ThemePage html={html} />

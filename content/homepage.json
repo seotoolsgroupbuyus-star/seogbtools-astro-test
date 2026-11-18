@@ -1,0 +1,92 @@
+{
+  "hero": {
+    "title": "Unlock Premium Group Buy SEO Tools",
+    "subtitle": "at Lower Cost",
+    "lead": "Get instant access to Ahrefs, SEMrush, Moz Pro, Canva Pro, Jasper, and more with our Group Buy SEO Tools. Simplify your daily SEO, content, and research work without paying full price for every tool.",
+    "primaryButton": "Get started",
+    "secondaryButton": "View pricing",
+    "stat2": "Reliable",
+    "stat3": "Support",
+    "logosLabel": "Includes Ahrefs, SEMrush, Jasper, Surfer SEO, Grammarly & more"
+  },
+  "why": {
+    "eyebrow": "Why Choose Us",
+    "title": "Why So Many SEO Users Choose Us",
+    "lead": "Clean access, quick setup, and pricing that makes sense for real-world SEO workflows.",
+    "cards": [
+      {
+        "title": "Secure Access That Feels Reliable",
+        "description": "Stable access with a setup designed for everyday SEO work without constant interruptions."
+      },
+      {
+        "title": "Fast Setup Without the Back and Forth",
+        "description": "Get started quickly with simple onboarding and fewer steps between you and your tools."
+      },
+      {
+        "title": "Help Is There When You Need It",
+        "description": "Support is available when you get stuck, so you can keep moving without losing time."
+      },
+      {
+        "title": "Simple Access for Daily Work",
+        "description": "A straightforward experience that makes it easy to run checks, research, and repeat."
+      },
+      {
+        "title": "Better Value Than Paying for Every Tool Alone",
+        "description": "Use the tools you actually need without stacking expensive individual subscriptions."
+      },
+      {
+        "title": "Built for People Who Use SEO Tools Every Day",
+        "description": "Great for freelancers, agencies, and teams who rely on SEO tools as part of their routine."
+      }
+    ]
+  },
+  "tools": {
+    "eyebrow": "Tools Collection",
+    "title": "Popular SEO Tools You Can Access",
+    "lead": "Find the tools you already use, and get access without paying for every subscription separately.",
+    "categories": [
+      {
+        "title": "Popular SEO Tools",
+        "description": "Keyword research, audits, backlinks, and competitor analysis."
+      },
+      {
+        "title": "Content and Writing Tools",
+        "description": "Rewrite, grammar, outlines, and content workflows."
+      },
+      {
+        "title": "Design and Creative Tools",
+        "description": "Design assets, templates, video tools, and creative suites."
+      },
+      {
+        "title": "Other SEO Services",
+        "description": "Extra utilities, trackers, and supporting tools."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Pricing Plans",
+    "title": "SEO Tools Plans That Fit the Way You Work",
+    "lead": "Choose a simple plan, then start using your tools right away."
+  },
+  "spotlight": {
+    "eyebrow": "Tool spotlight",
+    "title": "Popular Tools Included",
+    "lead": "A quick look at what people use most for research, audits, content, and daily SEO work."
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "How Group Buy SEO Tools Work",
+    "lead": "Create your account, choose a plan, and start using your tools."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions People Usually Ask",
+    "intro": "Straight answers about pricing, what is included, and how to start. Pick a question to read the full reply.",
+    "topics": [
+      "What group buy SEO tools are",
+      "Which tools you can access",
+      "Plans, pricing, and what is included",
+      "How the system works and how to start"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "21",
+  "name": "Hootsuite",
+  "slug": "hootsuite",
+  "price": "$4.99",
+  "originalPrice": "$49.00",
+  "image": "https://img.icons8.com/color/96/twitter--v1.png",
+  "bgColor": "#f0f4ff",
+  "description": "Social media management platform. Schedule posts, manage multiple accounts, and track performance across all social networks.",
+  "features": [
+    "Social media scheduling",
+    "Multi-platform management",
+    "Content calendar",
+    "Analytics and reporting",
+    "Team collaboration",
+    "Social listening"
+  ],
+  "category": "Social Media"
+}

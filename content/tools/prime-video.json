@@ -1,0 +1,19 @@
+{
+  "id": "11",
+  "name": "Prime Video",
+  "slug": "prime-video",
+  "price": "$3.99",
+  "originalPrice": "$8.99",
+  "image": "https://img.icons8.com/color/96/amazon-prime-video.png",
+  "bgColor": "#f0f4ff",
+  "description": "Stream thousands of movies and TV shows. Access to Amazon Prime Video with exclusive content and originals.",
+  "features": [
+    "Unlimited streaming",
+    "Prime originals access",
+    "4K Ultra HD quality",
+    "Download for offline viewing",
+    "Multiple device support",
+    "X-Ray feature"
+  ],
+  "category": "Entertainment"
+}

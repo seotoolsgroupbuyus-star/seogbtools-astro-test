@@ -1,0 +1,19 @@
+{
+  "id": "4",
+  "name": "Canva Pro",
+  "slug": "canva-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$12.99",
+  "image": "/tools/canva-logo.svg",
+  "bgColor": "#f0f4ff",
+  "description": "Professional design tool with premium templates, stock photos, and advanced design features. Create stunning graphics easily.",
+  "features": [
+    "Premium templates library",
+    "Stock photos and videos",
+    "Brand kit and consistency",
+    "Advanced design tools",
+    "Team collaboration",
+    "Export in multiple formats"
+  ],
+  "category": "Design Tools"
+}

@@ -1,0 +1,196 @@
+media:
+  input: public/assets/images/site
+  output: /assets/images/site
+content:
+  - name: homepage
+    label: Homepage Sections
+    type: file
+    path: content/homepage.json
+    format: json
+    fields:
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: subtitle, type: string }
+          - { name: lead, type: text }
+          - { name: primaryButton, type: string }
+          - { name: secondaryButton, type: string }
+          - { name: stat2, type: string }
+          - { name: stat3, type: string }
+          - { name: logosLabel, type: string }
+      - name: why
+        label: Why Choose Us
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: lead, type: text }
+          - name: cards
+            type: object
+            list: true
+            fields:
+              - { name: title, type: string }
+              - { name: description, type: text }
+      - name: tools
+        label: Tools Section
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: lead, type: text }
+          - name: categories
+            type: object
+            list: true
+            fields:
+              - { name: title, type: string }
+              - { name: description, type: text }
+      - name: pricing
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: lead, type: text }
+      - name: spotlight
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: lead, type: text }
+      - name: how
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: lead, type: text }
+      - name: faq
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: intro, type: text }
+          - { name: topics, type: string, list: true }
+  - name: settings
+    label: Site Settings & SEO
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - { name: brand, type: string }
+      - { name: tagline, type: text }
+      - { name: footerRights, type: string }
+      - { name: siteUrl, type: string }
+      - { name: signupUrl, type: string }
+      - { name: whatsappUrl, type: string }
+      - { name: messengerUrl, type: string }
+      - { name: toolCount, type: string }
+      - { name: startingPrice, type: string }
+      - { name: defaultSeoDescription, type: text }
+  - name: products
+    label: Products
+    type: collection
+    path: content/products
+    format: json
+    fields:
+      - { name: name, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: category, type: string }
+      - { name: categories, type: string, list: true }
+      - { name: image, type: string }
+      - { name: price, type: string }
+      - { name: regularPrice, type: string }
+      - { name: salePrice, type: string }
+      - { name: onSale, type: boolean }
+      - { name: shortDescription, type: rich-text, format: html }
+      - { name: description, type: rich-text, format: html }
+      - { name: externalUrl, type: string }
+      - { name: seoTitle, type: string }
+      - { name: seoDescription, type: text }
+      - { name: seoH1, type: string }
+      - { name: focusKeyword, type: string }
+  - name: tools
+    label: Homepage Tools
+    type: collection
+    path: content/tools
+    format: json
+    fields:
+      - { name: id, type: string }
+      - { name: name, type: string }
+      - { name: slug, type: string }
+      - { name: price, type: string }
+      - { name: originalPrice, type: string }
+      - { name: image, type: string }
+      - { name: bgColor, type: string }
+      - { name: description, type: text }
+      - { name: category, type: string }
+      - { name: features, type: string, list: true }
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: content/posts
+    format: json
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: image, type: image }
+      - { name: content, type: rich-text, format: html }
+      - { name: excerpt, type: rich-text, format: html }
+      - { name: seoTitle, type: string }
+      - { name: seoDescription, type: text }
+  - name: pages
+    label: Website Pages
+    type: collection
+    path: content/pages
+    format: json
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: content, type: rich-text, format: html }
+      - { name: excerpt, type: rich-text, format: html }
+      - { name: image, type: image }
+      - { name: seoTitle, type: string }
+      - { name: seoDescription, type: text }
+  - name: plans
+    label: Pricing Plans
+    type: file
+    path: content/plans.json
+    format: json
+    list: true
+    fields:
+      - { name: name, type: string }
+      - { name: price, type: string }
+      - { name: popular, type: boolean }
+      - { name: tools, type: string, list: true }
+      - { name: buyUrl, type: string }
+  - name: faqs
+    label: FAQs
+    type: file
+    path: content/faqs.json
+    format: json
+    list: true
+    fields:
+      - { name: question, type: string }
+      - { name: answer, type: rich-text, format: html }
+  - name: spotlightItems
+    label: Spotlight Tool Cards
+    type: file
+    path: content/spotlight.json
+    format: json
+    list: true
+    fields:
+      - { name: name, type: string }
+      - { name: description, type: text }
+      - { name: features, type: string, list: true }
+      - { name: color, type: string }
+  - name: howSteps
+    label: How It Works Steps
+    type: file
+    path: content/steps.json
+    format: json
+    list: true
+    fields:
+      - { name: number, type: string }
+      - { name: title, type: string }
+      - { name: description, type: text }
+      - { name: icon, type: string }

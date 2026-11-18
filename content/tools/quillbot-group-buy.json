@@ -1,0 +1,19 @@
+{
+  "id": "9",
+  "name": "QuillBot",
+  "slug": "quillbot-group-buy",
+  "price": "$3.99",
+  "originalPrice": "$9.95",
+  "image": "https://img.icons8.com/color/96/documents.png",
+  "bgColor": "#f0f4ff",
+  "description": "AI-powered writing assistant for paraphrasing, grammar checking, and content improvement. Perfect for writers and students.",
+  "features": [
+    "AI paraphrasing tool",
+    "Grammar and spell checker",
+    "Summarizer tool",
+    "Citation generator",
+    "Translator",
+    "Co-writer mode"
+  ],
+  "category": "Writing Tools"
+}

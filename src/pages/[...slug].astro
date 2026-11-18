@@ -1,0 +1,15 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import ThemePage from '../components/ThemePage.astro';
+const generatedRoot = path.join(process.cwd(), '.generated');
+export function getStaticPaths() {
+  const root = path.join(process.cwd(), '.generated');
+  return fs.readdirSync(root, { withFileTypes: true })
+    .filter(e => e.isDirectory())
+    .map(e => ({ params: { slug: e.name } }));
+}
+const slug = Astro.params.slug;
+const html = fs.readFileSync(path.join(generatedRoot, slug, 'index.html'), 'utf8');
+---
+<ThemePage html={html} />

@@ -1,0 +1,291 @@
+{
+  "source": "seogbtools.WordPress.2026-11-18.xml",
+  "countsByTypeStatus": {
+    "attachment/inherit": 1273,
+    "page/draft": 1,
+    "page/publish": 14,
+    "custom_css/publish": 1,
+    "post/draft": 1,
+    "pricing_plan/publish": 3,
+    "product/publish": 203,
+    "post/publish": 4,
+    "sgb_faq/publish": 7,
+    "product/trash": 15,
+    "wp_navigation/publish": 1,
+    "wp_global_styles/publish": 1
+  },
+  "publishedImported": {
+    "products": 203,
+    "posts": 4,
+    "pages": 14
+  },
+  "plans": 3,
+  "faqs": 7,
+  "mediaReferences": 1273,
+  "filesDownloaded": 0,
+  "withoutFeaturedImage": [
+    {
+      "type": "product",
+      "slug": "midjourney-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "textwizard-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "pipio-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "peppercontent-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "crunchyroll-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "smhack-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "tools-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "lsigraph-group-buy-cheap-price-starting-from-4-95-month"
+    },
+    {
+      "type": "product",
+      "slug": "graphicstock-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "ad-ecommerce-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "rank-key-top-seo-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "vidnami-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "keyword-eye-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "adheart-me-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "copygenius-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "onlinetools-ai-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "deepflush-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "hashtagforlikes-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "steven-ai-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "lovepik-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "play-ht-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "ai-content-labs-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "peppertype-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "advertsuite-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "findniche-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "graphic-stock-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "theoptimizer-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "adspy-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "nichess-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "brandoverflow-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "terapeak-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "audio-block-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "vidiq-group-buy-with-4-95-month-cheap-price"
+    },
+    {
+      "type": "product",
+      "slug": "leonardo-ai-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "turnitin-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "epidemicsound-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "viral-launch-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "invideo-io-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "capcut-pro-group-buy"
+    },
+    {
+      "type": "product",
+      "slug": "stealthwriter-ai-group-buy-cost-effective-copywriting-powered-by-ai"
+    },
+    {
+      "type": "product",
+      "slug": "copy-ai-group-buy-unlock-creative-copywriting-solutions-at-lower-prices"
+    },
+    {
+      "type": "product",
+      "slug": "claude-ai-group-buy-affordable-access-to-claudes-advanced-ai-technology"
+    },
+    {
+      "type": "product",
+      "slug": "moz-group-buy-premium-seo-tools"
+    },
+    {
+      "type": "product",
+      "slug": "jasper-ai-group-buy-access-in-3-affordable-ai-copywriting-tools"
+    },
+    {
+      "type": "product",
+      "slug": "helium-10-group-buy-amazon-seller-tools"
+    },
+    {
+      "type": "product",
+      "slug": "prime-video-group-buy"
+    },
+    {
+      "type": "post",
+      "slug": "ahrefs-shared-account"
+    },
+    {
+      "type": "post",
+      "slug": "15-best-group-buy-seo-tools-providers-top-picks"
+    },
+    {
+      "type": "post",
+      "slug": "10-best-group-buy-seo-tools-in-2025"
+    },
+    {
+      "type": "post",
+      "slug": "the-ultimate-guide-to-semrush-group-buy"
+    },
+    {
+      "type": "page",
+      "slug": "privacy-policy"
+    },
+    {
+      "type": "page",
+      "slug": "shop"
+    },
+    {
+      "type": "page",
+      "slug": "cart"
+    },
+    {
+      "type": "page",
+      "slug": "checkout"
+    },
+    {
+      "type": "page",
+      "slug": "my-account"
+    },
+    {
+      "type": "page",
+      "slug": "refund-returns"
+    },
+    {
+      "type": "page",
+      "slug": "blog"
+    },
+    {
+      "type": "page",
+      "slug": "pages"
+    },
+    {
+      "type": "page",
+      "slug": "home"
+    },
+    {
+      "type": "page",
+      "slug": "terms-of-service"
+    },
+    {
+      "type": "page",
+      "slug": "about"
+    },
+    {
+      "type": "page",
+      "slug": "contact-us"
+    },
+    {
+      "type": "page",
+      "slug": "authors"
+    },
+    {
+      "type": "page",
+      "slug": "sitemap"
+    }
+  ],
+  "slugCollisionsSkipped": [],
+  "notes": [
+    "WordPress XML stores media references only, not image binary files.",
+    "HTML from WordPress is preserved (including WP shortcodes that may need replacement).",
+    "WordPress backend/payment/reviews/forms are not automatically migrated.",
+    "Do not change DNS until Cloudflare build and visual/SEO checks pass."
+  ]
+}

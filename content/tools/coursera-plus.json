@@ -1,0 +1,19 @@
+{
+  "id": "13",
+  "name": "Coursera Plus",
+  "slug": "coursera-plus",
+  "price": "$4.99",
+  "originalPrice": "$59.00",
+  "image": "https://img.icons8.com/color/96/graduation-cap.png",
+  "bgColor": "#f0f4ff",
+  "description": "Access to thousands of courses from top universities and companies. Learn new skills with unlimited course access.",
+  "features": [
+    "Unlimited course access",
+    "Certificates of completion",
+    "Guided projects",
+    "Specializations",
+    "Professional certificates",
+    "Mobile app access"
+  ],
+  "category": "Education"
+}

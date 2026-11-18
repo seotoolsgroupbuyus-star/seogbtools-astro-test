@@ -1,0 +1,19 @@
+{
+  "id": "31",
+  "name": "InVideo",
+  "slug": "invideo",
+  "price": "$4.99",
+  "originalPrice": "$15.00",
+  "image": "https://img.icons8.com/color/96/video.png",
+  "bgColor": "#f0f4ff",
+  "description": "Online video editor with templates and AI features. Create professional videos quickly with pre-made templates.",
+  "features": [
+    "Video templates library",
+    "AI video generation",
+    "Text-to-video conversion",
+    "Stock media library",
+    "Collaboration tools",
+    "HD and 4K export"
+  ],
+  "category": "Video Editing"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "33",
+  "name": "Turnitin",
+  "slug": "turnitin",
+  "price": "$4.99",
+  "originalPrice": "$10.00",
+  "image": "https://img.icons8.com/color/96/checked-2.png",
+  "bgColor": "#f0f4ff",
+  "description": "Plagiarism detection and academic integrity tool. Check originality of documents and improve writing.",
+  "features": [
+    "Plagiarism detection",
+    "Similarity reports",
+    "Grammar checking",
+    "Writing feedback",
+    "Citation assistance",
+    "Academic integrity tools"
+  ],
+  "category": "Education"
+}

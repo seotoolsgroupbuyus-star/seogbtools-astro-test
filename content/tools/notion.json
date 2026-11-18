@@ -1,0 +1,19 @@
+{
+  "id": "16",
+  "name": "Notion",
+  "slug": "notion",
+  "price": "$4.99",
+  "originalPrice": "$10.00",
+  "image": "https://img.icons8.com/fluency/96/notion.png",
+  "bgColor": "#f0f4ff",
+  "description": "All-in-one workspace for notes, docs, projects, and collaboration. Organize your work and life in one place.",
+  "features": [
+    "Notes and documentation",
+    "Project management",
+    "Database and spreadsheets",
+    "Team collaboration",
+    "Templates library",
+    "API and integrations"
+  ],
+  "category": "Productivity"
+}

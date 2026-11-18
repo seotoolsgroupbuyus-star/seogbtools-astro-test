@@ -1,0 +1,19 @@
+{
+  "id": "34",
+  "name": "WordHero",
+  "slug": "wordhero",
+  "price": "$4.99",
+  "originalPrice": "$49.00",
+  "image": "https://img.icons8.com/color/96/edit.png",
+  "bgColor": "#f0f4ff",
+  "description": "AI writing tool for creating blog posts, articles, and content. Generate high-quality content with AI assistance.",
+  "features": [
+    "AI blog post generator",
+    "Article writing assistant",
+    "Content templates",
+    "SEO optimization",
+    "Multiple writing styles",
+    "Content rewriting"
+  ],
+  "category": "Writing Tools"
+}

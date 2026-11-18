@@ -1,0 +1,19 @@
+{
+  "id": "2",
+  "name": "SEMrush",
+  "slug": "semrush-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$119.95",
+  "image": "/tools/semrush-logo.svg",
+  "bgColor": "#f0f4ff",
+  "description": "All-in-one marketing toolkit for SEO, PPC, content marketing, and social media. Comprehensive digital marketing platform.",
+  "features": [
+    "SEO audit and on-page optimization",
+    "Keyword research and tracking",
+    "PPC keyword research",
+    "Content marketing toolkit",
+    "Social media management",
+    "Competitor analysis"
+  ],
+  "category": "SEO Tools"
+}

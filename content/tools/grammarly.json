@@ -1,0 +1,19 @@
+{
+  "id": "15",
+  "name": "Grammarly",
+  "slug": "grammarly",
+  "price": "$4.99",
+  "originalPrice": "$12.00",
+  "image": "https://img.icons8.com/color/96/grammarly.png",
+  "bgColor": "#f0f4ff",
+  "description": "Access Grammarly's premium writing and grammar-checking tools at a fraction of the cost with Grammarly Group Buy. Improve your writing with features like plagiarism detection and style suggestions.",
+  "features": [
+    "Real-time grammar checking",
+    "Spelling and punctuation correction",
+    "Style and tone suggestions",
+    "Plagiarism checker",
+    "Vocabulary enhancement",
+    "Writing insights and analytics"
+  ],
+  "category": "Writing Tools"
+}

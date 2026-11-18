@@ -1,0 +1,19 @@
+{
+  "id": "30",
+  "name": "CapCut Pro",
+  "slug": "capcut-pro",
+  "price": "$4.99",
+  "originalPrice": "$9.99",
+  "image": "https://img.icons8.com/color/96/video-editing.png",
+  "bgColor": "#f0f4ff",
+  "description": "Professional video editing app with advanced features. Create stunning videos with effects, transitions, and filters.",
+  "features": [
+    "Advanced video editing",
+    "Effects and transitions",
+    "Music and sound effects",
+    "Text and stickers",
+    "Filters and color grading",
+    "Export in 4K quality"
+  ],
+  "category": "Video Editing"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "3",
+  "name": "Moz Pro",
+  "slug": "moz-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$99.00",
+  "image": "/tools/moz-logo.svg",
+  "bgColor": "#f0f4ff",
+  "description": "Unlock Moz's full SEO potential with Moz Group Buy services. Get affordable access to Moz tools for keyword research, backlink analysis, and site audits at a fraction of the price.",
+  "features": [
+    "Rank tracking and monitoring",
+    "Site audit and crawl analysis",
+    "Link building tools",
+    "Keyword research",
+    "Local SEO tools",
+    "Domain authority metrics"
+  ],
+  "category": "SEO Tools"
+}

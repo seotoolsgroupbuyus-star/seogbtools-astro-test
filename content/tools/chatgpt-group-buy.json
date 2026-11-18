@@ -1,0 +1,19 @@
+{
+  "id": "5",
+  "name": "ChatGPT Plus",
+  "slug": "chatgpt-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$20.00",
+  "image": "/tools/chatgpt-logo.svg",
+  "bgColor": "#f0f4ff",
+  "description": "Advanced AI chatbot with GPT-4 access, faster responses, and priority access. The most powerful AI writing assistant.",
+  "features": [
+    "GPT-4 model access",
+    "Faster response times",
+    "Priority access during peak times",
+    "Advanced conversation capabilities",
+    "Code interpreter access",
+    "Plugin support"
+  ],
+  "category": "AI Tools"
+}

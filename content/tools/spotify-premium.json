@@ -1,0 +1,19 @@
+{
+  "id": "18",
+  "name": "Spotify Premium",
+  "slug": "spotify-premium",
+  "price": "$3.99",
+  "originalPrice": "$9.99",
+  "image": "https://img.icons8.com/color/96/spotify.png",
+  "bgColor": "#f0f4ff",
+  "description": "Stream millions of songs ad-free. Premium music streaming with offline downloads and high-quality audio.",
+  "features": [
+    "Ad-free music streaming",
+    "Offline downloads",
+    "High-quality audio",
+    "Unlimited skips",
+    "On-demand playback",
+    "Access to exclusive content"
+  ],
+  "category": "Entertainment"
+}

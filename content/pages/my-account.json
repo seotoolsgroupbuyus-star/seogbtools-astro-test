@@ -1,0 +1,13 @@
+{
+  "title": "My account",
+  "slug": "my-account",
+  "content": "<!-- wp:shortcode -->[woocommerce_my_account]<!-- /wp:shortcode -->",
+  "excerpt": "",
+  "seoTitle": "",
+  "seoDescription": "",
+  "image": "",
+  "wpId": "10",
+  "lastModified": "2026-10-26 12:13:48",
+  "seoH1": "",
+  "focusKeyword": ""
+}

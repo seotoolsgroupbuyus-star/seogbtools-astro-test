@@ -1,0 +1,19 @@
+{
+  "id": "36",
+  "name": "Majestic SEO",
+  "slug": "majestic-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$49.99",
+  "image": "https://img.icons8.com/color/96/link.png",
+  "bgColor": "#f0f4ff",
+  "description": "Link intelligence and backlink analysis tool. Analyze backlinks, trust flow, and citation flow for SEO.",
+  "features": [
+    "Backlink analysis",
+    "Trust Flow and Citation Flow",
+    "Link prospecting",
+    "Competitor backlink analysis",
+    "Historical link data",
+    "Site explorer tool"
+  ],
+  "category": "SEO Tools"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "23",
+  "name": "HubSpot",
+  "slug": "hubspot",
+  "price": "$9.99",
+  "originalPrice": "$45.00",
+  "image": "https://img.icons8.com/color/96/business.png",
+  "bgColor": "#f0f4ff",
+  "description": "Complete CRM and marketing automation platform. Manage sales, marketing, and customer service in one place.",
+  "features": [
+    "CRM and contact management",
+    "Marketing automation",
+    "Sales pipeline management",
+    "Email marketing",
+    "Analytics and reporting",
+    "Customer service tools"
+  ],
+  "category": "CRM Tools"
+}

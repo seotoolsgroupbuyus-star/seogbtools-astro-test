@@ -1,0 +1,19 @@
+{
+  "id": "40",
+  "name": "StoryBlocks",
+  "slug": "storyblocks-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$15.00",
+  "image": "https://img.icons8.com/color/96/movie.png",
+  "bgColor": "#f0f4ff",
+  "description": "Unlimited stock video, audio, and images. Access millions of royalty-free media assets for your projects.",
+  "features": [
+    "Unlimited downloads",
+    "Stock video library",
+    "Stock photos",
+    "Audio tracks",
+    "After Effects templates",
+    "Commercial license"
+  ],
+  "category": "Media"
+}

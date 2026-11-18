@@ -1,0 +1,19 @@
+{
+  "id": "27",
+  "name": "Helium 10",
+  "slug": "helium10-group-buy",
+  "price": "$9.99",
+  "originalPrice": "$99.00",
+  "image": "https://img.icons8.com/color/96/amazon.png",
+  "bgColor": "#f0f4ff",
+  "description": "Complete Amazon FBA toolkit. Product research, keyword tracking, listing optimization, and competitor analysis for Amazon sellers.",
+  "features": [
+    "Product research tools",
+    "Keyword research and tracking",
+    "Listing optimizer",
+    "Competitor analysis",
+    "Inventory management",
+    "Profitability calculator"
+  ],
+  "category": "E-commerce Tools"
+}

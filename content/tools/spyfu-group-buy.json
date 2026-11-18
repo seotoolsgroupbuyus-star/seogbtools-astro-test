@@ -1,0 +1,19 @@
+{
+  "id": "12",
+  "name": "SpyFu",
+  "slug": "spyfu-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$39.00",
+  "image": "https://img.icons8.com/color/96/search.png",
+  "bgColor": "#f0f4ff",
+  "description": "Competitor analysis tool for SEO and PPC. Discover what keywords your competitors rank for and their ad strategies.",
+  "features": [
+    "Competitor keyword research",
+    "PPC competitor analysis",
+    "Backlink checker",
+    "Rank tracking",
+    "Ad history research",
+    "Domain comparison"
+  ],
+  "category": "SEO Tools"
+}

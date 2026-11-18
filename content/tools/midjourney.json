@@ -1,0 +1,19 @@
+{
+  "id": "24",
+  "name": "Midjourney",
+  "slug": "midjourney",
+  "price": "$4.99",
+  "originalPrice": "$10.00",
+  "image": "https://img.icons8.com/color/96/image-gallery.png",
+  "bgColor": "#f0f4ff",
+  "description": "AI art generator that creates stunning images from text prompts. Generate unique artwork and designs with AI.",
+  "features": [
+    "AI image generation",
+    "Text-to-image conversion",
+    "High-quality artwork",
+    "Multiple art styles",
+    "Fast generation",
+    "Commercial usage rights"
+  ],
+  "category": "AI Tools"
+}

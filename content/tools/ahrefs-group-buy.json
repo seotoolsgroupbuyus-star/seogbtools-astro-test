@@ -1,0 +1,19 @@
+{
+  "id": "1",
+  "name": "Ahrefs",
+  "slug": "ahrefs-group-buy",
+  "price": "$20.00",
+  "originalPrice": "$99.00",
+  "image": "/tools/ahrefs-logo.svg",
+  "bgColor": "#f0f4ff",
+  "description": "Complete SEO toolset for backlinks, keywords, and competitor analysis. Industry-leading SEO software trusted by millions.",
+  "features": [
+    "Backlink analysis and monitoring",
+    "Keyword research and tracking",
+    "Competitor analysis",
+    "Site audit and technical SEO",
+    "Content explorer and gap analysis",
+    "Rank tracking and SERP analysis"
+  ],
+  "category": "SEO Tools"
+}

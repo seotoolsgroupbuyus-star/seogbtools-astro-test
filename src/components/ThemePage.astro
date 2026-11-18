@@ -1,0 +1,12 @@
+---
+import '../styles/tailwind.css';
+interface Props { html: string }
+const { html } = Astro.props;
+const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i)?.[1] || '';
+const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '';
+---
+<!doctype html>
+<html lang="en">
+  <head><Fragment set:html={head} /></head>
+  <body><Fragment set:html={body} /></body>
+</html>

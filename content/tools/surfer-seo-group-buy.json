@@ -1,0 +1,19 @@
+{
+  "id": "8",
+  "name": "Surfer SEO",
+  "slug": "surfer-seo-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$89.00",
+  "image": "https://img.icons8.com/color/96/google-logo.png",
+  "bgColor": "#f0f4ff",
+  "description": "Content optimization tool to rank higher on Google. Data-driven content editor for SEO optimization.",
+  "features": [
+    "Content editor with SEO guidelines",
+    "Keyword density optimization",
+    "Content score analysis",
+    "SERP analysis",
+    "Content planning",
+    "Competitor content analysis"
+  ],
+  "category": "SEO Tools"
+}

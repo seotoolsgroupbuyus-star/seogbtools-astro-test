@@ -1,0 +1,19 @@
+{
+  "id": "14",
+  "name": "RunwayML",
+  "slug": "runwayml",
+  "price": "$4.99",
+  "originalPrice": "$15.00",
+  "image": "/tools/runwayml-logo.svg",
+  "bgColor": "#f0f4ff",
+  "description": "AI-powered video editing and generation platform. Create professional videos with AI assistance and advanced editing tools.",
+  "features": [
+    "AI video generation",
+    "Advanced video editing",
+    "Green screen removal",
+    "Motion tracking",
+    "Color grading tools",
+    "Export in multiple formats"
+  ],
+  "category": "AI Tools"
+}

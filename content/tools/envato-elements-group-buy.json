@@ -1,0 +1,19 @@
+{
+  "id": "25",
+  "name": "Envato Elements",
+  "slug": "envato-elements-group-buy",
+  "price": "$4.99",
+  "originalPrice": "$16.50",
+  "image": "https://img.icons8.com/color/96/design.png",
+  "bgColor": "#f0f4ff",
+  "description": "Unlimited downloads of premium graphics, templates, videos, and audio. Everything you need for creative projects.",
+  "features": [
+    "Unlimited downloads",
+    "Premium templates",
+    "Stock photos and videos",
+    "Audio tracks and sound effects",
+    "Graphics and illustrations",
+    "Fonts and web templates"
+  ],
+  "category": "Design Tools"
+}

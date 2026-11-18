@@ -1,0 +1,19 @@
+{
+  "id": "39",
+  "name": "Epidemic Sound",
+  "slug": "epidemic-sound",
+  "price": "$4.99",
+  "originalPrice": "$15.00",
+  "image": "https://img.icons8.com/color/96/music.png",
+  "bgColor": "#f0f4ff",
+  "description": "Royalty-free music and sound effects for videos. Access to thousands of tracks for commercial use.",
+  "features": [
+    "Royalty-free music",
+    "Sound effects library",
+    "Commercial license",
+    "No attribution required",
+    "High-quality audio",
+    "Unlimited downloads"
+  ],
+  "category": "Media"
+}

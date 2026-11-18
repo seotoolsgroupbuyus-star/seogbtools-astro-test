@@ -1,0 +1,794 @@
+[
+  {
+    "id": "1",
+    "name": "Ahrefs",
+    "slug": "ahrefs-group-buy",
+    "price": "$20.00",
+    "originalPrice": "$99.00",
+    "image": "/tools/ahrefs-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "Complete SEO toolset for backlinks, keywords, and competitor analysis. Industry-leading SEO software trusted by millions.",
+    "features": [
+      "Backlink analysis and monitoring",
+      "Keyword research and tracking",
+      "Competitor analysis",
+      "Site audit and technical SEO",
+      "Content explorer and gap analysis",
+      "Rank tracking and SERP analysis"
+    ],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "2",
+    "name": "SEMrush",
+    "slug": "semrush-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$119.95",
+    "image": "/tools/semrush-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "All-in-one marketing toolkit for SEO, PPC, content marketing, and social media. Comprehensive digital marketing platform.",
+    "features": [
+      "SEO audit and on-page optimization",
+      "Keyword research and tracking",
+      "PPC keyword research",
+      "Content marketing toolkit",
+      "Social media management",
+      "Competitor analysis"
+    ],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "3",
+    "name": "Moz Pro",
+    "slug": "moz-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$99.00",
+    "image": "/tools/moz-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "Unlock Moz's full SEO potential with Moz Group Buy services. Get affordable access to Moz tools for keyword research, backlink analysis, and site audits at a fraction of the price.",
+    "features": [
+      "Rank tracking and monitoring",
+      "Site audit and crawl analysis",
+      "Link building tools",
+      "Keyword research",
+      "Local SEO tools",
+      "Domain authority metrics"
+    ],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "4",
+    "name": "Canva Pro",
+    "slug": "canva-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$12.99",
+    "image": "/tools/canva-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "Professional design tool with premium templates, stock photos, and advanced design features. Create stunning graphics easily.",
+    "features": [
+      "Premium templates library",
+      "Stock photos and videos",
+      "Brand kit and consistency",
+      "Advanced design tools",
+      "Team collaboration",
+      "Export in multiple formats"
+    ],
+    "category": "Design Tools"
+  },
+  {
+    "id": "5",
+    "name": "ChatGPT Plus",
+    "slug": "chatgpt-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$20.00",
+    "image": "/tools/chatgpt-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "Advanced AI chatbot with GPT-4 access, faster responses, and priority access. The most powerful AI writing assistant.",
+    "features": [
+      "GPT-4 model access",
+      "Faster response times",
+      "Priority access during peak times",
+      "Advanced conversation capabilities",
+      "Code interpreter access",
+      "Plugin support"
+    ],
+    "category": "AI Tools"
+  },
+  {
+    "id": "6",
+    "name": "Netflix",
+    "slug": "netflix-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$15.99",
+    "image": "/tools/netflix-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "Stream unlimited movies and TV shows. Access to premium Netflix account with all features and content.",
+    "features": [
+      "Unlimited streaming",
+      "HD and 4K quality",
+      "Multiple device support",
+      "Download for offline viewing",
+      "No ads",
+      "Access to all Netflix originals"
+    ],
+    "category": "Entertainment"
+  },
+  {
+    "id": "7",
+    "name": "Claude",
+    "slug": "claude",
+    "price": "$4.99",
+    "originalPrice": "$20.00",
+    "image": "/tools/claude-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "Advanced AI assistant by Anthropic. Safe, helpful, and honest AI for writing, analysis, and conversation.",
+    "features": [
+      "Advanced AI capabilities",
+      "Long context understanding",
+      "Safe and ethical AI",
+      "Code analysis and writing",
+      "Creative writing assistance",
+      "Research and analysis tools"
+    ],
+    "category": "AI Tools"
+  },
+  {
+    "id": "8",
+    "name": "Surfer SEO",
+    "slug": "surfer-seo-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$89.00",
+    "image": "https://img.icons8.com/color/96/google-logo.png",
+    "bgColor": "#f0f4ff",
+    "description": "Content optimization tool to rank higher on Google. Data-driven content editor for SEO optimization.",
+    "features": [
+      "Content editor with SEO guidelines",
+      "Keyword density optimization",
+      "Content score analysis",
+      "SERP analysis",
+      "Content planning",
+      "Competitor content analysis"
+    ],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "9",
+    "name": "QuillBot",
+    "slug": "quillbot-group-buy",
+    "price": "$3.99",
+    "originalPrice": "$9.95",
+    "image": "https://img.icons8.com/color/96/documents.png",
+    "bgColor": "#f0f4ff",
+    "description": "AI-powered writing assistant for paraphrasing, grammar checking, and content improvement. Perfect for writers and students.",
+    "features": [
+      "AI paraphrasing tool",
+      "Grammar and spell checker",
+      "Summarizer tool",
+      "Citation generator",
+      "Translator",
+      "Co-writer mode"
+    ],
+    "category": "Writing Tools"
+  },
+  {
+    "id": "10",
+    "name": "Ubersuggest",
+    "slug": "ubersuggest-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$29.00",
+    "image": "https://img.icons8.com/color/96/analytics.png",
+    "bgColor": "#f0f4ff",
+    "description": "Keyword research and SEO tool by Neil Patel. Comprehensive SEO suite for keyword research and content ideas.",
+    "features": [
+      "Keyword research and suggestions",
+      "SEO audit tool",
+      "Backlink checker",
+      "Content ideas generator",
+      "Competitor analysis",
+      "Rank tracking"
+    ],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "11",
+    "name": "Prime Video",
+    "slug": "prime-video",
+    "price": "$3.99",
+    "originalPrice": "$8.99",
+    "image": "https://img.icons8.com/color/96/amazon-prime-video.png",
+    "bgColor": "#f0f4ff",
+    "description": "Stream thousands of movies and TV shows. Access to Amazon Prime Video with exclusive content and originals.",
+    "features": [
+      "Unlimited streaming",
+      "Prime originals access",
+      "4K Ultra HD quality",
+      "Download for offline viewing",
+      "Multiple device support",
+      "X-Ray feature"
+    ],
+    "category": "Entertainment"
+  },
+  {
+    "id": "12",
+    "name": "SpyFu",
+    "slug": "spyfu-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$39.00",
+    "image": "https://img.icons8.com/color/96/search.png",
+    "bgColor": "#f0f4ff",
+    "description": "Competitor analysis tool for SEO and PPC. Discover what keywords your competitors rank for and their ad strategies.",
+    "features": [
+      "Competitor keyword research",
+      "PPC competitor analysis",
+      "Backlink checker",
+      "Rank tracking",
+      "Ad history research",
+      "Domain comparison"
+    ],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "13",
+    "name": "Coursera Plus",
+    "slug": "coursera-plus",
+    "price": "$4.99",
+    "originalPrice": "$59.00",
+    "image": "https://img.icons8.com/color/96/graduation-cap.png",
+    "bgColor": "#f0f4ff",
+    "description": "Access to thousands of courses from top universities and companies. Learn new skills with unlimited course access.",
+    "features": [
+      "Unlimited course access",
+      "Certificates of completion",
+      "Guided projects",
+      "Specializations",
+      "Professional certificates",
+      "Mobile app access"
+    ],
+    "category": "Education"
+  },
+  {
+    "id": "14",
+    "name": "RunwayML",
+    "slug": "runwayml",
+    "price": "$4.99",
+    "originalPrice": "$15.00",
+    "image": "/tools/runwayml-logo.svg",
+    "bgColor": "#f0f4ff",
+    "description": "AI-powered video editing and generation platform. Create professional videos with AI assistance and advanced editing tools.",
+    "features": [
+      "AI video generation",
+      "Advanced video editing",
+      "Green screen removal",
+      "Motion tracking",
+      "Color grading tools",
+      "Export in multiple formats"
+    ],
+    "category": "AI Tools"
+  },
+  {
+    "id": "15",
+    "name": "Grammarly",
+    "slug": "grammarly",
+    "price": "$4.99",
+    "originalPrice": "$12.00",
+    "image": "https://img.icons8.com/color/96/grammarly.png",
+    "bgColor": "#f0f4ff",
+    "description": "Access Grammarly's premium writing and grammar-checking tools at a fraction of the cost with Grammarly Group Buy. Improve your writing with features like plagiarism detection and style suggestions.",
+    "features": [
+      "Real-time grammar checking",
+      "Spelling and punctuation correction",
+      "Style and tone suggestions",
+      "Plagiarism checker",
+      "Vocabulary enhancement",
+      "Writing insights and analytics"
+    ],
+    "category": "Writing Tools"
+  },
+  {
+    "id": "16",
+    "name": "Notion",
+    "slug": "notion",
+    "price": "$4.99",
+    "originalPrice": "$10.00",
+    "image": "https://img.icons8.com/fluency/96/notion.png",
+    "bgColor": "#f0f4ff",
+    "description": "All-in-one workspace for notes, docs, projects, and collaboration. Organize your work and life in one place.",
+    "features": [
+      "Notes and documentation",
+      "Project management",
+      "Database and spreadsheets",
+      "Team collaboration",
+      "Templates library",
+      "API and integrations"
+    ],
+    "category": "Productivity"
+  },
+  {
+    "id": "17",
+    "name": "Adobe Creative",
+    "slug": "adobe-creative",
+    "price": "$9.99",
+    "originalPrice": "$52.99",
+    "image": "https://img.icons8.com/color/96/adobe-creative-cloud.png",
+    "bgColor": "#f0f4ff",
+    "description": "Complete creative suite with Photoshop, Illustrator, Premiere Pro, and 20+ professional design and video tools.",
+    "features": [
+      "Photoshop for image editing",
+      "Illustrator for vector graphics",
+      "Premiere Pro for video editing",
+      "After Effects for motion graphics",
+      "InDesign for layout design",
+      "Access to all Adobe apps"
+    ],
+    "category": "Design Tools"
+  },
+  {
+    "id": "18",
+    "name": "Spotify Premium",
+    "slug": "spotify-premium",
+    "price": "$3.99",
+    "originalPrice": "$9.99",
+    "image": "https://img.icons8.com/color/96/spotify.png",
+    "bgColor": "#f0f4ff",
+    "description": "Stream millions of songs ad-free. Premium music streaming with offline downloads and high-quality audio.",
+    "features": [
+      "Ad-free music streaming",
+      "Offline downloads",
+      "High-quality audio",
+      "Unlimited skips",
+      "On-demand playback",
+      "Access to exclusive content"
+    ],
+    "category": "Entertainment"
+  },
+  {
+    "id": "19",
+    "name": "Jasper AI",
+    "slug": "jasper-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$49.00",
+    "image": "https://img.icons8.com/color/96/chatgpt.png",
+    "bgColor": "#f0f4ff",
+    "description": "AI content creation platform for marketers. Generate blog posts, ads, emails, and social media content instantly.",
+    "features": [
+      "AI content generation",
+      "Blog post writing",
+      "Social media content",
+      "Email marketing copy",
+      "Ad copy creation",
+      "SEO-optimized content"
+    ],
+    "category": "AI Tools"
+  },
+  {
+    "id": "20",
+    "name": "Mailchimp",
+    "slug": "mailchimp",
+    "price": "$4.99",
+    "originalPrice": "$13.00",
+    "image": "https://img.icons8.com/color/96/email.png",
+    "bgColor": "#f0f4ff",
+    "description": "All-in-one marketing platform for email campaigns, automation, and customer insights. Grow your business with email marketing.",
+    "features": [
+      "Email campaign builder",
+      "Marketing automation",
+      "Audience segmentation",
+      "A/B testing",
+      "Analytics and reporting",
+      "Landing page builder"
+    ],
+    "category": "Marketing Tools"
+  },
+  {
+    "id": "21",
+    "name": "Hootsuite",
+    "slug": "hootsuite",
+    "price": "$4.99",
+    "originalPrice": "$49.00",
+    "image": "https://img.icons8.com/color/96/twitter--v1.png",
+    "bgColor": "#f0f4ff",
+    "description": "Social media management platform. Schedule posts, manage multiple accounts, and track performance across all social networks.",
+    "features": [
+      "Social media scheduling",
+      "Multi-platform management",
+      "Content calendar",
+      "Analytics and reporting",
+      "Team collaboration",
+      "Social listening"
+    ],
+    "category": "Social Media"
+  },
+  {
+    "id": "22",
+    "name": "Figma Pro",
+    "slug": "figma-pro",
+    "price": "$4.99",
+    "originalPrice": "$12.00",
+    "image": "https://img.icons8.com/color/96/figma.png",
+    "bgColor": "#f0f4ff",
+    "description": "Collaborative design tool for teams. Create, prototype, and collaborate on designs in real-time.",
+    "features": [
+      "Vector graphics editor",
+      "Real-time collaboration",
+      "Prototyping tools",
+      "Design systems",
+      "Plugins and integrations",
+      "Version history"
+    ],
+    "category": "Design Tools"
+  },
+  {
+    "id": "23",
+    "name": "HubSpot",
+    "slug": "hubspot",
+    "price": "$9.99",
+    "originalPrice": "$45.00",
+    "image": "https://img.icons8.com/color/96/business.png",
+    "bgColor": "#f0f4ff",
+    "description": "Complete CRM and marketing automation platform. Manage sales, marketing, and customer service in one place.",
+    "features": [
+      "CRM and contact management",
+      "Marketing automation",
+      "Sales pipeline management",
+      "Email marketing",
+      "Analytics and reporting",
+      "Customer service tools"
+    ],
+    "category": "CRM Tools"
+  },
+  {
+    "id": "24",
+    "name": "Midjourney",
+    "slug": "midjourney",
+    "price": "$4.99",
+    "originalPrice": "$10.00",
+    "image": "https://img.icons8.com/color/96/image-gallery.png",
+    "bgColor": "#f0f4ff",
+    "description": "AI art generator that creates stunning images from text prompts. Generate unique artwork and designs with AI.",
+    "features": [
+      "AI image generation",
+      "Text-to-image conversion",
+      "High-quality artwork",
+      "Multiple art styles",
+      "Fast generation",
+      "Commercial usage rights"
+    ],
+    "category": "AI Tools"
+  },
+  {
+    "id": "25",
+    "name": "Envato Elements",
+    "slug": "envato-elements-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$16.50",
+    "image": "https://img.icons8.com/color/96/design.png",
+    "bgColor": "#f0f4ff",
+    "description": "Unlimited downloads of premium graphics, templates, videos, and audio. Everything you need for creative projects.",
+    "features": [
+      "Unlimited downloads",
+      "Premium templates",
+      "Stock photos and videos",
+      "Audio tracks and sound effects",
+      "Graphics and illustrations",
+      "Fonts and web templates"
+    ],
+    "category": "Design Tools"
+  },
+  {
+    "id": "26",
+    "name": "Buzzsumo",
+    "slug": "buzzsumo-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$99.00",
+    "image": "https://img.icons8.com/color/96/graph.png",
+    "bgColor": "#f0f4ff",
+    "description": "Content research and social media analytics tool. Find trending content, analyze competitors, and discover influencers.",
+    "features": [
+      "Content research",
+      "Trending topics discovery",
+      "Competitor analysis",
+      "Influencer identification",
+      "Social media analytics",
+      "Content alerts"
+    ],
+    "category": "Content Marketing"
+  },
+  {
+    "id": "27",
+    "name": "Helium 10",
+    "slug": "helium10-group-buy",
+    "price": "$9.99",
+    "originalPrice": "$99.00",
+    "image": "https://img.icons8.com/color/96/amazon.png",
+    "bgColor": "#f0f4ff",
+    "description": "Complete Amazon FBA toolkit. Product research, keyword tracking, listing optimization, and competitor analysis for Amazon sellers.",
+    "features": [
+      "Product research tools",
+      "Keyword research and tracking",
+      "Listing optimizer",
+      "Competitor analysis",
+      "Inventory management",
+      "Profitability calculator"
+    ],
+    "category": "E-commerce Tools"
+  },
+  {
+    "id": "28",
+    "name": "Leonardo.AI",
+    "slug": "leonardo-ai",
+    "price": "$4.99",
+    "originalPrice": "$10.00",
+    "image": "https://img.icons8.com/color/96/artificial-intelligence.png",
+    "bgColor": "#f0f4ff",
+    "description": "AI image generation platform for creating stunning visuals. Generate images, textures, and designs with advanced AI models.",
+    "features": [
+      "AI image generation",
+      "Multiple AI models",
+      "Image editing tools",
+      "Texture generation",
+      "High-resolution output",
+      "Commercial license"
+    ],
+    "category": "AI Tools"
+  },
+  {
+    "id": "29",
+    "name": "Freepik Premium",
+    "slug": "freepik-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$9.99",
+    "image": "https://img.icons8.com/color/96/image.png",
+    "bgColor": "#f0f4ff",
+    "description": "Premium graphics, photos, vectors, and PSD files. Unlimited downloads of high-quality design resources.",
+    "features": [
+      "Unlimited downloads",
+      "Premium vectors and graphics",
+      "Stock photos",
+      "PSD templates",
+      "Icons and illustrations",
+      "No attribution required"
+    ],
+    "category": "Design Tools"
+  },
+  {
+    "id": "30",
+    "name": "CapCut Pro",
+    "slug": "capcut-pro",
+    "price": "$4.99",
+    "originalPrice": "$9.99",
+    "image": "https://img.icons8.com/color/96/video-editing.png",
+    "bgColor": "#f0f4ff",
+    "description": "Professional video editing app with advanced features. Create stunning videos with effects, transitions, and filters.",
+    "features": [
+      "Advanced video editing",
+      "Effects and transitions",
+      "Music and sound effects",
+      "Text and stickers",
+      "Filters and color grading",
+      "Export in 4K quality"
+    ],
+    "category": "Video Editing"
+  },
+  {
+    "id": "31",
+    "name": "InVideo",
+    "slug": "invideo",
+    "price": "$4.99",
+    "originalPrice": "$15.00",
+    "image": "https://img.icons8.com/color/96/video.png",
+    "bgColor": "#f0f4ff",
+    "description": "Online video editor with templates and AI features. Create professional videos quickly with pre-made templates.",
+    "features": [
+      "Video templates library",
+      "AI video generation",
+      "Text-to-video conversion",
+      "Stock media library",
+      "Collaboration tools",
+      "HD and 4K export"
+    ],
+    "category": "Video Editing"
+  },
+  {
+    "id": "32",
+    "name": "Udemy Pro",
+    "slug": "udemy-pro",
+    "price": "$4.99",
+    "originalPrice": "$19.99",
+    "image": "https://img.icons8.com/color/96/udemy.png",
+    "bgColor": "#f0f4ff",
+    "description": "Access to thousands of online courses. Learn new skills with unlimited access to Udemy courses.",
+    "features": [
+      "Unlimited course access",
+      "Certificates of completion",
+      "Mobile app access",
+      "Offline downloads",
+      "Expert instructors",
+      "Lifetime access"
+    ],
+    "category": "Education"
+  },
+  {
+    "id": "33",
+    "name": "Turnitin",
+    "slug": "turnitin",
+    "price": "$4.99",
+    "originalPrice": "$10.00",
+    "image": "https://img.icons8.com/color/96/checked-2.png",
+    "bgColor": "#f0f4ff",
+    "description": "Plagiarism detection and academic integrity tool. Check originality of documents and improve writing.",
+    "features": [
+      "Plagiarism detection",
+      "Similarity reports",
+      "Grammar checking",
+      "Writing feedback",
+      "Citation assistance",
+      "Academic integrity tools"
+    ],
+    "category": "Education"
+  },
+  {
+    "id": "34",
+    "name": "WordHero",
+    "slug": "wordhero",
+    "price": "$4.99",
+    "originalPrice": "$49.00",
+    "image": "https://img.icons8.com/color/96/edit.png",
+    "bgColor": "#f0f4ff",
+    "description": "AI writing tool for creating blog posts, articles, and content. Generate high-quality content with AI assistance.",
+    "features": [
+      "AI blog post generator",
+      "Article writing assistant",
+      "Content templates",
+      "SEO optimization",
+      "Multiple writing styles",
+      "Content rewriting"
+    ],
+    "category": "Writing Tools"
+  },
+  {
+    "id": "35",
+    "name": "Copy.ai",
+    "slug": "copy-ai",
+    "price": "$4.99",
+    "originalPrice": "$49.00",
+    "image": "https://img.icons8.com/color/96/document.png",
+    "bgColor": "#f0f4ff",
+    "description": "AI copywriting tool for marketing content. Generate ad copy, emails, product descriptions, and more.",
+    "features": [
+      "AI copywriting",
+      "Marketing copy generation",
+      "Email templates",
+      "Product descriptions",
+      "Social media content",
+      "A/B testing variations"
+    ],
+    "category": "Writing Tools"
+  },
+  {
+    "id": "36",
+    "name": "Majestic SEO",
+    "slug": "majestic-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$49.99",
+    "image": "https://img.icons8.com/color/96/link.png",
+    "bgColor": "#f0f4ff",
+    "description": "Link intelligence and backlink analysis tool. Analyze backlinks, trust flow, and citation flow for SEO.",
+    "features": [
+      "Backlink analysis",
+      "Trust Flow and Citation Flow",
+      "Link prospecting",
+      "Competitor backlink analysis",
+      "Historical link data",
+      "Site explorer tool"
+    ],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "37",
+    "name": "Scribd Premium",
+    "slug": "scribd-premium",
+    "price": "$3.99",
+    "originalPrice": "$9.99",
+    "image": "https://img.icons8.com/color/96/book.png",
+    "bgColor": "#f0f4ff",
+    "description": "Unlimited access to books, audiobooks, magazines, and documents. Read and listen to millions of titles.",
+    "features": [
+      "Unlimited book access",
+      "Audiobooks library",
+      "Magazines and documents",
+      "Offline reading",
+      "Mobile app access",
+      "No ads"
+    ],
+    "category": "Entertainment"
+  },
+  {
+    "id": "38",
+    "name": "Prezi",
+    "slug": "prezi",
+    "price": "$4.99",
+    "originalPrice": "$14.99",
+    "image": "https://img.icons8.com/color/96/presentation.png",
+    "bgColor": "#f0f4ff",
+    "description": "Interactive presentation software. Create engaging, non-linear presentations with zoom and motion effects.",
+    "features": [
+      "Interactive presentations",
+      "Zoom and motion effects",
+      "Template library",
+      "Team collaboration",
+      "Analytics and insights",
+      "Offline editing"
+    ],
+    "category": "Productivity"
+  },
+  {
+    "id": "39",
+    "name": "Epidemic Sound",
+    "slug": "epidemic-sound",
+    "price": "$4.99",
+    "originalPrice": "$15.00",
+    "image": "https://img.icons8.com/color/96/music.png",
+    "bgColor": "#f0f4ff",
+    "description": "Royalty-free music and sound effects for videos. Access to thousands of tracks for commercial use.",
+    "features": [
+      "Royalty-free music",
+      "Sound effects library",
+      "Commercial license",
+      "No attribution required",
+      "High-quality audio",
+      "Unlimited downloads"
+    ],
+    "category": "Media"
+  },
+  {
+    "id": "40",
+    "name": "StoryBlocks",
+    "slug": "storyblocks-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$15.00",
+    "image": "https://img.icons8.com/color/96/movie.png",
+    "bgColor": "#f0f4ff",
+    "description": "Unlimited stock video, audio, and images. Access millions of royalty-free media assets for your projects.",
+    "features": [
+      "Unlimited downloads",
+      "Stock video library",
+      "Stock photos",
+      "Audio tracks",
+      "After Effects templates",
+      "Commercial license"
+    ],
+    "category": "Media"
+  },
+  {
+    "id": "41",
+    "name": "Screaming Frog SEO Spider",
+    "slug": "screaming-frog-seo-spider",
+    "price": "$15/mo",
+    "priceSubtitle": "$100/yr",
+    "originalPrice": "",
+    "image": "/images/screaming-frog-seo-spider-logo.jpg",
+    "bgColor": "#ecfdf5",
+    "description": "Screaming Frog SEO Spider helps you crawl websites, find SEO issues, and improve technical site health.",
+    "features": [],
+    "category": "SEO Tools"
+  },
+  {
+    "id": "42",
+    "name": "SEO Profiler",
+    "slug": "seo-profiler-group-buy",
+    "price": "$4.99",
+    "originalPrice": "$69.95",
+    "image": "/tools/seoprofiler-logo.svg",
+    "bgColor": "#ecfdf5",
+    "description": "Unlock SEO Profiler's full suite of SEO tools at an affordable price with SEO Profiler Group Buy. Get access to keyword research, backlink analysis, site audits, and more, all at a fraction of the cost.",
+    "features": [
+      "Keyword research and rank tracking",
+      "Backlink analysis and link opportunities",
+      "Site audits and on-page recommendations",
+      "Competitor analysis and benchmarking",
+      "SEO reports and project workflows",
+      "Technical and content SEO insights"
+    ],
+    "category": "SEO Tools"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "id": "38",
+  "name": "Prezi",
+  "slug": "prezi",
+  "price": "$4.99",
+  "originalPrice": "$14.99",
+  "image": "https://img.icons8.com/color/96/presentation.png",
+  "bgColor": "#f0f4ff",
+  "description": "Interactive presentation software. Create engaging, non-linear presentations with zoom and motion effects.",
+  "features": [
+    "Interactive presentations",
+    "Zoom and motion effects",
+    "Template library",
+    "Team collaboration",
+    "Analytics and insights",
+    "Offline editing"
+  ],
+  "category": "Productivity"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "28",
+  "name": "Leonardo.AI",
+  "slug": "leonardo-ai",
+  "price": "$4.99",
+  "originalPrice": "$10.00",
+  "image": "https://img.icons8.com/color/96/artificial-intelligence.png",
+  "bgColor": "#f0f4ff",
+  "description": "AI image generation platform for creating stunning visuals. Generate images, textures, and designs with advanced AI models.",
+  "features": [
+    "AI image generation",
+    "Multiple AI models",
+    "Image editing tools",
+    "Texture generation",
+    "High-resolution output",
+    "Commercial license"
+  ],
+  "category": "AI Tools"
+}

@@ -1,0 +1,30 @@
+/*
+Theme Name: SEOGBTools
+Theme URI: https://seogbtools.com/
+Author: SEOGBTools Migration
+Description: SEOGBTools - design in theme; pages/posts via WP; products/tools via WooCommerce (no hardcoded catalog).
+Version: 0.5.2
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.1
+Text Domain: seogbtools
+*/
+
+/* Base tokens — expanded as design is ported from Tailwind */
+:root {
+  --sgb-primary: #3b82f6;
+  --sgb-secondary: #8b5cf6;
+  --sgb-bg: #0f172a;
+  --sgb-bg-deep: #0a0a0a;
+  --sgb-text: #e2e8f0;
+  --sgb-muted: #94a3b8;
+}
+/* Base tokens â€” expanded as design is ported from Tailwind */
+:root {
+  --sgb-primary: #3b82f6;
+  --sgb-secondary: #8b5cf6;
+  --sgb-bg: #0f172a;
+  --sgb-bg-deep: #0a0a0a;
+  --sgb-text: #e2e8f0;
+  --sgb-muted: #94a3b8;
+}
