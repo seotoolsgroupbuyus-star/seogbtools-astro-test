@@ -1,7 +1,7 @@
 {
   "title": "My account",
   "slug": "my-account",
-  "content": "<!-- wp:shortcode -->[woocommerce_my_account]<!-- /wp:shortcode -->",
+  "content": "<section class=\"sgb-account-panel\" aria-labelledby=\"account-access-title\"><div class=\"sgb-account-panel__symbol\" aria-hidden=\"true\">↗</div><h2 id=\"account-access-title\">Access your account</h2><p>Manage your existing account, orders, and account details through our secure WordPress account portal.</p><a class=\"sgb-account-panel__button\" href=\"https://seogbtools.com/my-account/\" rel=\"noopener noreferrer\">Open My Account →</a><p class=\"sgb-account-panel__note\">This preview is a static copy of the website. Sign-in and order history remain on the existing website until a separate account system is connected.</p></section>",
   "excerpt": "",
   "seoTitle": "",
   "seoDescription": "",
