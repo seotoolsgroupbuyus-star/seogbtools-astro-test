@@ -2,43 +2,56 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const publicDir = path.join(root, 'public');
-const contentDir = path.join(root, 'content');
-const findings = { scannedFiles: 0, localImageReferences: 0, missingLocalImages: [], externalWordPressImages: [], tinyImageFiles: [] };
-const imageRe = /(?:src|srcset|image|thumbnail|featuredImage)[\\s\\":=]+(?:\\"|')?(https?:\\/\\/[^\\s\\"'<>]+|\\/[^\\s\\"'<>]+\\.(?:png|jpe?g|webp|gif|svg))/gi;
-function walk(dir, visit) {
-  if (!fs.existsSync(dir)) return;
-  for (const ent of fs.readdirSync(dir, { withFileTypes:true })) {
-    const full=path.join(dir,ent.name);
-    if (ent.isDirectory()) walk(full,visit); else if(ent.isFile()) visit(full);
+const publicRoot = path.resolve('public');
+const report = { scannedFiles: 0, localReferences: 0, missingLocalImages: [], externalWordPressImages: [], tinyImageCandidates: [] };
+function walk(folder, visit) {
+  if (!fs.existsSync(folder)) return;
+  for (const entry of fs.readdirSync(folder, { withFileTypes: true })) {
+    const file = path.join(folder, entry.name);
+    if (entry.isDirectory()) walk(file, visit);
+    else if (entry.isFile()) visit(file);
   }
 }
-function scanText(file) {
-  if (!/\\.(?:json|html|mjs|astro)$/i.test(file)) return;
-  findings.scannedFiles++;
-  const text = fs.readFileSync(file,'utf8');
-  for (const match of text.matchAll(imageRe)) {
-    const src=match[1].replace(/\\\\\\//g,'/').replace(/&amp;/g,'&');
-    if (/^https?:\\/\\//i.test(src)) {
-      if (/seogbtools\\.com\\/wp-content\\/uploads/i.test(src)) findings.externalWordPressImages.push({file:path.relative(root,file),url:src});
-    } else if(src.startsWith('/')) {
-      const pathname=decodeURIComponent(src.split('?')[0]);
-      if(!pathname.startsWith('/assets/')&&!pathname.startsWith('/wp-content/'))continue;
-      findings.localImageReferences++;
-      const candidate=path.resolve(publicDir,'.'+pathname);
-      if(!candidate.startsWith(publicDir+path.sep)||!fs.existsSync(candidate)) findings.missingLocalImages.push({file:path.relative(root,file),src:pathname});
+const seen = new Set();
+function checkSource(source, relativeFile) {
+  for (const url of source.match(/https?:\/\/[^\s"'<>\\]+|\/assets\/images\/[^\s"'<>\\]+/gi) || []) {
+    const normalized = url.replace(/\\u002F/gi, '/').replace(/&amp;/g, '&').replace(/\\\//g, '/');
+    if (/^https?:\/\//i.test(normalized)) {
+      if (/^https?:\/\/(?:www\.)?seogbtools\.com\/wp-content\/uploads\//i.test(normalized)) {
+        const key = relativeFile + '|' + normalized;
+        if (!seen.has(key)) { seen.add(key); report.externalWordPressImages.push({ file: relativeFile, url: normalized }); }
+      }
+      continue;
+    }
+    const pathname = normalized.split(/[?#]/)[0];
+    if (!pathname.startsWith('/assets/images/')) continue;
+    report.localReferences++;
+    const target = path.resolve(publicRoot, '.' + pathname);
+    if (target.startsWith(publicRoot + path.sep) && !fs.existsSync(target)) {
+      const key = relativeFile + '|' + pathname;
+      if (!seen.has(key)) { seen.add(key); report.missingLocalImages.push({file: relativeFile, path: pathname}); }
     }
   }
 }
-walk(contentDir,scanText);
-walk(path.join(root,'.generated'),scanText);
-walk(path.join(publicDir,'assets','images'),file=>{
- if(!/\\.(?:png|jpe?g|webp|gif|svg)$/i.test(file)) return;
- if(fs.statSync(file).size<300) findings.tinyImageFiles.push({file:path.relative(root,file),bytes:fs.statSync(file).size});
+for (const folder of ['content', '.generated']) {
+  walk(path.join(root, folder), file => {
+    if (!/\.(json|html)$/i.test(file)) return;
+    report.scannedFiles++;
+    checkSource(fs.readFileSync(file, 'utf8'), path.relative(root, file));
+  });
+}
+walk(path.join(publicRoot, 'assets/images'), file => {
+  if (/\.(png|jpe?g|webp|gif|svg)$/i.test(file)) {
+    const bytes = fs.statSync(file).size;
+    if (bytes < 300) report.tinyImageCandidates.push({ file: path.relative(root, file), bytes });
+  }
 });
-for(const k of ['externalWordPressImages','missingLocalImages']) findings[k]=[...new Map(findings[k].map(v=>[v.file+'|'+(v.src||v.url),v])).values()];
-const reportDir=path.join(root,'audit');fs.mkdirSync(reportDir,{recursive:true});
-fs.writeFileSync(path.join(reportDir,'image-audit.json'),JSON.stringify(findings,null,2));
-console.log('Image audit:',findings.localImageReferences,'local refs,',findings.missingLocalImages.length,'missing local refs,',findings.externalWordPressImages.length,'external WP refs,',findings.tinyImageFiles.length,'tiny image candidates');
-console.log('Report: audit/image-audit.json');
-if(findings.missingLocalImages.length) console.warn('Sample missing:',findings.missingLocalImages.slice(0,10));
+fs.mkdirSync(path.join(root, 'audit'), { recursive: true });
+fs.writeFileSync(path.join(root, 'audit/image-audit.json'), JSON.stringify(report, null, 2));
+console.log(JSON.stringify({
+  scannedFiles:report.scannedFiles,localReferences:report.localReferences,
+  missingLocalImages:report.missingLocalImages.length,
+  externalWordPressImages:report.externalWordPressImages.length,
+  tinyImageCandidates:report.tinyImageCandidates.length
+},null,2));
+console.log('Details saved to audit/image-audit.json');
