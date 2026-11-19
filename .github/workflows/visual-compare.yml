@@ -6,6 +6,8 @@ on:
       - 'scripts/visual-compare.mjs'
       - 'scripts/mobile-functional-audit.mjs'
       - 'scripts/site-paths.mjs'
+      - 'scripts/build.mjs'
+      - 'src/pages/[...slug].astro'
       - '.github/workflows/visual-compare.yml'
 permissions:
   contents: read
@@ -20,6 +22,11 @@ jobs:
           node-version: '22'
       - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
+      - name: Validate source scripts
+        run: |
+          node --check scripts/build.mjs
+          node --check scripts/visual-compare.mjs
+          node --check scripts/mobile-functional-audit.mjs
       - name: Screenshot + sitemap + SEO comparison
         continue-on-error: true
         run: node scripts/visual-compare.mjs
