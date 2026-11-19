@@ -1,0 +1,328 @@
+{
+  "total": 203,
+  "match": 203,
+  "mismatchCount": 0,
+  "mismatch": [],
+  "first20": [
+    {
+      "slug": "ahrefs-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/13/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/13/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/15/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "semrush-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/104/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/104/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/60/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "ad-ecommerce-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/95/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/95/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/16/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "adheart-me-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/signup",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/150/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "adobe-creative",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/119/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/119/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 2
+    },
+    {
+      "slug": "adobe-stock-group-buy-accounts-shared-private",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/44/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/44/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/27/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "adspy-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/109/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/109/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "advertsuite-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/signup",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/188/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "ai-content-labs-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/signup",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/123/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "aiseo-ai-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/signup",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/55/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "alexa-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/186/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/186/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/149/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "amztrackers",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/133/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/133/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/159/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "animoto-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/195/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/195/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/173/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "answerthepublic-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/60/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/60/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/198/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "article-builder-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/146/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/146/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/24/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "article-forge-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/28/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/28/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/87/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "audio-block-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/140/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/140/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/69/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "authority-labs-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/signup",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/186/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "bigspy-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/cart/index/product/id/115/c/",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/115/c/",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/109/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    },
+    {
+      "slug": "blaster-online-group-buy",
+      "status": 200,
+      "previous": "https://seogroupsbuy.com/users/signup",
+      "first": [
+        {
+          "href": "https://seogroupsbuy.com/users/signup",
+          "text": "Buy Now"
+        },
+        {
+          "href": "https://seogroupsbuy.com/users/cart/index/product/id/110/c/",
+          "text": "Buy Now"
+        }
+      ],
+      "total": 9
+    }
+  ]
+}
