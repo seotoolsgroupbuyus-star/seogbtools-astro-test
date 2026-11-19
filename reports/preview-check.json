@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-19T03:39:12.321Z",
+  "at": "2026-11-19T03:41:14.562Z",
   "root": "https://seogbtools-astro-test.bilalfadi11221333.workers.dev",
   "results": [
     {
@@ -8,6 +8,7 @@
       "type": "text/html",
       "bytes": 52241,
       "title": "SEOGBTools | Premium Group Buy SEO Tools",
+      "titleMatchesCurrentLive": false,
       "hasFavicon": true,
       "noindex": true,
       "liveSignup": true,
