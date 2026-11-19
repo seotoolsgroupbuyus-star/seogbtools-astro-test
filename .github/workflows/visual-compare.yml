@@ -1,0 +1,41 @@
+name: Original vs Astro preview — visual and mobile audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/visual-compare.mjs'
+      - 'scripts/mobile-functional-audit.mjs'
+      - 'scripts/site-paths.mjs'
+      - '.github/workflows/visual-compare.yml'
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Screenshot + sitemap + SEO comparison
+        continue-on-error: true
+        run: node scripts/visual-compare.mjs
+      - name: Desktop/mobile functional audit
+        continue-on-error: true
+        run: node scripts/mobile-functional-audit.mjs
+      - name: Upload evidence (JSON reports and screenshots)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-vs-preview-site-audit
+          path: |
+            visual-audit/
+            mobile-functional-audit/
+          if-no-files-found: warn
+      - name: Audit outcome
+        if: always()
+        run: |
+          node -e "const fs=require('fs');let bad=false;for(const p of ['visual-audit/report.json','mobile-functional-audit/report.json']){if(!fs.existsSync(p)){console.error('Missing audit report: '+p);bad=true;continue;}const d=JSON.parse(fs.readFileSync(p));console.log(p, 'pages:',d.sitemapCount,'failures:',d.failed??d.issueCount);if((d.failed??d.issueCount)>0)bad=true;}if(bad)process.exit(1)"
