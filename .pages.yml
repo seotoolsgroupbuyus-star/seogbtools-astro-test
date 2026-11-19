@@ -1,6 +1,22 @@
 media:
-  input: public/assets/images/site
-  output: /assets/images/site
+  - name: site_images
+    label: Site & Product Images
+    input: public/assets/images/site
+    output: /assets/images/site
+    rename: safe
+    categories: [image]
+  - name: article_images
+    label: Article Images
+    input: public/assets/images/articles
+    output: /assets/images/articles
+    rename: safe
+    categories: [image]
+  - name: wp_uploads
+    label: Migrated WordPress Uploads
+    input: public/assets/wp-uploads
+    output: /assets/wp-uploads
+    rename: false
+    categories: [image]
 content:
   - name: homepage
     label: Homepage Sections
@@ -92,18 +108,20 @@ content:
     type: collection
     path: content/products
     format: json
+    operations: { rename: false, delete: false }
+    view: { primary: name }
     fields:
       - { name: name, type: string, required: true }
       - { name: slug, type: string, required: true }
       - { name: category, type: string }
       - { name: categories, type: string, list: true }
-      - { name: image, type: string }
+      - { name: image, label: Featured Image, type: image, options: { media: site_images } }
       - { name: price, type: string }
       - { name: regularPrice, type: string }
       - { name: salePrice, type: string }
       - { name: onSale, type: boolean }
-      - { name: shortDescription, type: rich-text, format: html }
-      - { name: description, type: rich-text, format: html }
+      - { name: shortDescription, type: rich-text, options: { format: html, media: article_images, switcher: true } }
+      - { name: description, type: rich-text, options: { format: html, media: article_images, switcher: true } }
       - { name: externalUrl, type: string }
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
@@ -114,13 +132,15 @@ content:
     type: collection
     path: content/tools
     format: json
+    operations: { rename: false, delete: false }
+    view: { primary: name }
     fields:
       - { name: id, type: string }
       - { name: name, type: string }
       - { name: slug, type: string }
       - { name: price, type: string }
       - { name: originalPrice, type: string }
-      - { name: image, type: string }
+      - { name: image, label: Featured Image, type: image, options: { media: site_images } }
       - { name: bgColor, type: string }
       - { name: description, type: text }
       - { name: category, type: string }
@@ -130,12 +150,14 @@ content:
     type: collection
     path: content/posts
     format: json
+    operations: { rename: false, delete: false }
+    view: { primary: title }
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
-      - { name: image, type: image }
-      - { name: content, type: rich-text, format: html }
-      - { name: excerpt, type: rich-text, format: html }
+      - { name: image, label: Featured Image, type: image, options: { media: site_images } }
+      - { name: content, type: rich-text, options: { format: html, media: article_images, switcher: true } }
+      - { name: excerpt, type: rich-text, options: { format: html, media: article_images, switcher: true } }
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
   - name: pages
@@ -143,12 +165,14 @@ content:
     type: collection
     path: content/pages
     format: json
+    operations: { rename: false, delete: false }
+    view: { primary: title }
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
-      - { name: content, type: rich-text, format: html }
-      - { name: excerpt, type: rich-text, format: html }
-      - { name: image, type: image }
+      - { name: content, type: rich-text, options: { format: html, media: article_images, switcher: true } }
+      - { name: excerpt, type: rich-text, options: { format: html, media: article_images, switcher: true } }
+      - { name: image, label: Featured Image, type: image, options: { media: site_images } }
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
   - name: plans
@@ -171,7 +195,7 @@ content:
     list: true
     fields:
       - { name: question, type: string }
-      - { name: answer, type: rich-text, format: html }
+      - { name: answer, type: rich-text, options: { format: html, media: article_images, switcher: true } }
   - name: spotlightItems
     label: Spotlight Tool Cards
     type: file
