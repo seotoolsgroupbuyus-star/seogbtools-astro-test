@@ -1,0 +1,29 @@
+name: SEOGBTools fresh live-link and favicon audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/audit-live-reference.mjs
+      - .github/workflows/audit-live-reference.yml
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read original live website pages
+        run: node scripts/audit-live-reference.mjs
+      - name: Commit audit only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/live-reference.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit live SEOGBTools page URLs icons and metadata"
+            git push
+          fi
