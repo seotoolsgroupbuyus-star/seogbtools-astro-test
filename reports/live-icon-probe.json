@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/favicon.ico",
+    "status": 404,
+    "type": "text/html",
+    "size": 796,
+    "signature": "3c21444f43545950452068746d6c3e0a",
+    "finalUrl": "https://seogbtools.com/favicon.ico"
+  },
+  {
+    "path": "/apple-touch-icon.png",
+    "status": 404,
+    "type": "text/html; charset=UTF-8",
+    "size": 92818,
+    "signature": "3c21444f43545950452068746d6c3e0a",
+    "finalUrl": "https://seogbtools.com/apple-touch-icon.png"
+  },
+  {
+    "path": "/wp-content/uploads/favicon.ico",
+    "status": 404,
+    "type": "text/html; charset=UTF-8",
+    "size": 91948,
+    "signature": "3c21444f43545950452068746d6c3e0a",
+    "finalUrl": "https://seogbtools.com/wp-content/uploads/favicon.ico"
+  },
+  {
+    "path": "/wp-json/wp/v2/settings",
+    "status": 401,
+    "type": "application/json; charset=UTF-8",
+    "size": 98,
+    "signature": "7b22636f6465223a22726573745f666f",
+    "finalUrl": "https://seogbtools.com/wp-json/wp/v2/settings"
+  },
+  {
+    "path": "/wp-json/",
+    "status": 200,
+    "type": "application/json; charset=UTF-8",
+    "size": 1327554,
+    "signature": "7b226e616d65223a2253454f4742546f",
+    "finalUrl": "https://seogbtools.com/wp-json/"
+  }
+]
