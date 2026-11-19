@@ -6,7 +6,7 @@ const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>
 const strip=s=>String(s||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 const url=s=>/^(https?:|mailto:|tel:|\/)/i.test(s||'')?s:'#';
 // Keep links to the original WordPress domain on the Astro preview domain.
-const fixInternalLinks=s=>String(s??'').replace(/(href\\s*=\\s*[\"'])https?:\\/\\/(?:www\\.)?seogbtools\\.com(?=\\/)/gi,'$1');
+const fixInternalLinks=s=>String(s??'').replace(/(href\s*=\s*["'])https?:\/\/(?:www\.)?seogbtools\.com(?=\/)/gi,'$1');
 const asset=(s)=>{if(!s)return '/assets/images/tools/seo-tools.svg';if(s.startsWith('/tools/'))return '/assets/images/tools/'+s.slice(7);if(s.startsWith('/essentialsjacket/images/'))return '/assets/images/site/'+s.slice('/essentialsjacket/images/'.length);return s};
 const setting=read('settings.json'),home=read('homepage.json'),products=collection('products'),posts=collection('posts'),pages=collection('pages'),tools=collection('tools'),plans=read('plans.json'),faqs=read('faqs.json'),spotlight=read('spotlight.json'),steps=read('steps.json');
 function write(route,body){let dir=path.join(out,route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),body)}
