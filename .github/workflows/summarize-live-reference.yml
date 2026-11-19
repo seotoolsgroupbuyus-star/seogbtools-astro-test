@@ -1,0 +1,27 @@
+name: Summarize SEOGBTools current live links and icons
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/summarize-live-reference.mjs
+      - .github/workflows/summarize-live-reference.yml
+permissions:
+  contents: write
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/summarize-live-reference.mjs
+      - name: Save verified-only compact report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/live-summary.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Summarize live source URLs and site icon metadata"
+            git push
+          fi
