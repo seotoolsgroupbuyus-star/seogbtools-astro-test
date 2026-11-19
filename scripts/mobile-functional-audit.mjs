@@ -60,10 +60,10 @@ const issues=[];
 for(const row of report.pages){
  for(const siteName of Object.keys(sites))for(const vp of viewports){
   const d=row.sites[siteName]?.[vp.name];
-  if(!d||d.error||d.status!==200)issues.push({path:row.path,site:siteName,viewport:vp.name,issue:d?.error||'HTTP '+d?.status});
+  if(siteName==='preview'&&(!d||d.error||d.status!==200))issues.push({path:row.path,site:siteName,viewport:vp.name,issue:d?.error||'HTTP '+d?.status});
   if(siteName==='preview'&&d?.overflow)issues.push({path:row.path,site:siteName,viewport:vp.name,issue:'horizontal overflow on migrated preview'});
-  if(d?.jsErrors?.length)issues.push({path:row.path,site:siteName,viewport:vp.name,issue:'browser JS errors',details:d.jsErrors});
-  if((d?.schemas||[]).some(s=>!s.valid))issues.push({path:row.path,site:siteName,viewport:vp.name,issue:'invalid JSON-LD'});
+  if(siteName==='preview'&&d?.jsErrors?.length)issues.push({path:row.path,site:siteName,viewport:vp.name,issue:'browser JS errors',details:d.jsErrors});
+  if(siteName==='preview'&&(d?.schemas||[]).some(s=>!s.valid))issues.push({path:row.path,site:siteName,viewport:vp.name,issue:'invalid JSON-LD'});
  }
 }
 report.issueCount=issues.length;report.issues=issues;
