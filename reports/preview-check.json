@@ -1,0 +1,91 @@
+{
+  "at": "2026-11-19T03:39:12.321Z",
+  "root": "https://seogbtools-astro-test.bilalfadi11221333.workers.dev",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 52241,
+      "title": "SEOGBTools | Premium Group Buy SEO Tools",
+      "hasFavicon": true,
+      "noindex": true,
+      "liveSignup": true,
+      "legacySignup": false,
+      "ahrefsCheckout": true
+    },
+    {
+      "path": "/ahrefs-group-buy/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 118046,
+      "title": "Ahrefs Group Buy 2026 – Pricing, Features &amp; Access",
+      "hasFavicon": true,
+      "noindex": true,
+      "liveSignup": true,
+      "legacySignup": false,
+      "ahrefsCheckout": true
+    },
+    {
+      "path": "/semrush-group-buy/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 120526,
+      "title": "Semrush Group Buy | Keyword &amp; SEO Research | SEOGBTools",
+      "hasFavicon": true,
+      "noindex": true,
+      "liveSignup": true,
+      "legacySignup": false,
+      "ahrefsCheckout": true
+    },
+    {
+      "path": "/shop/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 2441334,
+      "title": "Shop - SEO Tools",
+      "hasFavicon": true,
+      "noindex": true,
+      "liveSignup": true,
+      "legacySignup": false,
+      "ahrefsCheckout": true
+    },
+    {
+      "path": "/blog/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 8182,
+      "title": "Blog | SEOGBTools",
+      "hasFavicon": true,
+      "noindex": true,
+      "liveSignup": false,
+      "legacySignup": false,
+      "ahrefsCheckout": false
+    },
+    {
+      "path": "/contact-us/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 10438,
+      "title": "Contact SEOGBTools - SEO Tools Customer Support",
+      "hasFavicon": true,
+      "noindex": true,
+      "liveSignup": false,
+      "legacySignup": false,
+      "ahrefsCheckout": false
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 451,
+      "title": "",
+      "hasFavicon": false,
+      "noindex": false,
+      "liveSignup": false,
+      "legacySignup": false,
+      "ahrefsCheckout": false,
+      "faviconValid": true
+    }
+  ]
+}
