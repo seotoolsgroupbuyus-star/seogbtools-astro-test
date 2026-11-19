@@ -108,8 +108,9 @@ content:
     type: collection
     path: content/products
     format: json
+    filename: "{slug}.json"
     operations: { rename: false, delete: false }
-    view: { primary: name }
+    view: { primary: name, fields: [name, slug, price, category] }
     fields:
       - { name: name, type: string, required: true }
       - { name: slug, type: string, required: true }
@@ -132,6 +133,7 @@ content:
     type: collection
     path: content/tools
     format: json
+    filename: "{slug}.json"
     operations: { rename: false, delete: false }
     view: { primary: name }
     fields:
@@ -150,8 +152,9 @@ content:
     type: collection
     path: content/posts
     format: json
+    filename: "{slug}.json"
     operations: { rename: false, delete: false }
-    view: { primary: title }
+    view: { primary: title, fields: [title, slug] }
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
@@ -165,6 +168,7 @@ content:
     type: collection
     path: content/pages
     format: json
+    filename: "{slug}.json"
     operations: { rename: false, delete: false }
     view: { primary: title }
     fields:
