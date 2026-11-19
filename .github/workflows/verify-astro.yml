@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - scripts/build.mjs
+      - 'src/pages/[...slug].astro'
       - content/settings.json
       - content/plans.json
       - public/favicon.svg
