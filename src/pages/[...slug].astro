@@ -5,9 +5,17 @@ import ThemePage from '../components/ThemePage.astro';
 const generatedRoot = path.join(process.cwd(), '.generated');
 export function getStaticPaths() {
   const root = path.join(process.cwd(), '.generated');
-  return fs.readdirSync(root, { withFileTypes: true })
-    .filter(e => e.isDirectory())
-    .map(e => ({ params: { slug: e.name } }));
+  const routes = [];
+  const walk = (dir, prefix = '') => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const slug = prefix ? prefix + '/' + entry.name : entry.name;
+      if (fs.existsSync(path.join(dir, entry.name, 'index.html'))) routes.push({ params: { slug } });
+      walk(path.join(dir, entry.name), slug);
+    }
+  };
+  walk(root);
+  return routes;
 }
 const slug = Astro.params.slug;
 const html = fs.readFileSync(path.join(generatedRoot, slug, 'index.html'), 'utf8');
