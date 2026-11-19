@@ -1,0 +1,28 @@
+name: Check and reuse live SEOGBTools favicon
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/probe-live-favicon.mjs
+      - .github/workflows/probe-live-favicon.yml
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/probe-live-favicon.mjs
+      - name: Save findings and genuine favicon if available
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/live-icon-probe.json
+          if test -f public/favicon.ico; then git add public/favicon.ico; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Import verified original site favicon if present"
+            git push
+          fi
