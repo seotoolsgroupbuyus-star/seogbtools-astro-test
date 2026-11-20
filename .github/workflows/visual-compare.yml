@@ -62,6 +62,8 @@ jobs:
               titleMismatches:pages.filter(p=>p.compare?.titleMatch===false).length,
               descriptionMismatches:pages.filter(p=>p.compare?.descriptionMatch===false).length,
               headingMismatches:pages.filter(p=>p.compare?.h1Match===false||p.compare?.headingsMatch===false).length,
+              exactTextMismatchPages:pages.filter(p=>p.compare?.exactTextMatch===false).length,
+              totalWordMismatches:pages.reduce((n,p)=>n+(p.compare?.wordMismatches||0),0),
               pagesWithMissingInternalLinks:pages.filter(p=>(p.compare?.missingInternalLinks||[]).length>0).length,
               pagesWithBrokenPreviewImages:pages.filter(p=>(p.compare?.brokenPreviewImages||[]).length>0).length,
               visualDifferencePages:visual.failed??visual.failures?.length??0,
