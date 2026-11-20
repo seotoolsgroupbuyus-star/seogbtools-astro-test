@@ -7,7 +7,8 @@ const pages=await sitePaths(origin);
 const screenshotPaths=new Set(['/','/all-tools/','/pricing/','/faq/','/blog/','/ahrefs-group-buy/','/semrush-group-buy/','/tool/ahrefs-group-buy']);
 const report=[];
 mkdirSync('visual-audit',{recursive:true});
-function normalizedLinks(links,base){return [...new Set(links.map(value=>{try{const u=new URL(value);if(u.hostname===new URL(base).hostname)return u.pathname+u.search+u.hash;return u.origin+u.pathname+u.search+u.hash}catch{return value}}))].sort()}
+function normalizedPath(value,base){try{const u=new URL(value,base);let p=u.pathname.length>1?u.pathname.replace(/\\/+$/,''):u.pathname;return p==='/'?'/':p+'/'}catch{return value}}
+function normalizedLinks(links,base){return [...new Set(links.map(value=>{try{const u=new URL(value,base);if(u.hostname===new URL(base).hostname)return normalizedPath(u.href,base)+u.search+u.hash;return u.origin+u.pathname+u.search+u.hash}catch{return value}}))].sort()}
 for(let index=0;index<pages.length;index++){
  const path=pages[index],pair={path};
  for(const [name,base] of [['origin',origin],['preview',preview]]){
@@ -52,7 +53,7 @@ for(let index=0;index<pages.length;index++){
  const al=normalizedLinks(a.links||[],origin),bl=normalizedLinks(b.links||[],preview);
  pair.compare={
   statusMatch:a.status===b.status,titleMatch:a.title===b.title,descriptionMatch:a.description===b.description,
-  canonicalMatch:a.canonical===b.canonical,h1Match:JSON.stringify(a.h1)===JSON.stringify(b.h1),
+  canonicalMatch:normalizedPath(a.canonical,origin)===normalizedPath(b.canonical,preview),h1Match:JSON.stringify(a.h1)===JSON.stringify(b.h1),
   headingsMatch:JSON.stringify(a.headings)===JSON.stringify(b.headings),
   exactTextMatch:(a.text||'').replace(/\s+/g,' ').trim()===(b.text||'').replace(/\s+/g,' ').trim(),
   wordCounts:{origin:originWords.length,preview:previewWords.length},
