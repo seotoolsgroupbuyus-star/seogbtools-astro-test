@@ -21,8 +21,8 @@ for(let index=0;index<pages.length;index++){
     description:document.querySelector('meta[name="description"]')?.content||'',
     canonical:document.querySelector('link[rel="canonical"]')?.href||'',
     h1:[...document.querySelectorAll('h1')].map(x=>x.innerText.trim()),
-    headings:[...document.querySelectorAll('h1,h2,h3')].map(x=>x.tagName+':'+x.innerText.trim().replace(/\\s+/g,' ')),
-    text:document.body.innerText.replace(/\\s+/g,' ').trim(),
+    headings:[...document.querySelectorAll('h1,h2,h3')].map(x=>x.tagName+':'+x.innerText.trim().replace(/\s+/g,' ')),
+    text:document.body.innerText.replace(/\s+/g,' ').trim(),
     links:[...new Set([...document.querySelectorAll('a[href]')].map(a=>a.href))].sort(),
     images:[...document.images].map(i=>({src:i.currentSrc||i.src,alt:i.alt,loaded:i.complete&&i.naturalWidth>0})),
     viewport:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight},
@@ -34,11 +34,30 @@ for(let index=0;index<pages.length;index++){
   }catch(e){pair[name]={error:String(e.message||e)}}finally{await page.close()}
  }
  const a=pair.origin||{},b=pair.preview||{};
+ const originWords=(a.text||'').trim().split(/\s+/).filter(Boolean);
+ const previewWords=(b.text||'').trim().split(/\s+/).filter(Boolean);
+ let wordMismatches=0,firstWordMismatch=-1;
+ const maxWords=Math.max(originWords.length,previewWords.length);
+ for(let wi=0;wi<maxWords;wi++){
+  if(originWords[wi]!==previewWords[wi]){
+   wordMismatches++;
+   if(firstWordMismatch===-1)firstWordMismatch=wi;
+  }
+ }
+ const wordDiff=firstWordMismatch<0?null:{
+  index:firstWordMismatch+1,
+  origin:originWords.slice(Math.max(0,firstWordMismatch-12),firstWordMismatch+13),
+  preview:previewWords.slice(Math.max(0,firstWordMismatch-12),firstWordMismatch+13)
+ };
  const al=normalizedLinks(a.links||[],origin),bl=normalizedLinks(b.links||[],preview);
  pair.compare={
   statusMatch:a.status===b.status,titleMatch:a.title===b.title,descriptionMatch:a.description===b.description,
   canonicalMatch:a.canonical===b.canonical,h1Match:JSON.stringify(a.h1)===JSON.stringify(b.h1),
   headingsMatch:JSON.stringify(a.headings)===JSON.stringify(b.headings),
+  exactTextMatch:(a.text||'').replace(/\s+/g,' ').trim()===(b.text||'').replace(/\s+/g,' ').trim(),
+  wordCounts:{origin:originWords.length,preview:previewWords.length},
+  wordMismatches,
+  firstWordMismatch:wordDiff,
   textLength:{origin:a.text?.length||0,preview:b.text?.length||0},
   textRatio:a.text?.length&&b.text?.length?Math.round(Math.min(a.text.length,b.text.length)/Math.max(a.text.length,b.text.length)*100):0,
   missingInternalLinks:al.filter(x=>!bl.includes(x)).slice(0,50),
@@ -51,7 +70,7 @@ for(let index=0;index<pages.length;index++){
  console.log(path,JSON.stringify(pair.compare));
 }
 await browser.close();
-const failures=report.filter(p=>p.error||p.origin?.status!==200||p.preview?.status!==200||!p.compare.titleMatch||!p.compare.descriptionMatch||!p.compare.canonicalMatch||!p.compare.h1Match||!p.compare.headingsMatch||p.compare.textRatio<98||p.compare.missingInternalLinks.length||p.compare.brokenPreviewImages.length);
+const failures=report.filter(p=>p.error||p.origin?.status!==200||p.preview?.status!==200||!p.compare.titleMatch||!p.compare.descriptionMatch||!p.compare.canonicalMatch||!p.compare.h1Match||!p.compare.headingsMatch||!p.compare.exactTextMatch||p.compare.missingInternalLinks.length||p.compare.brokenPreviewImages.length);
 const summary={origin,preview,checked:new Date().toISOString(),sitemapCount:pages.length,passed:report.length-failures.length,failed:failures.length,failures:failures.map(p=>({path:p.path,compare:p.compare,originError:p.origin?.error,previewError:p.preview?.error})),pages:report};
 writeFileSync('visual-audit/report.json',JSON.stringify(summary,null,2));
 if(failures.length)process.exitCode=1;
