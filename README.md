@@ -1,6 +1,6 @@
 # SEOGBTools — Astro + Tailwind CSS + Pages CMS + Cloudflare Pages
 
-Migrated source **from the supplied WordPress theme ZIP plus the WordPress XML export dated 2026-11-18**. Existing theme CSS, JS, fonts, logos, icons and available images are retained in `public/assets/`. Theme PHP is reference only; the generated HTML layouts and content data are now static. This is a functional source starter, **not a verified pixel-perfect clone** of the live WordPress website.
+Migrated source **from the supplied WordPress theme ZIP plus the WordPress XML export originally dated 2026-11-18, with published content synchronized to the 2026-11-22 export**. Existing theme CSS, JS, fonts, logos, icons and available images are retained in `public/assets/`. Theme PHP is reference only; the generated HTML layouts and content data are now static. This is a functional source starter, **not a verified pixel-perfect clone** of the live WordPress website.
 
 ## Start locally
 
@@ -32,7 +32,7 @@ npm run dev
 ## Where content goes
 
 - `content/products/*.json` — 203 published product records imported from WordPress XML (not a database backup).
-- `content/posts/*.json`, `content/pages/*.json` — 4 published posts and 14 published pages imported from WordPress XML.
+- `content/posts/*.json`, `content/pages/*.json` — 4 published posts and 14 published pages synchronized from WordPress XML; older GitHub-only records remain preserved for review.
 - `content/homepage.json`, `content/plans.json`, `content/faqs.json`, `content/settings.json` — CMS-editable settings.
 - `public/assets` — original bundled images and theme design assets.
 
@@ -61,3 +61,12 @@ Imported: **203 published products, 4 published posts, 14 published pages, 3 pri
 - The 42 starter homepage tool records remain in `content/tools/` and are not drawn from the WXR export.
 
 **Launch gate:** Do not switch DNS until both the full Astro build succeeds and desktop/mobile design, media links, pages, canonicals, pricing and purchase redirects are verified against production.
+
+## November 22 XML reconciliation (November 23, 2026)
+
+- The 2026-11-22 WXR export lists 203 published products, 4 published posts, 14 published pages, 3 plans, 7 FAQs and 1,273 attachment records. Published products, posts and pages were synchronized into individual Pages CMS JSON records without deleting other repository-only content or overwriting existing image paths.
+- Indexable public pages use `index,follow`; cart, checkout and account utility pages use `noindex,follow`. The sitemap excludes those utility URLs. Old `/refund_returns/` redirects to `/refund-returns/`.
+- XML title, description, focus keyword, and custom SEO H1 fields are retained. The three explicit Yoast canonical overrides for Lynda, Copy AI and Moz were also preserved. Social images use absolute URLs and each page emits structured data.
+- The full static Astro build and content/SEO test are verified through GitHub Actions. This does not prove screenshot-perfect parity with the live WordPress site or functional e-commerce checkout.
+- The XML does not contain image binaries. Media completeness, actual buy links, and real preview/mobile visual parity remain separate launch checks. The existing repository has additional pages and posts not present in the new XML; they were deliberately not deleted.
+- The repeatable importer now preserves existing CMS-only records and image paths instead of destructively deleting other files.
