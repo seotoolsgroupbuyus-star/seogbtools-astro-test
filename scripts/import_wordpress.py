@@ -25,9 +25,7 @@ def main(xml):
     counts=collections.Counter((get(x,W+'post_type'),get(x,W+'status')) for x in records)
     attachments={get(x,W+'post_id'):get(x,W+'attachment_url') for x in records if get(x,W+'post_type')=='attachment'}
     published=[x for x in records if get(x,W+'status')=='publish']
-    for folder in ('products','posts','pages'):
-        d=CONTENT/folder
-        for f in d.glob('*.json'):f.unlink()
+    # Preserve CMS-managed records absent from this export; do not delete unrelated pages.
     collisions=[]; used=set(); missing_images=[]; summary={}
     for typ,folder in (('product','products'),('post','posts'),('page','pages')):
         number=0
@@ -41,7 +39,7 @@ def main(xml):
             m=mget(x);body=get(x,CO+'encoded');excerpt=get(x,EX+'encoded')
             image=primary_image(x,m,attachments)
             if not image:missing_images.append({'type':typ,'slug':slug})
-            common={'seoTitle':m.get('_yoast_wpseo_title',''),'seoDescription':m.get('_yoast_wpseo_metadesc',''), 'image':image}
+            common={'seoTitle':m.get('_yoast_wpseo_title',''),'seoDescription':m.get('_yoast_wpseo_metadesc',''), 'image':image, 'canonicalUrl':m.get('_yoast_wpseo_canonical','')}
             if typ=='product':
                 categories=[(c.text or '').strip() for c in x.findall('category') if c.attrib.get('domain')=='product_cat']
                 p={
@@ -58,7 +56,16 @@ def main(xml):
                 p={'title':get(x,'title'),'slug':slug,'content':body,'excerpt':excerpt,
                    **common,'wpId':get(x,W+'post_id'),'lastModified':get(x,W+'post_modified'),
                    'seoH1':m.get('_sgb_seo_h1',''),'focusKeyword':m.get('_yoast_wpseo_focuskw','')}
-            save(CONTENT/folder/(slug+'.json'),p);number+=1
+            destination=CONTENT/folder/(slug+'.json')
+            if destination.exists():
+                try: existing=json.loads(destination.read_text(encoding='utf8'))
+                except (ValueError,OSError): existing={}
+                # Preserve working asset paths and CMS-only settings; XML controls content and SEO.
+                if existing.get('image'):p['image']=existing['image']
+                if existing.get('canonicalUrl') and not p.get('canonicalUrl'):
+                    p['canonicalUrl']=existing['canonicalUrl']
+                p={**existing,**p}
+            save(destination,p);number+=1
         summary[folder]=number
     plans=[]
     for x in published:
