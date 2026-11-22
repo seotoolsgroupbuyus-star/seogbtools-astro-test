@@ -50,6 +50,20 @@ for (const route of ['/','/shop/','/blog/','/ahrefs-group-buy/','/semrush-group-
   if(!html.includes('name="robots" content="index,follow"'))failures.push('Public indexing disabled: '+route);
   if(!sitemap.includes('<loc>'+canon+'</loc>'))failures.push('Sitemap omission: '+route);
 }
+for (const [slug, target] of Object.entries({
+  'lynda-group-buy':'/linkedin-learning-group-buy/',
+  'copy-ai-group-buy-unlock-creative-copywriting-solutions-at-lower-prices':'/copy-ai/',
+  'moz-group-buy-premium-seo-tools':'/moz-group-buy/'
+})) {
+  const html=htmlFor('/'+slug+'/');
+  if (!html.includes('rel="canonical" href="'+domain+target+'"')) failures.push('Yoast canonical override mismatch: '+slug);
+}
+if(!htmlFor('/').includes('application/ld+json')) failures.push('Homepage structured data missing');
+for(const {group,slug,item} of all){
+  if(!item.seoH1 || !['products','posts'].includes(group))continue;
+  const expectedH1=String(item.seoH1).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  if(!htmlFor('/'+slug+'/').includes('<h1>'+expectedH1+'</h1>'))failures.push('Custom H1 mismatch: '+slug);
+}
 for (const route of excluded) {
   if(!routeExists(route))continue;
   if(!htmlFor(route).includes('name="robots" content="noindex,follow"'))failures.push('Utility route should be noindex: '+route);
