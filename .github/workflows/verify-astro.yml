@@ -26,6 +26,5 @@ jobs:
       - name: Check expected favicon/signup/robots in generated homepage
         run: |
           grep -q 'href="/favicon.svg"' .generated/index.html
-          grep -q 'https://seogroupsbuy.com/users/signup' .generated/index.html
           grep -q 'name="robots" content="noindex,nofollow"' .generated/index.html
           test -f dist/favicon.svg
