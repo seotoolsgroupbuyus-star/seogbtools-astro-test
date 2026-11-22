@@ -126,6 +126,7 @@ content:
       - { name: externalUrl, type: string }
       - { name: seoTitle, type: string }
       - { name: seoDescription, type: text }
+      - { name: canonicalUrl, label: Canonical URL Override, type: string }
       - { name: seoH1, type: string }
       - { name: focusKeyword, type: string }
   - name: tools
