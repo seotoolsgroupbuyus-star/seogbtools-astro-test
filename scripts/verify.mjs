@@ -10,10 +10,10 @@ const domain = 'https://seogbtools.com';
 
 function readJson(file) { return JSON.parse(fs.readFileSync(file,'utf8')); }
 function htmlFor(route) {
-  return fs.readFileSync(path.join(base, route.replace(/^\\/|\\/$/g,''), 'index.html'), 'utf8');
+  return fs.readFileSync(path.join(base, route.split('/').filter(Boolean).join('/'), 'index.html'), 'utf8');
 }
 function routeExists(route) {
-  return fs.existsSync(path.join(base, route.replace(/^\\/|\\/$/g,''), 'index.html'));
+  return fs.existsSync(path.join(base, route.split('/').filter(Boolean).join('/'), 'index.html'));
 }
 const all = [];
 for (const [group, minimum] of Object.entries(expected)) {
