@@ -1,9 +1,9 @@
+import { sitePaths } from './site-paths.mjs';
 import { chromium } from 'playwright';
 import {mkdirSync,writeFileSync} from 'node:fs';
 const origin='https://seogbtools.com',preview='https://seogbtools-astro-test.bilalfadi11221333.workers.dev';
-const sitemap=await fetch(origin+'/sitemap.xml').then(async r=>{if(!r.ok)throw new Error('Original sitemap HTTP '+r.status);return r.text()});
-const paths=[...new Set([...sitemap.matchAll(/<loc>(.*?)<\\/loc>/g)].map(m=>new URL(m[1].replaceAll('&amp;','&')).pathname))];
-if(!paths.length)throw new Error('No URLs found in original sitemap');
+const paths=await sitePaths(origin);
+if(!paths.length)throw new Error('No URLs found in original sitemaps');
 const browser=await chromium.launch({headless:true});
 mkdirSync('parity-audit',{recursive:true});
 const viewports=[{name:'desktop',width:1440,height:1000},{name:'mobile',width:390,height:844}];
