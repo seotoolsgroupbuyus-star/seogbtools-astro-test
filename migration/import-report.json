@@ -1,5 +1,5 @@
 {
-  "source": "seogbtools.WordPress.2026-11-18.xml",
+  "source": "seogbtools.WordPress.2026-11-22.xml",
   "countsByTypeStatus": {
     "attachment/inherit": 1273,
     "page/draft": 1,
@@ -286,6 +286,10 @@
     "WordPress XML stores media references only, not image binary files.",
     "HTML from WordPress is preserved (including WP shortcodes that may need replacement).",
     "WordPress backend/payment/reviews/forms are not automatically migrated.",
-    "Do not change DNS until Cloudflare build and visual/SEO checks pass."
-  ]
+    "Do not change DNS until Cloudflare build and visual/SEO checks pass.",
+    "Published product/page/post JSON fields were synchronized with the 2026-11-22 XML while preserving existing image references and other CMS-only fields.",
+    "Existing repository pages/posts not present in this XML were retained and require separate editorial review.",
+    "The media manifest may reflect an earlier export; images were not re-downloaded in this content synchronization."
+  ],
+  "lastContentSync": "2026-11-23"
 }
