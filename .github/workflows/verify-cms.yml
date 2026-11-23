@@ -1,0 +1,53 @@
+name: Verify Pages CMS edits reach site output
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - '.pages.yml'
+      - 'scripts/**'
+      - 'src/**'
+      - '.github/workflows/verify-cms.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate CMS YAML and editor collections
+        run: |
+          ruby -e 'require "yaml"; y=YAML.load_file(".pages.yml", aliases: true); a=y.fetch("content"); abort "CMS editor collections missing" unless a.length >= 11; abort "Merge safety disabled" unless y.dig("settings","content","merge") == true'
+      - name: Simulate CMS editing in disposable checkout only
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const edit=(p,fn)=>{const v=JSON.parse(fs.readFileSync(p,'utf8'));fn(v);fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n')};
+          edit('content/homepage.json',v=>{v.hero.title='CMS HERO RENDER CHECK';v.hero.primaryButton='CMS CTA RENDER CHECK'});
+          edit('content/settings.json',v=>{v.brand='CMS BRAND RENDER CHECK';v.chat.heading='CMS CHAT RENDER CHECK'});
+          edit('content/products/ahrefs-group-buy.json',v=>{v.name='CMS AHREFS RENDER CHECK';v.salePrice='17'});
+          edit('content/ui-labels.json',v=>{v.misc.toolsSectionAriaLabel='CMS ACCESSIBILITY RENDER CHECK'});
+          JS
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build changed content
+        run: npm run build
+      - name: Check output reflects CMS values
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const read=p=>fs.readFileSync(p,'utf8');
+          const home=read('.generated/index.html');
+          const product=read('.generated/ahrefs-group-buy/index.html');
+          for(const s of ['CMS HERO RENDER CHECK','CMS CTA RENDER CHECK','CMS BRAND RENDER CHECK','CMS CHAT RENDER CHECK','CMS ACCESSIBILITY RENDER CHECK'])assert.ok(home.includes(s), 'Homepage CMS output missing: '+s);
+          assert.ok(product.includes('CMS AHREFS RENDER CHECK'),'Product CMS name not rendered');
+          assert.ok(product.includes('17'),'Product CMS sale price not rendered');
+          assert.ok(fs.existsSync('dist/index.html'),'Astro homepage not generated');
+          console.log('PASS: Pages CMS fields flow to generated HTML; source files were not committed.');
+          JS
