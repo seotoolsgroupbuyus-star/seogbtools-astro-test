@@ -11,7 +11,11 @@ const asset=(s)=>{if(!s)return '/assets/images/tools/seo-tools.svg';if(s.startsW
 const curatedCategoryData=read('category-assignments.json');
 const curatedCategoryProducts=curatedCategoryData.products||{};
 const setting=read('settings.json'),home=read('homepage.json'),products=collection('products'),posts=collection('posts'),pages=collection('pages'),tools=collection('tools'),plans=read('plans.json'),ui=read('ui-labels.json'),faqs=read('faqs.json'),spotlight=read('spotlight.json'),steps=read('steps.json');
-function write(route,body){let dir=path.join(out,route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),body)}
+// Preserve member cart product IDs and login/signup paths while moving their host.
+const paymentBase=(setting.paymentBaseUrl||'https://pay.seogbtools.com').replace(/\\/$/,'');
+function paymentHref(value){return String(value||'').replace(/^https?:\\/\\/(?:www\\.)?seogroupsbuy\\.com(?=\\/users\\/(?:login|signup|cart\\/))/i,paymentBase)}
+function rewriteMemberLinks(html){return String(html).replace(/(\\bhref\\s*=\\s*["'])(https?:\\/\\/(?:www\\.)?seogroupsbuy\\.com\\/users\\/(?:login|signup|cart\\/)[^"']*)(["'])/gi,(_whole,a,target,z)=>a+paymentHref(target)+z)}
+function write(route,body){let dir=path.join(out,route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),rewriteMemberLinks(body))}
 fs.rmSync(out,{recursive:true,force:true});// Astro copies public/ into dist during build.
 const link=(slug)=>`/${encodeURIComponent(slug)}/`;
 const icons=[`<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>`,`<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>`,`<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h3"/>`,`<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>`,`<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,`<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 1 3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`];
