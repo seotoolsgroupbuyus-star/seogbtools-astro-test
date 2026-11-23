@@ -37,6 +37,7 @@ content:
           - { name: lead, type: text }
           - { name: primaryButton, type: string }
           - { name: secondaryButton, type: string }
+          - { name: secondaryUrl, label: Secondary Button URL, type: string }
           - { name: stat2, type: string }
           - { name: stat3, type: string }
           - { name: logosLabel, type: string }
@@ -268,3 +269,62 @@ content:
       - { name: title, type: string }
       - { name: description, type: text }
       - { name: icon, type: string }
+
+  - name: ui_labels
+    label: Shop, Products, Blog and Buttons
+    type: file
+    path: content/ui-labels.json
+    format: json
+    fields:
+      - name: product
+        label: Product Content
+        type: object
+        fields:
+          - { name: viewDetails, label: View Details Button, type: string }
+          - { name: buyNow, label: Buy Now Button, type: string }
+          - { name: sale, label: Sale Badge, type: string }
+          - { name: related, label: Related Products Title, type: string }
+          - { name: instant, label: Instant Activation Bullet, type: string }
+          - { name: secure, label: Secure Payment Bullet, type: string }
+          - { name: reliable, label: Reliable Access Bullet, type: string }
+          - { name: support, label: Support Bullet, type: string }
+      - name: plans
+        label: Plans Content
+        type: object
+        fields:
+          - { name: topTools, label: Included Tools Heading, type: string }
+          - { name: complete, label: Full Tools List Heading, type: string }
+          - { name: buyNow, label: Buy Plan Button, type: string }
+          - { name: back, label: Back Button, type: string }
+      - name: blog
+        label: Blog Content
+        type: object
+        fields:
+          - { name: eyebrow, label: Archive Eyebrow, type: string }
+          - { name: intro, label: Archive Introduction, type: text }
+          - { name: articleBadge, label: Article Badge, type: string }
+          - { name: readMore, label: Read More Link, type: string }
+      - name: category
+        label: Category Content
+        type: object
+        fields:
+          - { name: introPrefix, label: Category Introduction Prefix, type: text }
+          - { name: introSuffix, label: Category Introduction Suffix, type: text }
+          - { name: empty, label: Empty Category Message, type: text }
+          - { name: viewAll, label: View All Tools, type: string }
+      - name: account
+        label: Account Content
+        type: object
+        fields:
+          - { name: message, label: Member Portal Message, type: text }
+          - { name: button, label: Open Portal Button, type: string }
+      - name: spotlight
+        label: Spotlight Content
+        type: object
+        fields:
+          - { name: featuredTitle, label: Featured Tools Title, type: string }
+          - { name: featuredText, label: Featured Tools Description, type: text }
+          - { name: moreTitle, label: More Tools Title, type: string }
+          - { name: moreText, label: More Tools Description, type: text }
+          - { name: othersTitle, label: Other Services Title, type: string }
+          - { name: othersText, label: Other Services Description, type: text }
