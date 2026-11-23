@@ -12,9 +12,9 @@ const curatedCategoryData=read('category-assignments.json');
 const curatedCategoryProducts=curatedCategoryData.products||{};
 const setting=read('settings.json'),home=read('homepage.json'),products=collection('products'),posts=collection('posts'),pages=collection('pages'),tools=collection('tools'),plans=read('plans.json'),ui=read('ui-labels.json'),faqs=read('faqs.json'),spotlight=read('spotlight.json'),steps=read('steps.json');
 // Preserve member cart product IDs and login/signup paths while moving their host.
-const paymentBase=(setting.paymentBaseUrl||'https://pay.seogbtools.com').replace(/\\/$/,'');
-function paymentHref(value){return String(value||'').replace(/^https?:\\/\\/(?:www\\.)?seogroupsbuy\\.com(?=\\/users\\/(?:login|signup|cart\\/))/i,paymentBase)}
-function rewriteMemberLinks(html){return String(html).replace(/(\\bhref\\s*=\\s*["'])(https?:\\/\\/(?:www\\.)?seogroupsbuy\\.com\\/users\\/(?:login|signup|cart\\/)[^"']*)(["'])/gi,(_whole,a,target,z)=>a+paymentHref(target)+z)}
+const paymentBase=(setting.paymentBaseUrl||'https://pay.seogbtools.com').replace(/\/$/,'');
+function paymentHref(value){return String(value||'').replace(/^https?:\/\/(?:www\.)?seogroupsbuy\.com(?=\/users\/(?:login|signup|cart\/))/i,paymentBase)}
+function rewriteMemberLinks(html){return String(html).replace(/(\bhref\s*=\s*["'])(https?:\/\/(?:www\.)?seogroupsbuy\.com\/users\/(?:login|signup|cart\/)[^"']*)(["'])/gi,(_whole,a,target,z)=>a+paymentHref(target)+z)}
 function write(route,body){let dir=path.join(out,route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),rewriteMemberLinks(body))}
 fs.rmSync(out,{recursive:true,force:true});// Astro copies public/ into dist during build.
 const link=(slug)=>`/${encodeURIComponent(slug)}/`;
