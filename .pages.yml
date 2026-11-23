@@ -139,10 +139,10 @@ content:
           - { name: stat3, label: Third Stat Caption, type: string }
           - { name: pricePrefix, label: Price Note, type: string }
       - name: heroLogos
-        label: Hero Tool Logo Filenames
-        type: string
-        list:
-          collapsible: true
+        label: Homepage Tool Logos (upload)
+        type: image
+        options: { media: site_images }
+        list: true
   - name: products
     label: Products
     type: collection
