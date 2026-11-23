@@ -47,5 +47,6 @@
     "/assets/images/tools/jasper-logo.svg",
     "/assets/images/tools/surferseo-logo.svg",
     "/assets/images/tools/grammarly-logo.svg"
-  ]
+  ],
+  "faviconUrl": "/favicon.svg"
 }
