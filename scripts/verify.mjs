@@ -87,6 +87,22 @@ for (const route of excluded) {
   if(sitemap.includes('<loc>'+domain+route+'</loc>'))failures.push('Utility route included in sitemap: '+route);
 }
 for (const f of ['public/assets/css/main.css','public/assets/js/main.js']) if(!fs.existsSync(f))failures.push('Missing '+f);
+// Validate every editorial assignment against a rendered, crawlable category archive.
+const assignments=readJson('content/category-assignments.json').products;
+const allProducts=new Set(all.filter(x=>x.group==='products').map(x=>x.slug));
+const archiveHTML=new Map();
+for(const [slug,categories] of Object.entries(assignments)){
+ if(!allProducts.has(slug)){failures.push('Category mapping references unknown product: '+slug);continue;}
+ if(!Array.isArray(categories)||!categories.length){failures.push('Category mapping missing categories: '+slug);continue;}
+ for(const category of categories){
+  const route='/product-category/'+category+'/';
+  if(!routeExists(route)){failures.push('Missing category for assigned product: '+route);continue;}
+  if(!archiveHTML.has(category))archiveHTML.set(category,htmlFor(route));
+  if(!archiveHTML.get(category).includes('href="/'+encodeURIComponent(slug)+'/\"'))failures.push('Assigned product absent from category: '+slug+' -> '+category);
+  if(!sitemap.includes('<loc>'+domain+route+'</loc>'))failures.push('Assigned category excluded from sitemap: '+category);
+  if(!archiveHTML.get(category).includes('name="robots" content="index,follow"'))failures.push('Assigned category not indexable: '+category);
+ }
+}
 // Archive quality report: existing routes alone do not prove that taxonomy migrated.
 const archiveDir=path.join(base,'product-category');
 const archiveNames=fs.existsSync(archiveDir)?fs.readdirSync(archiveDir).filter(name=>routeExists('/product-category/'+name+'/')):[];
