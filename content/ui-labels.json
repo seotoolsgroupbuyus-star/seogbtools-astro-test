@@ -38,5 +38,15 @@
     "moreText": "Content, writing, and creative tools are included across plans, with more added over time.",
     "othersTitle": "Other SEO Services",
     "othersText": "Beyond Ahrefs, SEMrush, and Moz, packages can include audits, rank monitoring, and supporting SEO utilities depending on your plan."
+  },
+  "pages": {
+    "eyebrow": "Pages Directory",
+    "viewPage": "View Page →",
+    "headingFallback": "Explore Our Pages"
+  },
+  "misc": {
+    "authorHeading": "Articles by Admin",
+    "uncategorizedHeading": "Uncategorized",
+    "openMenu": "Open menu"
   }
 }
