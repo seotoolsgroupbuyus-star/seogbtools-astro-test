@@ -14,7 +14,7 @@ for(const path of paths){
  const item={path,origin:{},preview:{}};
  for(const [name,base] of [['origin',origin],['preview',preview]]){
   for(const vp of viewports){
-   const page=await browser.newPage({viewport:{width:vp.width,height:vp.height},deviceScaleFactor:1,isMobile:vp.name==='mobile',hasTouch:vp.name==='mobile});
+   const page=await browser.newPage({viewport:{width:vp.width,height:vp.height},deviceScaleFactor:1,isMobile:vp.name==='mobile',hasTouch:vp.name==='mobile'});
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
    try{
     const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:60000});
