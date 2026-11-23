@@ -34,7 +34,7 @@ jobs:
           edit('content/ui-labels.json',v=>{v.misc.toolsSectionAriaLabel='CMS ACCESSIBILITY RENDER CHECK'});
           JS
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm install --no-audit --no-fund
       - name: Build changed content
         run: npm run build
       - name: Check output reflects CMS values
