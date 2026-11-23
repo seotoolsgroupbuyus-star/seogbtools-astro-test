@@ -1,0 +1,30 @@
+name: Verify Easy Pages CMS Editing
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'content/settings.json'
+      - 'content/homepage.json'
+      - 'scripts/build.mjs'
+      - 'scripts/verify-cms-site.mjs'
+      - '.pages.yml'
+      - '.github/workflows/verify-cms-site.yml'
+permissions:
+  contents: read
+jobs:
+  cms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare non-persistent CMS edits
+        run: node scripts/verify-cms-site.mjs prepare
+      - run: npm install --no-audit --no-fund
+      - name: Build edited Astro content
+        run: npm run build
+      - name: Verify edited values rendered
+        run: node scripts/verify-cms-site.mjs check
