@@ -208,6 +208,7 @@ content:
     label: Website Pages
     type: collection
     path: content/pages
+    exclude: [home.json]
     format: json
     filename: "{slug}.json"
     operations: { rename: false, delete: false }
