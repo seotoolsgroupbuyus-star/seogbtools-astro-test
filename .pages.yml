@@ -104,6 +104,8 @@ content:
       - { name: footerRights, type: string }
       - { name: siteUrl, type: string }
       - { name: signupUrl, type: string }
+      - { name: loginUrl, label: Member Login URL, type: string }
+      - { name: paymentBaseUrl, label: Payment Subdomain Base URL, type: string }
       - { name: whatsappUrl, type: string }
       - { name: messengerUrl, type: string }
       - { name: toolCount, type: string }
