@@ -8,5 +8,44 @@
   "messengerUrl": "https://m.me/108606453898810",
   "toolCount": "40+",
   "startingPrice": "From $10/mo",
-  "defaultSeoDescription": "Affordable group buy SEO tools and digital marketing tools."
+  "defaultSeoDescription": "Affordable group buy SEO tools and digital marketing tools.",
+  "navigation": [
+    {
+      "text": "Home",
+      "url": "/"
+    },
+    {
+      "text": "Blog",
+      "url": "/blog/"
+    },
+    {
+      "text": "Shop",
+      "url": "/shop/"
+    }
+  ],
+  "pagesMenuLabel": "Pages",
+  "pagesMenuAllLabel": "View All Pages",
+  "footerLinks": [],
+  "chat": {
+    "heading": "Questions? Chat Now",
+    "whatsappText": "Chat via WhatsApp",
+    "messengerText": "Message Us",
+    "footerText": "We're here anytime"
+  },
+  "heroLabels": {
+    "toolCount": "Premium Tools",
+    "stat2": "Access",
+    "stat3": "When You Need It",
+    "pricePrefix": "Affordable group-buy plans"
+  },
+  "heroLogos": [
+    "ahrefs-logo.svg",
+    "semrush-logo.svg",
+    "moz-logo.svg",
+    "canva-logo.svg",
+    "chatgpt-logo.svg",
+    "jasper-logo.svg",
+    "surferseo-logo.svg",
+    "grammarly-logo.svg"
+  ]
 }
