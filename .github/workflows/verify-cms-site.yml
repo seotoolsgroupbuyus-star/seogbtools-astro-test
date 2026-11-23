@@ -23,7 +23,7 @@ jobs:
           node-version: '22'
       - name: Validate Pages CMS YAML and editor collections
         run: |
-          ruby -e 'require "yaml"; y=YAML.load_file(".pages.yml", aliases: true); c=y.fetch("content"); abort "CMS collections missing" if c.size < 9; puts "Pages CMS YAML valid with #{c.size} editors"'
+          ruby -e 'require "yaml"; y=YAML.load_file(".pages.yml", aliases: true); c=y.fetch("content"); abort "CMS collections missing" if c.size < 9; abort "CMS merge protection disabled" unless y.dig("settings","content","merge") == true; puts "Pages CMS YAML valid with #{c.size} editors"'
       - name: Prepare non-persistent CMS edits
         run: node scripts/verify-cms-site.mjs prepare
       - run: npm install --no-audit --no-fund
