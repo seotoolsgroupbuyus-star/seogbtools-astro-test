@@ -1,0 +1,661 @@
+{
+  "source": "Editorial classifications of product names; original 2026-11-22 WordPress XML assigns all products to Uncategorized. These are NOT claimed to be exported WooCommerce taxonomy.",
+  "categorySlugs": [
+    "seo-tools",
+    "keyword-tools",
+    "backlink-tools",
+    "ai-content-tools",
+    "writing-tools",
+    "ai-tools",
+    "design-tools",
+    "graphic-stock-tools",
+    "amazon-tools",
+    "ecommerce-tools",
+    "adspy-tools",
+    "social-media-tools",
+    "streaming",
+    "online-courses-tools",
+    "video-editing",
+    "ai-video-maker",
+    "youtube-tools",
+    "sound",
+    "productivity",
+    "marketing-tools"
+  ],
+  "products": {
+    "ad-ecommerce-group-buy": [
+      "adspy-tools"
+    ],
+    "adheart-me-group-buy": [
+      "adspy-tools"
+    ],
+    "adobe-creative": [
+      "design-tools"
+    ],
+    "adobe-stock-group-buy-accounts-shared-private": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "adspy-group-buy": [
+      "adspy-tools"
+    ],
+    "advertsuite-group-buy": [
+      "adspy-tools"
+    ],
+    "ahrefs-group-buy": [
+      "seo-tools",
+      "backlink-tools"
+    ],
+    "ai-content-labs-group-buy": [
+      "ai-content-tools"
+    ],
+    "aiseo-ai-group-buy": [
+      "ai-content-tools"
+    ],
+    "alexa-group-buy": [
+      "marketing-tools"
+    ],
+    "amztrackers": [
+      "amazon-tools"
+    ],
+    "animoto-group-buy": [
+      "video-editing"
+    ],
+    "answerthepublic-group-buy": [
+      "keyword-tools"
+    ],
+    "article-builder-group-buy": [
+      "ai-content-tools"
+    ],
+    "article-forge-group-buy": [
+      "ai-content-tools"
+    ],
+    "audio-block-group-buy": [
+      "sound"
+    ],
+    "authority-labs-group-buy": [
+      "seo-tools",
+      "backlink-tools"
+    ],
+    "bigspy-group-buy": [
+      "adspy-tools"
+    ],
+    "bramework-group-buy": [
+      "ai-content-tools"
+    ],
+    "brandoverflow-group-buy": [
+      "marketing-tools"
+    ],
+    "buzzstream-group-buy": [
+      "backlink-tools"
+    ],
+    "buzzsumo-group-buy": [
+      "social-media-tools",
+      "marketing-tools"
+    ],
+    "canva-group-buy": [
+      "design-tools"
+    ],
+    "capcut-pro-group-buy": [
+      "video-editing"
+    ],
+    "capcut-pro": [
+      "video-editing"
+    ],
+    "cbengine-group-buy": [
+      "ecommerce-tools"
+    ],
+    "chatgpt-group-buy": [
+      "ai-tools"
+    ],
+    "chaupal-tv-group-buy": [
+      "streaming"
+    ],
+    "claude-ai-group-buy-affordable-access-to-claudes-advanced-ai-technology": [
+      "ai-tools"
+    ],
+    "claude": [
+      "ai-tools"
+    ],
+    "closerscopy-group-buy-affordable-access-to-ai-powered-copywriting": [
+      "ai-content-tools"
+    ],
+    "content-and-writing": [
+      "writing-tools"
+    ],
+    "content-samurai-group-buy": [
+      "video-editing"
+    ],
+    "copy-ai-group-buy-unlock-creative-copywriting-solutions-at-lower-prices": [
+      "ai-content-tools"
+    ],
+    "copy-ai": [
+      "ai-content-tools"
+    ],
+    "copygenius-group-buy": [
+      "ai-content-tools"
+    ],
+    "copymatic-ai-group-buy": [
+      "ai-content-tools"
+    ],
+    "coursera-group-buy": [
+      "online-courses-tools"
+    ],
+    "coursera-plus": [
+      "online-courses-tools"
+    ],
+    "creative-fabrica-group-buy": [
+      "design-tools"
+    ],
+    "creator-ai-group-buy": [
+      "ai-tools"
+    ],
+    "crunchyroll-group-buy": [
+      "streaming"
+    ],
+    "designs-ai-group-buy": [
+      "design-tools"
+    ],
+    "doodly-group-buy": [
+      "video-editing"
+    ],
+    "dreamart-image-ai-group-buy": [
+      "ai-tools",
+      "design-tools"
+    ],
+    "ecomhunt-group-buy": [
+      "ecommerce-tools"
+    ],
+    "elevenlabs-group-buy": [
+      "sound"
+    ],
+    "envato-elements-group-buy": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "epidemic-sound": [
+      "sound"
+    ],
+    "epidemicsound-group-buy": [
+      "sound"
+    ],
+    "exploding-topics-group-buy-affordable-premium-access": [
+      "marketing-tools"
+    ],
+    "figma-pro": [
+      "design-tools"
+    ],
+    "findniche-group-buy": [
+      "ecommerce-tools"
+    ],
+    "fotojet-group-buy": [
+      "design-tools"
+    ],
+    "frase-group-buy-instant-content-tool": [
+      "ai-content-tools"
+    ],
+    "freepik-group-buy": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "freshdrop-group-buy": [
+      "ecommerce-tools"
+    ],
+    "gamma-ai-group-buy": [
+      "ai-tools",
+      "productivity"
+    ],
+    "get-stencil-group-buy": [
+      "design-tools"
+    ],
+    "grammarly-group-buy": [
+      "writing-tools"
+    ],
+    "grammarly": [
+      "writing-tools"
+    ],
+    "graphic-stock-group-buy": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "graphicstock-group-buy": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "hashtagforlikes-group-buy": [
+      "social-media-tools"
+    ],
+    "helium-10-group-buy-amazon-seller-tools": [
+      "amazon-tools"
+    ],
+    "helium10-group-buy": [
+      "amazon-tools"
+    ],
+    "helloscribe-ai-group-buy": [
+      "ai-content-tools"
+    ],
+    "hix-ai-group-buy-access-cutting-edge-ai-tools-at-unbeatable-prices": [
+      "ai-content-tools",
+      "ai-tools"
+    ],
+    "hootsuite": [
+      "social-media-tools"
+    ],
+    "hubspot": [
+      "social-media-tools",
+      "productivity",
+      "marketing-tools"
+    ],
+    "hyperwrite-ai-group-buy": [
+      "ai-content-tools"
+    ],
+    "iconscout-group-buy": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "indexification-group-buy": [
+      "backlink-tools"
+    ],
+    "inkforall-group-buy": [
+      "ai-content-tools"
+    ],
+    "invideo-io-group-buy": [
+      "video-editing",
+      "ai-video-maker"
+    ],
+    "invideo": [
+      "video-editing",
+      "ai-video-maker"
+    ],
+    "ispionage-group-buy": [
+      "adspy-tools"
+    ],
+    "jasper-ai-group-buy-access-in-3-affordable-ai-copywriting-tools": [
+      "ai-content-tools"
+    ],
+    "jasper-group-buy": [
+      "ai-content-tools"
+    ],
+    "jenni-ai-group-buy-unlock-ai-writing-assistance": [
+      "ai-content-tools"
+    ],
+    "jungle-scout-group-buy": [
+      "amazon-tools"
+    ],
+    "katteb-ai-group-buy": [
+      "ai-content-tools"
+    ],
+    "keyword-eye-group-buy": [
+      "keyword-tools"
+    ],
+    "keyword-revealer-group-buy": [
+      "keyword-tools"
+    ],
+    "keywords-everywhere-group-buy": [
+      "keyword-tools"
+    ],
+    "keywordtool-io-group-buy": [
+      "keyword-tools",
+      "youtube-tools"
+    ],
+    "kwfinder-group-buy": [
+      "keyword-tools"
+    ],
+    "leonardo-ai-group-buy": [
+      "ai-tools",
+      "ai-video-maker"
+    ],
+    "leonardo-ai": [
+      "ai-tools",
+      "ai-video-maker"
+    ],
+    "linkedin-learning-group-buy": [
+      "online-courses-tools"
+    ],
+    "linkedin-sales-navigator-advanced-1-month": [
+      "social-media-tools"
+    ],
+    "lovepik-group-buy": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "lovo-ai-group-buy": [
+      "sound"
+    ],
+    "lsigraph-group-buy-cheap-price-starting-from-4-95-month": [
+      "keyword-tools"
+    ],
+    "lumen5-group-buy": [
+      "video-editing",
+      "ai-video-maker"
+    ],
+    "lynda-group-buy": [
+      "online-courses-tools"
+    ],
+    "mailchimp": [
+      "social-media-tools",
+      "marketing-tools"
+    ],
+    "majestic-group-buy": [
+      "seo-tools",
+      "backlink-tools"
+    ],
+    "mangools-group-buy": [
+      "seo-tools",
+      "keyword-tools"
+    ],
+    "marmalead-group-buy": [
+      "ecommerce-tools"
+    ],
+    "midjourney-group-buy": [
+      "ai-tools"
+    ],
+    "midjourney": [
+      "ai-tools"
+    ],
+    "motionarray-group-buy": [
+      "video-editing"
+    ],
+    "moz-group-buy-premium-seo-tools": [
+      "seo-tools"
+    ],
+    "moz-group-buy": [
+      "seo-tools"
+    ],
+    "murf-ai-group-buy": [
+      "sound"
+    ],
+    "netflix-group-buy": [
+      "streaming"
+    ],
+    "neuronwriter-group-buy": [
+      "ai-content-tools"
+    ],
+    "niche-scraper-group-buy": [
+      "ecommerce-tools"
+    ],
+    "nichess-group-buy": [
+      "ai-content-tools",
+      "ecommerce-tools"
+    ],
+    "nobuna-group-buy": [
+      "streaming"
+    ],
+    "notion": [
+      "productivity"
+    ],
+    "onlinetools-ai-group-buy": [
+      "ai-tools"
+    ],
+    "peppercontent-group-buy": [
+      "ai-content-tools"
+    ],
+    "peppertype-group-buy": [
+      "ai-content-tools"
+    ],
+    "pexda-group-buy": [
+      "ecommerce-tools"
+    ],
+    "picmonkey-group-buy": [
+      "design-tools"
+    ],
+    "picovico-group-buy": [
+      "video-editing"
+    ],
+    "picsart-group-buy": [
+      "design-tools"
+    ],
+    "pictory-group-buy": [
+      "video-editing",
+      "ai-video-maker"
+    ],
+    "pipio-group-buy": [
+      "video-editing",
+      "ai-video-maker"
+    ],
+    "pixteller-group-buy": [
+      "design-tools"
+    ],
+    "pizap-group-buy": [
+      "design-tools"
+    ],
+    "placeit-group-buy": [
+      "design-tools"
+    ],
+    "play-ht-group-buy": [
+      "sound"
+    ],
+    "prezi-group-buy": [
+      "productivity"
+    ],
+    "prezi": [
+      "productivity"
+    ],
+    "prime-video-group-buy": [
+      "streaming"
+    ],
+    "prime-video": [
+      "streaming"
+    ],
+    "prowritingaid-group-buy": [
+      "writing-tools"
+    ],
+    "quetext-group-buy": [
+      "writing-tools"
+    ],
+    "quillbot-group-buy": [
+      "writing-tools"
+    ],
+    "rank-key-top-seo-group-buy": [
+      "seo-tools"
+    ],
+    "renderforest-group-buy": [
+      "video-editing"
+    ],
+    "runwayml": [
+      "video-editing",
+      "ai-video-maker"
+    ],
+    "rytr-me-group-buy-affordable-access-to-ai-powered-content-writing": [
+      "ai-content-tools",
+      "writing-tools"
+    ],
+    "salehoo-group-buy": [
+      "ecommerce-tools"
+    ],
+    "screaming-frog-group-buy": [
+      "seo-tools"
+    ],
+    "screaming-frog-seo-spider": [
+      "seo-tools"
+    ],
+    "scribd-group-buy": [
+      "online-courses-tools"
+    ],
+    "scribd-premium": [
+      "online-courses-tools"
+    ],
+    "se-ranking-group-buy": [
+      "seo-tools",
+      "keyword-tools"
+    ],
+    "selleramp-group-buy": [
+      "amazon-tools"
+    ],
+    "sellthetrend-group-buy": [
+      "ecommerce-tools"
+    ],
+    "semrush-group-buy": [
+      "seo-tools"
+    ],
+    "semscoop-group-buy": [
+      "seo-tools",
+      "keyword-tools"
+    ],
+    "seo-profiler-group-buy": [
+      "seo-tools"
+    ],
+    "seo-site-checkup-group-buy-affordable-seo-audit-tools-for-businesses": [
+      "seo-tools"
+    ],
+    "seobility-group-buy": [
+      "seo-tools"
+    ],
+    "seoptimer-group-buy-affordable-seo-tools-for-your-business": [
+      "seo-tools"
+    ],
+    "seoscout-group-buy": [
+      "seo-tools"
+    ],
+    "serpstat-group-buy": [
+      "seo-tools"
+    ],
+    "similarweb-group-buy": [
+      "seo-tools",
+      "marketing-tools"
+    ],
+    "skills-share-group-buy": [
+      "online-courses-tools"
+    ],
+    "slidebean-group-buy": [
+      "productivity"
+    ],
+    "smartcopy-group-buy-get-access-to-ai-powered-copywriting-tools": [
+      "ai-content-tools"
+    ],
+    "smhack-group-buy": [
+      "social-media-tools"
+    ],
+    "smodin-group-buy": [
+      "writing-tools"
+    ],
+    "snapied-group-buy": [
+      "design-tools"
+    ],
+    "spamzilla-group-buy": [
+      "seo-tools"
+    ],
+    "spinrewriter-group-buy": [
+      "ai-content-tools"
+    ],
+    "spotify-premium": [
+      "streaming"
+    ],
+    "spyfu-group-buy": [
+      "seo-tools"
+    ],
+    "spyhero-group-buy": [
+      "adspy-tools"
+    ],
+    "stealthwriter-ai-group-buy-cost-effective-copywriting-powered-by-ai": [
+      "ai-content-tools"
+    ],
+    "stencil-group-buy": [
+      "design-tools"
+    ],
+    "steven-ai-group-buy": [
+      "ai-video-maker"
+    ],
+    "storyblocks-group-buy": [
+      "graphic-stock-tools"
+    ],
+    "surfer-seo-group-buy": [
+      "seo-tools"
+    ],
+    "terapeak-group-buy": [
+      "ecommerce-tools"
+    ],
+    "texta-ai-group-buy": [
+      "ai-content-tools"
+    ],
+    "textwizard-group-buy": [
+      "ai-content-tools"
+    ],
+    "theoptimizer-group-buy": [
+      "adspy-tools"
+    ],
+    "topicmojo-group-buy": [
+      "marketing-tools"
+    ],
+    "tuberanker-group-buy": [
+      "youtube-tools"
+    ],
+    "turnitin-group-buy": [
+      "online-courses-tools"
+    ],
+    "turnitin": [
+      "online-courses-tools"
+    ],
+    "ubersuggest-group-buy": [
+      "seo-tools"
+    ],
+    "udemy-group-buy": [
+      "online-courses-tools"
+    ],
+    "udemy-pro": [
+      "online-courses-tools"
+    ],
+    "unbounce-group-buy": [
+      "productivity",
+      "marketing-tools"
+    ],
+    "vecteezy-group-buy": [
+      "design-tools",
+      "graphic-stock-tools"
+    ],
+    "videoblocks-group-buy": [
+      "graphic-stock-tools"
+    ],
+    "vidiq-group-buy-with-4-95-month-cheap-price": [
+      "youtube-tools"
+    ],
+    "vidnami-group-buy": [
+      "video-editing",
+      "ai-video-maker"
+    ],
+    "viral-launch-group-buy": [
+      "amazon-tools"
+    ],
+    "vyond-group-buy": [
+      "video-editing"
+    ],
+    "wave-video-group-buy": [
+      "video-editing"
+    ],
+    "woorank-group-buy": [
+      "seo-tools"
+    ],
+    "wordai-group-buy": [
+      "ai-content-tools"
+    ],
+    "wordhero-group-buy": [
+      "ai-content-tools",
+      "writing-tools"
+    ],
+    "wordhero": [
+      "ai-content-tools",
+      "writing-tools"
+    ],
+    "wordtracker-group-buy": [
+      "keyword-tools"
+    ],
+    "wordtune-group-buy": [
+      "writing-tools"
+    ],
+    "writerzen-group-buy-advanced-ai-tools-for-writing-and-seo": [
+      "keyword-tools",
+      "ai-content-tools",
+      "writing-tools"
+    ],
+    "writesonic-group-buy-get-professional-ai-copywriting": [
+      "ai-content-tools",
+      "writing-tools"
+    ],
+    "wrytly-group-buy": [
+      "writing-tools"
+    ],
+    "you-ai-the-leading-ai-group-buy-platform-for-advanced-ai-tools": [
+      "ai-tools"
+    ]
+  }
+}
