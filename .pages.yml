@@ -99,6 +99,7 @@ content:
     format: json
     fields:
       - { name: brand, type: string }
+      - { name: faviconUrl, label: Site Favicon (upload), type: image, options: { media: site_images } }
       - { name: tagline, type: text }
       - { name: footerRights, type: string }
       - { name: siteUrl, type: string }
@@ -318,6 +319,21 @@ content:
         fields:
           - { name: message, label: Member Portal Message, type: text }
           - { name: button, label: Open Portal Button, type: string }
+
+      - name: pages
+        label: Page Directory
+        type: object
+        fields:
+          - { name: eyebrow, label: Directory Label, type: string }
+          - { name: viewPage, label: Page Button, type: string }
+          - { name: headingFallback, label: Directory Heading, type: string }
+      - name: misc
+        label: Archive and Mobile Menu
+        type: object
+        fields:
+          - { name: authorHeading, label: Author Archive Heading, type: string }
+          - { name: uncategorizedHeading, label: Uncategorized Archive Heading, type: string }
+          - { name: openMenu, label: Mobile Menu Accessibility Label, type: string }
       - name: spotlight
         label: Spotlight Content
         type: object
