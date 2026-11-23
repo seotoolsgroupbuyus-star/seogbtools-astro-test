@@ -3,7 +3,7 @@
   "tagline": "Professional SEO & marketing tools at group-buy prices. Join thousands of marketers.",
   "footerRights": "All rights reserved.",
   "siteUrl": "https://seogbtools.com",
-  "signupUrl": "https://seogroupsbuy.com/users/signup",
+  "signupUrl": "https://pay.seogbtools.com/users/signup",
   "whatsappUrl": "https://wa.me/447845432224",
   "messengerUrl": "https://m.me/108606453898810",
   "toolCount": "40+",
@@ -48,5 +48,7 @@
     "/assets/images/tools/surferseo-logo.svg",
     "/assets/images/tools/grammarly-logo.svg"
   ],
-  "faviconUrl": "/favicon.svg"
+  "faviconUrl": "/favicon.svg",
+  "loginUrl": "https://pay.seogbtools.com/users/login",
+  "paymentBaseUrl": "https://pay.seogbtools.com"
 }
