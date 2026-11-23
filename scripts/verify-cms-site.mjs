@@ -11,12 +11,16 @@ if(mode==='prepare'){
   settings.heroLabels.stat2='CMS Edited Stat Caption';
   settings.heroLogos[0]='/assets/images/site/cms-logo.png';
   settings.footerLinks=[{text:'CMS Edited Footer Link',url:'/contact-us/'}];
+  settings.faviconUrl='/assets/images/site/cms-favicon.svg';
   write('content/settings.json',settings);
   const home=read('content/homepage.json');
   home.hero.title='CMS Edited Hero Heading';
   home.hero.secondaryUrl='/contact-us/';
   write('content/homepage.json',home);
   const labels=read('content/ui-labels.json');
+  labels.pages.eyebrow='CMS Pages Directory';
+  labels.misc.authorHeading='CMS Author Archive';
+  labels.product.buyNow='CMS Product Buy';
   labels.product.sale='CMS Sale Label';
   labels.product.related='CMS Related Tools Heading';
   labels.blog.eyebrow='CMS Blog Archive Label';
@@ -29,10 +33,13 @@ if(mode==='prepare'){
   const html=fs.readFileSync('dist/index.html','utf8');
   for(const v of ['CMS Edited Main Menu','CMS Edited Chat Heading','CMS Edited Stat Caption','cms-logo.png','CMS Edited Footer Link','CMS Edited Hero Heading'])
     assert.ok(html.includes(v),'Missing CMS field in homepage HTML: '+v);
+  assert.ok(html.includes('cms-favicon.svg'),'CMS favicon missing on homepage');
   const productFile=fs.readdirSync('dist').filter(p=>p!=='index.html'&&p!=='_astro').find(p=>fs.existsSync('dist/'+p+'/index.html')&&fs.readFileSync('dist/'+p+'/index.html','utf8').includes('CMS Related Tools Heading'));
   assert.ok(productFile,'Product page missing changed Related Tools heading');
   for(const [file,needle] of [['dist/index.html','CMS Featured Tools Heading'],['dist/blog/index.html','CMS Blog Archive Label'],['dist/cart/index.html','CMS Portal Intro']]){
     assert.ok(fs.readFileSync(file,'utf8').includes(needle),file+' missing '+needle);
   }
-  console.log('PASS: Homepage, product, blog, account, menu, logos and site labels are CMS-editable');
+  for(const [file,needle] of [['dist/pages/index.html','CMS Pages Directory'],['dist/author/admin/index.html','CMS Author Archive']])
+    assert.ok(fs.readFileSync(file,'utf8').includes(needle),file+' missing '+needle);
+  console.log('PASS: Homepage, product, blog, account, favicon, archives, menus and logos are CMS-editable');
 }else throw Error('Usage: node scripts/verify-cms-site.mjs prepare|check');
