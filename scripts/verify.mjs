@@ -60,6 +60,23 @@ for (const [slug, target] of Object.entries({
 }
 if(!htmlFor('/').includes('application/ld+json')) failures.push('Homepage structured data missing');
 for(const {group,slug,item} of all){
+ if(group!=='products')continue;
+ const html=htmlFor('/'+slug+'/');
+ const schemas=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>{try{return JSON.parse(m[1])}catch{return null}});
+ const product=schemas.find(x=>x?.['@type']==='Product');
+ if(!product){failures.push('Missing or invalid Product JSON-LD: '+slug);continue;}
+ if(product.name!==item.name)failures.push('Product schema name mismatch: '+slug);
+ if(product.url!==domain+'/'+encodeURIComponent(slug)+'/')failures.push('Product schema URL mismatch: '+slug);
+ const price=String(item.salePrice||item.price||'').trim();
+ if(/^\d+(?:\.\d{1,2})?$/.test(price)&&(!product.offers||product.offers.price!==price||product.offers.priceCurrency!=='USD'))failures.push('Product schema price mismatch: '+slug);
+}
+for(const slug of ['seo-tools','ai-tools','marketing-tools','keyword-tools']){
+ const route='/product-category/'+slug+'/';
+ if(!routeExists(route))failures.push('Missing product category archive: '+route);
+ if(!sitemap.includes('<loc>'+domain+route+'</loc>'))failures.push('Missing category sitemap URL: '+route);
+}
+
+for(const {group,slug,item} of all){
   if(!item.seoH1 || !['products','posts'].includes(group))continue;
   const expectedH1=String(item.seoH1).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   if(!htmlFor('/'+slug+'/').includes('<h1>'+expectedH1+'</h1>'))failures.push('Custom H1 mismatch: '+slug);
