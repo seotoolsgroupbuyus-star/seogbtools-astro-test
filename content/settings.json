@@ -39,13 +39,13 @@
     "pricePrefix": "Affordable group-buy plans"
   },
   "heroLogos": [
-    "ahrefs-logo.svg",
-    "semrush-logo.svg",
-    "moz-logo.svg",
-    "canva-logo.svg",
-    "chatgpt-logo.svg",
-    "jasper-logo.svg",
-    "surferseo-logo.svg",
-    "grammarly-logo.svg"
+    "/assets/images/tools/ahrefs-logo.svg",
+    "/assets/images/tools/semrush-logo.svg",
+    "/assets/images/tools/moz-logo.svg",
+    "/assets/images/tools/canva-logo.svg",
+    "/assets/images/tools/chatgpt-logo.svg",
+    "/assets/images/tools/jasper-logo.svg",
+    "/assets/images/tools/surferseo-logo.svg",
+    "/assets/images/tools/grammarly-logo.svg"
   ]
 }
