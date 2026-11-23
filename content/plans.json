@@ -26,7 +26,7 @@
       "Turnitin",
       "Linkedin Learning"
     ],
-    "buyUrl": "https://pay.seogbtools.com/users/cart/index/product/id/207/c/",
+    "buyUrl": "https://pay.seogbtools.com",
     "slug": "lite-plan"
   },
   {
@@ -100,7 +100,7 @@
       "Coursera",
       "Scribd Premium"
     ],
-    "buyUrl": "https://pay.seogbtools.com/users/cart/index/product/id/13/c/",
+    "buyUrl": "https://pay.seogbtools.com",
     "slug": "ahrefs-combo"
   },
   {
@@ -187,7 +187,7 @@
       "Coursera",
       "Scribd Premium"
     ],
-    "buyUrl": "https://pay.seogbtools.com/users/cart/index/product/id/97/c/",
+    "buyUrl": "https://pay.seogbtools.com",
     "slug": "mega-plan"
   }
 ]
