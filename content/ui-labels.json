@@ -47,6 +47,8 @@
   "misc": {
     "authorHeading": "Articles by Admin",
     "uncategorizedHeading": "Uncategorized",
-    "openMenu": "Open menu"
+    "openMenu": "Open menu",
+    "toolsSectionAriaLabel": "Premium Marketing Tools Collection",
+    "chatToggleAriaLabel": "Toggle chat"
   }
 }
