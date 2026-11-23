@@ -87,7 +87,15 @@ for (const route of excluded) {
   if(sitemap.includes('<loc>'+domain+route+'</loc>'))failures.push('Utility route included in sitemap: '+route);
 }
 for (const f of ['public/assets/css/main.css','public/assets/js/main.js']) if(!fs.existsSync(f))failures.push('Missing '+f);
+// Archive quality report: existing routes alone do not prove that taxonomy migrated.
+const archiveDir=path.join(base,'product-category');
+const archiveNames=fs.existsSync(archiveDir)?fs.readdirSync(archiveDir).filter(name=>routeExists('/product-category/'+name+'/')):[];
+const emptyCategories=archiveNames.filter(name=>!htmlFor('/product-category/'+name+'/').includes('class="sgb-product-card"'));
+const tagArchiveCount=['tag','product-tag'].reduce((sum,segment)=>sum+(fs.existsSync(path.join(base,segment))?fs.readdirSync(path.join(base,segment)).filter(name=>routeExists('/'+segment+'/'+name+'/')).length:0),0);
+const taxonomyReport={categoryArchives:archiveNames.length,emptyCategories,tagArchives:tagArchiveCount};
+if(emptyCategories.length)warnings.push(emptyCategories.length+' category archive(s) have no matched products: '+emptyCategories.join(', '));
+if(!tagArchiveCount)warnings.push('No tag archive pages generated; taxonomy migration remains unverified.');
 const duplicates=new Map();
 for(const x of all){const prior=duplicates.get(x.slug);if(prior&&prior!==x.group)warnings.push('Duplicate slug across '+prior+' and '+x.group+': '+x.slug);duplicates.set(x.slug,x.group)}
-console.log(JSON.stringify({counts:Object.fromEntries(Object.keys(expected).map(x=>[x,all.filter(v=>v.group===x).length])),routes:all.length,sitemapUrls:(sitemap.match(/<loc>/g)||[]).length,warnings,failures},null,2));
+console.log(JSON.stringify({counts:Object.fromEntries(Object.keys(expected).map(x=>[x,all.filter(v=>v.group===x).length])),routes:all.length,sitemapUrls:(sitemap.match(/<loc>/g)||[]).length,taxonomyReport,warnings,failures},null,2));
 if(failures.length)process.exitCode=1;
