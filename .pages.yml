@@ -334,6 +334,8 @@ content:
           - { name: authorHeading, label: Author Archive Heading, type: string }
           - { name: uncategorizedHeading, label: Uncategorized Archive Heading, type: string }
           - { name: openMenu, label: Mobile Menu Accessibility Label, type: string }
+          - { name: toolsSectionAriaLabel, label: Homepage Tools Section Accessibility Label, type: string }
+          - { name: chatToggleAriaLabel, label: Floating Chat Accessibility Label, type: string }
       - name: spotlight
         label: Spotlight Content
         type: object
