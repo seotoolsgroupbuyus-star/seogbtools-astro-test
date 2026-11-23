@@ -157,7 +157,7 @@ content:
     view: { primary: name, fields: [name, slug, price, category] }
     fields:
       - { name: name, type: string, required: true }
-      - { name: slug, type: string, required: true }
+      - { name: slug, type: string, required: true, readonly: true }
       - { name: category, type: string }
       - { name: categories, type: string, list: true }
       - { name: image, label: Featured Image, type: image, options: { media: site_images } }
@@ -182,9 +182,9 @@ content:
     operations: { rename: false, delete: false }
     view: { primary: name }
     fields:
-      - { name: id, type: string }
+      - { name: id, label: Original Product ID, type: string, readonly: true }
       - { name: name, type: string }
-      - { name: slug, type: string }
+      - { name: slug, type: string, readonly: true }
       - { name: price, type: string }
       - { name: originalPrice, type: string }
       - { name: image, label: Featured Image, type: image, options: { media: site_images } }
@@ -202,7 +202,7 @@ content:
     view: { primary: title, fields: [title, slug] }
     fields:
       - { name: title, type: string, required: true }
-      - { name: slug, type: string, required: true }
+      - { name: slug, type: string, required: true, readonly: true }
       - { name: image, label: Featured Image, type: image, options: { media: site_images } }
       - { name: content, type: rich-text, options: { format: html, media: article_images, switcher: false } }
       - { name: excerpt, type: rich-text, options: { format: html, media: article_images, switcher: false } }
@@ -219,7 +219,7 @@ content:
     view: { primary: title }
     fields:
       - { name: title, type: string, required: true }
-      - { name: slug, type: string, required: true }
+      - { name: slug, type: string, required: true, readonly: true }
       - { name: content, type: rich-text, options: { format: html, media: article_images, switcher: false } }
       - { name: excerpt, type: rich-text, options: { format: html, media: article_images, switcher: false } }
       - { name: image, label: Featured Image, type: image, options: { media: site_images } }
