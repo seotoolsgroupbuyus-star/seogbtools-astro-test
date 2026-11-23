@@ -103,6 +103,46 @@ content:
       - { name: toolCount, type: string }
       - { name: startingPrice, type: string }
       - { name: defaultSeoDescription, type: text }
+
+      - name: navigation
+        label: Main Menu Links
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{text}" }
+        fields:
+          - { name: text, label: Menu Text, type: string }
+          - { name: url, label: Link URL, type: string }
+      - { name: pagesMenuLabel, label: Pages Menu Heading, type: string }
+      - { name: pagesMenuAllLabel, label: Pages Dropdown Link, type: string }
+      - name: footerLinks
+        label: Footer Links
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{text}" }
+        fields:
+          - { name: text, label: Link Text, type: string }
+          - { name: url, label: URL, type: string }
+      - name: chat
+        label: Chat Widget Text
+        type: object
+        fields:
+          - { name: heading, label: Chat Heading, type: string }
+          - { name: whatsappText, label: WhatsApp Button, type: string }
+          - { name: messengerText, label: Facebook Button, type: string }
+          - { name: footerText, label: Chat Footer, type: string }
+      - name: heroLabels
+        label: Hero Labels
+        type: object
+        fields:
+          - { name: toolCount, label: Tool Count Caption, type: string }
+          - { name: stat2, label: Second Stat Caption, type: string }
+          - { name: stat3, label: Third Stat Caption, type: string }
+          - { name: pricePrefix, label: Price Note, type: string }
+      - name: heroLogos
+        label: Hero Tool Logo Filenames
+        type: string
+        list:
+          collapsible: true
   - name: products
     label: Products
     type: collection
