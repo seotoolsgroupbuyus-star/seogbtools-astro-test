@@ -1,0 +1,42 @@
+{
+  "product": {
+    "viewDetails": "View Details",
+    "buyNow": "Buy Now",
+    "sale": "Sale!",
+    "related": "Related Tools",
+    "instant": "✓ Instant Activation",
+    "secure": "✓ Secure Payment",
+    "reliable": "✓ Reliable Access",
+    "support": "✓ Support Available"
+  },
+  "plans": {
+    "topTools": "Top tools in this plan",
+    "complete": "Complete list",
+    "buyNow": "Buy Now",
+    "back": "← Back to Plan"
+  },
+  "blog": {
+    "eyebrow": "Blog & Guides",
+    "intro": "Tips, guides and resources for SEO professionals.",
+    "articleBadge": "Article",
+    "readMore": "Read More →"
+  },
+  "category": {
+    "introPrefix": "Browse",
+    "introSuffix": "tools and compare available plans.",
+    "empty": "Explore the complete tool collection while this category is updated.",
+    "viewAll": "View all tools"
+  },
+  "account": {
+    "message": "Member access and order management continue through the existing secure member portal.",
+    "button": "Open member portal"
+  },
+  "spotlight": {
+    "featuredTitle": "Featured SEO Tools",
+    "featuredText": "Core SEO research tools people rely on for rankings, audits, and backlinks.",
+    "moreTitle": "More Tools Available",
+    "moreText": "Content, writing, and creative tools are included across plans, with more added over time.",
+    "othersTitle": "Other SEO Services",
+    "othersText": "Beyond Ahrefs, SEMrush, and Moz, packages can include audits, rank monitoring, and supporting SEO utilities depending on your plan."
+  }
+}
