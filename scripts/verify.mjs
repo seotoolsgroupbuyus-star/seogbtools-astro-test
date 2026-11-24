@@ -42,7 +42,7 @@ if(!fs.existsSync(robotsPath))failures.push('No robots.txt');
 const sitemap=fs.existsSync(sitemapPath)?fs.readFileSync(sitemapPath,'utf8'):'';
 const robots=fs.existsSync(robotsPath)?fs.readFileSync(robotsPath,'utf8'):'';
 if(!robots.includes('Sitemap: '+domain+'/sitemap.xml'))failures.push('Bad robots sitemap location');
-for (const route of ['/','/shop/','/blog/','/ahrefs-group-buy/','/semrush-group-buy/']) {
+for (const route of ['/','/group/','/blog/','/ahrefs-group-buy/','/semrush-group-buy/']) {
   if(!routeExists(route)){failures.push('Missing required route '+route);continue;}
   const html=htmlFor(route);
   const canon=domain+route;
