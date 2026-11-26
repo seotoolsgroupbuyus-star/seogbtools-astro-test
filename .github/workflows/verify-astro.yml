@@ -31,6 +31,16 @@ jobs:
         run: npm run build
       - name: Check content, public indexing, sitemap and routes
         run: npm run test:content
+      - name: Audit all 203 product image URLs (report only)
+        if: always()
+        run: node scripts/audit-product-images.mjs
+      - name: Upload complete product image audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seogbtools-product-image-audit
+          path: product-image-audit.json
+          if-no-files-found: warn
       - name: Check generated files
         run: |
           test -f dist/index.html
