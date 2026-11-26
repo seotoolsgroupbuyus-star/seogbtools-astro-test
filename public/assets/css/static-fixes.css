@@ -63,3 +63,35 @@
 .sgb-account-panel__button:hover{background:#1d4ed8}
 .sgb-account-panel .sgb-account-panel__note{margin:1.25rem auto 0;color:#94a3b8;font-size:.875rem}
 @media(max-width:767px){.sgb-article{padding:6.5rem .9rem 2.5rem}.sgb-article__body{padding:1.25rem}.sgb-article>.sgb-article__wrap>h1{font-size:clamp(1.8rem,7vw,2.5rem)}}
+
+
+/* Product imagery: fill the card/gallery instead of showing a small centered thumbnail.
+   Covers all CMS products without modifying their original image files. */
+.sgb-product-card__media {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  overflow: hidden;
+}
+.sgb-product-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+.sgb-single__media {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  align-self: start;
+}
+.sgb-single__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
