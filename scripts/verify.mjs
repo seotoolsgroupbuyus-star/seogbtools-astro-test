@@ -30,6 +30,10 @@ for (const [group, minimum] of Object.entries(expected)) {
   }
 }
 if(!routeExists('/'))failures.push('Missing homepage');
+if(routeExists('/home/'))failures.push('Duplicate /home/ route must not be generated');
+const redirects=fs.readFileSync('public/_redirects','utf8');
+if(!/^\/home\/\s+\/\s+301\s*$/m.test(redirects))failures.push('Legacy /home/ URL missing canonical 301 redirect');
+
 // Imported WordPress entities must render as characters in the public shop.
 if(routeExists('/group/')){
  const html=htmlFor('/group/');
