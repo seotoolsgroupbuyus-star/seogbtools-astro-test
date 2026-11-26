@@ -30,6 +30,27 @@ for (const [group, minimum] of Object.entries(expected)) {
   }
 }
 if(!routeExists('/'))failures.push('Missing homepage');
+
+// Every product image in the generated shop and product page must be a real
+// local file bundled into the static site, never a dead WordPress upload URL.
+const productImageMap=readJson(path.join(base,'product-image-map.json'));
+const productRecords=all.filter(x=>x.group==='products');
+if(Object.keys(productImageMap).length!==productRecords.length)
+ failures.push('Product image map does not cover every product');
+let covers=0,originals=0;
+for(const {slug} of productRecords){
+ const entry=productImageMap[slug];
+ if(!entry||!entry.web||!entry.web.startsWith('/')){failures.push('Missing image mapping for '+slug);continue;}
+ const local=path.join('public',decodeURIComponent(entry.web).replace(/^\/+/,''));
+ if(!fs.existsSync(local))failures.push('Mapped product image does not exist: '+slug+' → '+entry.web);
+ if(/\/wp-content\/|google\.com\/s2\/favicons|https?:\/\//i.test(entry.web))
+  failures.push('External or old image URL remains: '+slug);
+ if(entry.source==='generated-labeled-cover')covers++;else originals++;
+ const page=htmlFor('/'+slug+'/');
+ if(!page.includes('src="'+entry.web+'"'))failures.push('Product page not using mapped local image: '+slug);
+}
+console.log('PRODUCT IMAGE CHECK',JSON.stringify({products:productRecords.length,localArtwork:originals,generatedLabeledCovers:covers}));
+
 if(routeExists('/home/'))failures.push('Duplicate /home/ route must not be generated');
 const redirects=fs.readFileSync('public/_redirects','utf8');
 if(!/^\/home\/\s+\/\s+301\s*$/m.test(redirects))failures.push('Legacy /home/ URL missing canonical 301 redirect');
