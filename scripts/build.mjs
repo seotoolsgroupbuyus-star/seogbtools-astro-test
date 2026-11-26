@@ -1,5 +1,5 @@
 import fs from 'node:fs';import path from 'node:path';
-import { prepareProductImages } from './product-images.mjs';
+import { prepareProductImages, resolveOriginalUrl } from './product-images.mjs';
 const root=process.cwd(),out=path.join(root,'.generated'),C=path.join(root,'content');
 const read=p=>JSON.parse(fs.readFileSync(path.join(C,p),'utf8'));
 const collection=name=>fs.readdirSync(path.join(C,name)).filter(f=>f.endsWith('.json')).map(f=>read(name+'/'+f));
@@ -17,7 +17,7 @@ const decodeEntities=value=>String(value??'').replace(/&(#x[0-9a-f]+|#\d+|amp|lt
 const url=s=>/^(https?:|mailto:|tel:|\/)/i.test(s||'')?s:'#';
 // Keep links to the original WordPress domain on the Astro preview domain.
 const fixInternalLinks=s=>String(s??'').replace(/(href\s*=\s*["'])https?:\/\/(?:www\.)?seogbtools\.com(?=\/)/gi,'$1');
-const asset=(s)=>{if(!s)return '/assets/images/tools/seo-tools.svg';if(s.startsWith('/tools/'))return '/assets/images/tools/'+s.slice(7);if(s.startsWith('/essentialsjacket/images/'))return '/assets/images/site/'+s.slice('/essentialsjacket/images/'.length);return s};
+const asset=(s)=>{if(!s)return '/assets/images/tools/seo-tools.svg';const original=resolveOriginalUrl(s);if(original)return original;if(s.startsWith('/tools/'))return '/assets/images/tools/'+s.slice(7);if(s.startsWith('/essentialsjacket/images/'))return '/assets/images/site/'+s.slice('/essentialsjacket/images/'.length);return s};
 const curatedCategoryData=read('category-assignments.json');
 const curatedCategoryProducts=curatedCategoryData.products||{};
 const setting=read('settings.json'),home=read('homepage.json'),products=collection('products'),posts=collection('posts'),pages=collection('pages'),tools=collection('tools'),plans=read('plans.json'),ui=read('ui-labels.json'),faqs=read('faqs.json'),spotlight=read('spotlight.json'),steps=read('steps.json');
@@ -27,7 +27,8 @@ function paymentHref(_value){return paymentBase}
 function rewriteMemberLinks(html){
  return String(html).replace(/(\bhref\s*=\s*["'])(https?:\/\/(?:www\.)?(?:seogroupsbuy\.com|pay\.seogbtools\.com)\/users\/(?:login|signup|cart\/)[^"']*)(["'])/gi,(_whole,a,_target,z)=>a+paymentBase+z);
 }
-function write(route,body){let dir=path.join(out,route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),rewriteMemberLinks(body))}
+function rewriteOriginalHtmlImages(html){return String(html).replace(/(?:https?:\/\/(?:www\.)?seogbtools\.com)?\/wp-content\/(?:uploads|themes)\/[^\s\"'<>)]*/gi,old=>resolveOriginalUrl(old)||old)}
+function write(route,body){let dir=path.join(out,route);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),rewriteOriginalHtmlImages(rewriteMemberLinks(body)))}
 fs.rmSync(out,{recursive:true,force:true});// Astro copies public/ into dist during build.
 const productImageMap=prepareProductImages(products);
 const productImage=p=>productImageMap[p.slug]?.web||'/assets/images/tools/seo-tools.svg';
