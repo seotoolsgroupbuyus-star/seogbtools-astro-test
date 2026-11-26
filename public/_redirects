@@ -1,3 +1,4 @@
 # WordPress permalink compatibility
 /refund_returns/ /refund-returns/ 301
 /shop/ /group/ 301
+/home/ / 301
