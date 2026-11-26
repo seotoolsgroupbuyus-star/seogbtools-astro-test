@@ -43,6 +43,8 @@ for(const {slug} of productRecords){
  if(!entry||!entry.web||!entry.web.startsWith('/')){failures.push('Missing image mapping for '+slug);continue;}
  const local=path.join('public',decodeURIComponent(entry.web).replace(/^\/+/,''));
  if(!fs.existsSync(local))failures.push('Mapped product image does not exist: '+slug+' → '+entry.web);
+ const deployed=path.join('dist',decodeURIComponent(entry.web).replace(/^\/+/,''));
+ if(fs.existsSync('dist')&&!fs.existsSync(deployed))failures.push('Product image not copied into deploy output: '+slug+' → '+entry.web);
  if(/\/wp-content\/|google\.com\/s2\/favicons|https?:\/\//i.test(entry.web))
   failures.push('External or old image URL remains: '+slug);
  if(entry.source==='generated-labeled-cover')covers++;else originals++;
