@@ -30,6 +30,15 @@ for (const [group, minimum] of Object.entries(expected)) {
   }
 }
 if(!routeExists('/'))failures.push('Missing homepage');
+// Imported WordPress entities must render as characters in the public shop.
+if(routeExists('/group/')){
+ const html=htmlFor('/group/');
+ if(html.includes('&#8211;')||html.includes('&#8217;')||html.includes('&amp;amp;'))
+   failures.push('Shop cards still display encoded WordPress text entities');
+ if(html.includes('Shared &amp;amp; Private'))
+   failures.push('Double-escaped product title in shop');
+}
+
 // Prevent literal JavaScript template expressions from leaking into shop cards.
 const shopRoute='/group/';
 if(routeExists(shopRoute)){
