@@ -30,6 +30,18 @@ for (const [group, minimum] of Object.entries(expected)) {
   }
 }
 if(!routeExists('/'))failures.push('Missing homepage');
+// Prevent literal JavaScript template expressions from leaking into shop cards.
+const shopRoute='/group/';
+if(routeExists(shopRoute)){
+  const shopHtml=htmlFor(shopRoute);
+  if(shopHtml.includes('${esc(ui.product.sale)}'))failures.push('Shop Sale badge contains an unrendered template expression');
+  const labels=readJson('content/ui-labels.json');
+  const saleLabel=String(labels.product?.sale||'Sale!');
+  const soldProducts=all.filter(x=>x.group==='products'&&x.item.onSale).length;
+  if(soldProducts>0&&!shopHtml.includes('class="sgb-badge">'+saleLabel+'</span>'))
+    failures.push('Shop sale badge missing CMS-configured sale label: '+saleLabel);
+}
+
 for (const {group,slug} of all) {
   if(slug==='home') continue;
   // The renderer has explicit top-level archive and utility routes.
