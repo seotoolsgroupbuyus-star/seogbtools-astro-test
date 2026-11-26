@@ -151,6 +151,37 @@ for(const [slug,categories] of Object.entries(assignments)){
   if(!archiveHTML.get(category).includes('name="robots" content="index,follow"'))failures.push('Assigned category not indexable: '+category);
  }
 }
+
+// Verify actual image elements across shop, homepage, blogs, and product pages.
+const allGeneratedHtml=[];
+function collectHtml(directory){
+ if(!fs.existsSync(directory))return;
+ for(const item of fs.readdirSync(directory,{withFileTypes:true})){
+  const full=path.join(directory,item.name);
+  if(item.isDirectory())collectHtml(full);
+  else if(item.name.endsWith('.html'))allGeneratedHtml.push(full);
+ }
+}
+collectHtml(base);
+let totalImageTags=0,originalImageTags=0,unresolvedOldMedia=0;
+const missingImages=[],oldMediaSamples=[];
+for(const file of allGeneratedHtml){
+ const page=fs.readFileSync(file,'utf8');
+ const refs=page.matchAll(/<img\b[^>]*?\bsrc=["']([^"']+)["']/gi);
+ for(const m of refs){
+  totalImageTags++;
+  const src=m[1].replace(/&amp;/g,'&');
+  if(src.startsWith('/assets/images/original/'))originalImageTags++;
+  if(/\/wp-content\/(?:uploads|themes)\//i.test(src)){unresolvedOldMedia++;if(oldMediaSamples.length<15)oldMediaSamples.push({file:path.relative(base,file),src});}
+  if(src.startsWith('/')&&!src.startsWith('//')&&!src.startsWith('/data:')){
+   const local=path.join('public',decodeURIComponent(src.split(/[?#]/)[0]).replace(/^\/+/,''));
+   if(!fs.existsSync(local)&&missingImages.length<30)missingImages.push({file:path.relative(base,file),src});
+  }
+ }
+}
+if(missingImages.length)failures.push('Broken local img src in built pages: '+JSON.stringify(missingImages.slice(0,6)));
+console.log('ALL_PAGE_IMAGE_AUDIT',JSON.stringify({htmlPages:allGeneratedHtml.length,imageTags:totalImageTags,originalImageTags,missingLocal:missingImages.length,unresolvedOldMedia,oldMediaSamples}));
+
 // Archive quality report: existing routes alone do not prove that taxonomy migrated.
 const archiveDir=path.join(base,'product-category');
 const archiveNames=fs.existsSync(archiveDir)?fs.readdirSync(archiveDir).filter(name=>routeExists('/product-category/'+name+'/')):[];
