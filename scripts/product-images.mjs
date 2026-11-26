@@ -120,5 +120,6 @@ export function prepareProductImages(products){
   map[p.slug]=entry;sources[entry.source]=(sources[entry.source]||0)+1;
  }
  console.log('PRODUCT_IMAGE_MIGRATION',JSON.stringify({total:products.length,sources,originalAssetsAvailable:originals.length,unresolved:Object.values(map).filter(e=>e.source==='generated-labeled-cover').length,brokenLocal:0}));
+ console.log('ORIGINAL_IMAGE_UNMATCHED_SLUGS',JSON.stringify(Object.entries(map).filter(([,v])=>v.source==='generated-labeled-cover').map(([slug])=>slug)));
  return map;
 }
