@@ -1,96 +1,124 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Build-only image migration. Original CMS image URLs remain untouched.
-// Every public product receives a self-hosted, working cover image.
-const root=process.cwd();
-const publicDir=path.join(root,'public');
-const generatedDir=path.join(publicDir,'assets/images/product-covers');
-const validImage=/\.(png|jpe?g|webp|gif|svg|avif)$/i;
-const norm=s=>String(s||'').toLowerCase().replace(/&(?:amp|#38);/g,'and').replace(/[^a-z0-9]+/g,'');
-const slugToken=s=>String(s||'').toLowerCase().replace(/&(?:amp|#38);/g,'and').replace(/[^a-z0-9]+/g,' ').split(/\s+/).filter(Boolean);
-const ignore=new Set(['group','buy','tools','tool','premium','shared','private','account','accounts','access','subscription','subscriptions','for','and','the','with','get','online','advanced','affordable','unlimited','seo','best','platform','software','leading','of','to','in','an','ai','a','professional']);
-const xml=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
-const truncate=(s,n)=>[...String(s||'')].slice(0,n).join('');
-function collect(directory){
- if(!fs.existsSync(directory))return [];
- return fs.readdirSync(directory,{withFileTypes:true}).flatMap(e=>e.isDirectory()?collect(path.join(directory,e.name)):validImage.test(e.name)?[path.join(directory,e.name)]:[]);
+// Original uploaded archive is the authoritative image source. CMS JSON remains unchanged.
+const root=process.cwd(),pub=path.join(root,'public');
+const originalRoot=path.join(pub,'assets/images/original');
+const output=path.join(pub,'assets/images/product-covers');
+const valid=/\.(?:png|jpe?g|webp|gif|svg|avif)$/i;
+const isVariant=s=>/-\d{2,4}x\d{2,4}(?=\.[^.]+$)/i.test(s);
+const stem=s=>path.basename(s).replace(/\.[^.]+$/,'').toLowerCase();
+const normalize=s=>String(s||'').toLowerCase().replace(/&(?:amp|#38);/gi,'and').replace(/[^a-z0-9]+/g,'');
+const ignored=new Set(['group','buy','seo','tools','tool','premium','with','access','account','accounts','for','and','the','share','shared','private','affordable','advanced','software','complete','professional','platform','get','to','in','a','ai','of','subscription','service']);
+const tokens=s=>String(s||'').toLowerCase().replace(/&(?:amp|#38);/gi,'and').split(/[^a-z0-9]+/).filter(t=>t.length>=3&&!ignored.has(t));
+function walk(dir){
+ if(!fs.existsSync(dir))return [];
+ return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):valid.test(e.name)?[path.join(dir,e.name)]:[]);
 }
-const available=[...collect(path.join(publicDir,'assets/images/site')),...collect(path.join(publicDir,'assets/images/tools'))];
-const entries=available.map(file=>{
- const web='/'+path.relative(publicDir,file).split(path.sep).join('/');
- const filename=path.basename(file);
- return {web,filename,normal:norm(filename.replace(/\.[^.]+$/,'')),kind:web.includes('/tools/')?'tools':'site'};
-}).filter(e=>!/placeholder|woocommerce|banner-bg|icon-(?:ssl|trusted)|^seo-tools\.svg$/i.test(e.filename));
-
-function imageCandidate(product){
- const original=String(product.image||'');
- const originalPath=original.replace(/^https?:\/\/[^/]+/i,'').split(/[?#]/)[0];
- if(!/^https?:/i.test(original) && originalPath.startsWith('/') && fs.existsSync(path.join(publicDir,originalPath.replace(/^\/+/,''))))return {web:originalPath,source:'existing-local'};
- const originalFile=norm(path.basename(originalPath).replace(/\.[^.]+$/,''));
- // Exact existing filename match (including the WordPress extractor's numbered duplicate names).
- if(originalFile.length>=6){
-  const exact=entries.filter(e=>e.normal===originalFile||e.normal.endsWith(originalFile));
-  if(exact.length){exact.sort((a,b)=>a.filename.length-b.filename.length);return {web:exact[0].web,source:'original-filename'};}
- }
- const tokens=slugToken(product.slug||product.name).filter(t=>t.length>2&&!ignore.has(t));
- if(!tokens.length)return null;
- const primary=tokens[0];
- let candidates=entries.filter(e=>e.normal.includes(primary) && tokens.every(t=>e.normal.includes(t)));
- if(!candidates.length && tokens.length>1){
-  // A named single-token logo is safer than a visually unrelated illustration.
-  candidates=entries.filter(e=>e.kind==='tools'&&e.normal.includes(primary)&&e.normal.includes('logo'));
- }
- if(!candidates.length && tokens.length===1)candidates=entries.filter(e=>e.normal.includes(primary));
- if(!candidates.length)return null;
- candidates.sort((a,b)=>{
-  const weight=e=>(e.kind==='site'?12:3)+(e.normal.includes('groupbuy')?6:0)+(e.normal.startsWith(primary)?7:0)-(e.filename.startsWith('01_')?3:0)-(e.normal.includes('logo')?4:0);
-  return weight(b)-weight(a)||a.filename.length-b.filename.length;
- });
- return {web:candidates[0].web,source:'matched-local'};
+const originals=walk(originalRoot).map(p=>({
+ web:'/'+path.relative(pub,p).split(path.sep).join('/'),
+ basename:path.basename(p),
+ stem:stem(p),
+ norm:normalize(stem(p)),
+ variant:isVariant(p),
+ directory:p.includes('/11/')?'11':'10'
+}));
+const older=walk(path.join(pub,'assets/images/site')).concat(walk(path.join(pub,'assets/images/tools'))).map(p=>({
+ web:'/'+path.relative(pub,p).split(path.sep).join('/'),
+ basename:path.basename(p),
+ stem:stem(p),
+ norm:normalize(stem(p)),
+ variant:isVariant(p),
+ directory:'legacy'
+}));
+const byBasename=new Map();
+for(const e of [...originals,...older]){
+ const k=e.basename.toLowerCase();
+ if(!byBasename.has(k))byBasename.set(k,[]);
+ byBasename.get(k).push(e);
 }
-
-const themes=[
- ['#111C36','#164E91','#60A5FA'],
- ['#172554','#4C1D95','#A78BFA'],
- ['#07333F','#155E75','#67E8F9'],
- ['#0C263A','#116149','#86EFAC'],
- ['#3C182B','#8B2455','#FDA4AF'],
- ['#3B2313','#9A3412','#FDBA74']
+function prefer(list){
+ return [...list].sort((a,b)=>{
+  const score=e=>(e.web.includes('/original/')?100:0)+(e.directory==='10'?10:0)-(e.variant?25:0)-(e.basename.includes('01_')?5:0);
+  return score(b)-score(a)||a.basename.length-b.basename.length;
+ })[0];
+}
+export function resolveOriginalUrl(value){
+ const input=String(value||'');
+ // Only image assets. Do not rewrite text links or links to content pages.
+ const pathname=input.replace(/^https?:\/\/[^/]+/i,'').split(/[?#]/)[0];
+ let base;
+ try{base=decodeURIComponent(path.posix.basename(pathname));}catch{return null;}
+ if(!valid.test(base))return null;
+ const matches=byBasename.get(base.toLowerCase());
+ if(matches?.length)return prefer(matches).web;
+ // Some archived originals have a normalized extension/case, but keep exact stem.
+ const k=normalize(stem(base));
+ const normalized=originals.filter(x=>x.norm===k&&!x.variant);
+ if(normalized.length)return prefer(normalized).web;
+ return null;
+}
+const priorities=[
+ {match:/-product-cover(?:$|-)/,rank:160},
+ {match:/-group-buy-cover(?:$|-)/,rank:150},
+ {match:/-cover(?:$|-)/,rank:125},
+ {match:/-featured(?:$|-)/,rank:110},
+ {match:/-feature-0$/,rank:105},
+ {match:/-logo$/,rank:70},
+ {match:/-inline-/,rank:-120},
+ {match:/-guide-/,rank:-75},
+ {match:/-content-/,rank:-65},
+ {match:/-screenshot/,rank:-40}
 ];
-function cover(product){
- const title=String(product.name||product.slug||'Premium Tool').replace(/&(?:amp|#38);/gi,'&').replace(/&#(?:8211|8212);/g,'–').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
- const stripped=title.replace(/(?:\s+[–-]\s+.*)$/,'').replace(/\s+Group Buy\b.*$/i,'').trim()||title;
- const words=[...stripped].length>28?truncate(stripped,26)+'…':stripped;
- const hash=[...product.slug].reduce((v,c)=>(v*31+c.charCodeAt(0))>>>0,11);
- const [a,b,c]=themes[hash%themes.length];
- const initials=stripped.split(/[\s._-]+/).filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join('');
- const label=xml(words);
- const size=words.length>22?38:words.length>13?48:62;
- return '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="'+xml(title)+' product cover">'
- +'<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="'+a+'"/><stop offset="1" stop-color="'+b+'"/></linearGradient></defs>'
- +'<rect width="640" height="420" fill="url(#g)"/>'
- +'<circle cx="560" cy="36" r="180" fill="'+c+'" opacity=".10"/><circle cx="40" cy="390" r="190" fill="'+c+'" opacity=".07"/>'
- +'<rect x="238" y="55" width="164" height="164" rx="38" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".18"/>'
- +'<text x="320" y="164" fill="#fff" font-family="Arial,sans-serif" font-size="76" font-weight="700" text-anchor="middle">'+xml(initials)+'</text>'
- +'<text x="320" y="302" fill="#fff" font-family="Arial,sans-serif" font-size="'+size+'" font-weight="700" text-anchor="middle">'+label+'</text>'
- +'<text x="320" y="344" fill="'+c+'" font-family="Arial,sans-serif" font-size="19" text-anchor="middle" letter-spacing="4">PREMIUM TOOL</text>'
- +'</svg>';
+function scoreProduct(e,p){
+ if(e.variant)return -99999;
+ const slug=String(p.slug||'');
+ const n=normalize(slug),es=e.norm;
+ const ts=tokens(slug);
+ if(!ts.length)return -99999;
+ const primary=ts[0],primaryNorm=normalize(primary);
+ if(!primaryNorm||!es.includes(primaryNorm))return -99999;
+ // Favor exact slug rather than similarly-named but unrelated tools.
+ let score=(es.includes(n)?450:0)+ (es.startsWith(n)?120:0);
+ const tokenHits=ts.filter(t=>es.includes(normalize(t))).length;
+ score+=tokenHits*50;
+ if(ts.length>1 && tokenHits===1)score-=100;
+ if(es.startsWith(primaryNorm))score+=30;
+ for(const ptn of priorities)if(ptn.match.test(e.stem))score+=ptn.rank;
+ if(e.stem.includes('square-')||e.stem.startsWith('semstyle-')||e.stem.startsWith('offer-'))score-=20;
+ if(e.directory==='10')score+=5;
+ return score;
+}
+function imageCandidate(product){
+ const originalUrl=resolveOriginalUrl(product.image);
+ if(originalUrl)return {web:originalUrl,source:'original-filename'};
+ const cur=String(product.image||'');
+ if(cur.startsWith('/')&&fs.existsSync(path.join(pub,cur.replace(/^\/+/,''))))return {web:cur,source:'existing-local'};
+ const candidates=originals.filter(x=>!x.variant).map(e=>({e,score:scoreProduct(e,product)})).filter(x=>x.score>=115);
+ candidates.sort((a,b)=>b.score-a.score||a.e.basename.length-b.e.basename.length);
+ if(candidates.length)return {web:candidates[0].e.web,source:'original-product-match',score:candidates[0].score};
+ return null;
+}
+function safeXml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function cover(p){
+ const name=String(p.name||p.slug).replace(/&amp;/g,'&').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+ const display=name.slice(0,34);
+ return '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420"><rect width="640" height="420" fill="#172554"/><text x="320" y="192" font-family="Arial,sans-serif" font-size="42" fill="white" font-weight="700" text-anchor="middle">'+safeXml(display)+'</text><text x="320" y="257" font-family="Arial,sans-serif" font-size="24" fill="#93c5fd" text-anchor="middle">Premium SEO Tool</text></svg>';
 }
 export function prepareProductImages(products){
- fs.mkdirSync(generatedDir,{recursive:true});
- let matched=0,generated=0;
- const map={};
+ fs.mkdirSync(output,{recursive:true});
+ const map={};const sources={};
  for(const p of products){
-  const candidate=imageCandidate(p);
-  if(candidate){map[p.slug]={...candidate};matched++;continue;}
-  const dest=path.join(generatedDir,p.slug+'.svg');
-  fs.writeFileSync(dest,cover(p),'utf8');
-  map[p.slug]={web:'/assets/images/product-covers/'+encodeURIComponent(p.slug)+'.svg',source:'generated-labeled-cover'};
-  generated++;
+  let entry=imageCandidate(p);
+  if(!entry){
+   const dest=path.join(output,p.slug+'.svg');
+   fs.writeFileSync(dest,cover(p),'utf8');
+   entry={web:'/assets/images/product-covers/'+encodeURIComponent(p.slug)+'.svg',source:'generated-labeled-cover'};
+  }
+  const local=path.join(pub,decodeURIComponent(entry.web).replace(/^\/+/,''));
+  if(!fs.existsSync(local))throw Error('Missing product image for '+p.slug+': '+entry.web);
+  map[p.slug]=entry;sources[entry.source]=(sources[entry.source]||0)+1;
  }
- const invalid=Object.values(map).filter(e=>!fs.existsSync(path.join(publicDir,decodeURIComponent(e.web).replace(/^\/+/,''))));
- if(invalid.length)throw Error('Some product image files are missing after generation: '+invalid.length);
- console.log('PRODUCT_IMAGE_MIGRATION',JSON.stringify({total:products.length,matchedLocal:matched,generatedCovers:generated,brokenLocal:invalid.length}));
+ console.log('PRODUCT_IMAGE_MIGRATION',JSON.stringify({total:products.length,sources,originalAssetsAvailable:originals.length,unresolved:Object.values(map).filter(e=>e.source==='generated-labeled-cover').length,brokenLocal:0}));
  return map;
 }
