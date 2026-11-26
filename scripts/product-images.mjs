@@ -89,7 +89,17 @@ function scoreProduct(e,p){
  if(e.directory==='10')score+=5;
  return score;
 }
+// Known legacy product names differ from filenames in the original archive.
+const verifiedAliases={
+ 'deepflush-group-buy':'/assets/images/site/Deepflush.png',
+ 'epidemicsound-group-buy':'/assets/images/original/11/epidemic-product-cover.webp',
+ 'pipio-group-buy':'/assets/images/site/Pipio-.png',
+ 'tools-group-buy':'/assets/images/site/Tools-Group-Buy1.png',
+ 'vidnami-group-buy':'/assets/images/site/Vidnami-.png'
+};
 function imageCandidate(product){
+ const alias=verifiedAliases[product.slug];
+ if(alias&&fs.existsSync(path.join(pub,alias.replace(/^\/+/,''))))return {web:alias,source:'verified-legacy-alias'};
  const originalUrl=resolveOriginalUrl(product.image);
  if(originalUrl)return {web:originalUrl,source:'original-filename'};
  const cur=String(product.image||'');
