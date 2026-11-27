@@ -1,3 +1,4 @@
+import {renderGbFaq} from './gb-section7-faq.mjs';
 import {renderGbSpotlight} from './gb-section5-spotlight.mjs';
 import {renderGbPricing} from './gb-section4-pricing.mjs';
 import {renderGbSection3} from './gb-section3-template.mjs';
@@ -81,7 +82,7 @@ ${renderGbSection3({home:h,tools,setting,asset,link,ui})}
 ${renderGbPricing({home:h,plans,setting,paymentHref})}
 ${renderGbSpotlight({home:h,spotlight,ui})}
 <link rel="stylesheet" href="/assets/css/gb-home-how-dv.css"><section id="gb-how" aria-labelledby="dv-how-h"><div class="dv-how-wrap"><div class="dv-how-intro"><div class="dv-reveal"><p class="dv-how-kicker">${esc(h.how.eyebrow)}</p><h2 id="dv-how-h">${esc(h.how.title).replace(/(Tools Work)$/,'<span class="dv-em-c">$1</span>')}</h2></div><p class="dv-how-lead">${esc(h.how.lead)}</p></div><ol class="dv-how-steps">${steps.map((step,i)=>`<li class="dv-how-step" data-icon="${esc(step.icon||'')}"><span class="dv-how-dot" aria-hidden="true"></span><span class="dv-outline-c" aria-hidden="true">${esc(String(step.number||i+1).padStart(2,'0'))}</span><h3>${esc(step.title)}</h3><p class="dv-how-body">${esc(step.description)}</p></li>`).join('')}</ol></div></section>
-<section class="sgb-faq"><div class="sgb-faq__q"><span class="sgb-eyebrow">${esc(h.faq.eyebrow)}</span><h2>${esc(h.faq.title)}</h2><p class="intro">${esc(h.faq.intro)}</p><ul class="sgb-faq__topics">${h.faq.topics.map(t=>`<li>${esc(t)}</li>`).join('')}</ul><ul class="sgb-faq__list" role="tablist" aria-label="FAQ questions">${faqs.map((f,i)=>`<li><button type="button" id="faq-q-${i}" class="${i===0?'is-active':''}" data-sgb-faq="${i}" aria-controls="faq-a-${i}" aria-selected="${i===0?'true':'false'}">${esc(f.question)}</button></li>`).join('')}</ul></div><div class="sgb-faq__a">${faqs.map((f,i)=>`<div id="faq-a-${i}" class="sgb-faq__panel${i===0?' is-active':''}" role="region" aria-labelledby="faq-q-${i}" ${i?'hidden':''}>${f.answer}</div>`).join('')}</div></section>`}
+${renderGbFaq({home:h,faqs,setting})}`}
 const normalizedCategorySlug=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/&/g,'-and-').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function assignedCategorySlugs(p){
  const original=(Array.isArray(p.categories)&&p.categories.length?p.categories:[p.category]).filter(x=>x&&String(x).toLowerCase()!=='uncategorized').map(normalizedCategorySlug);
