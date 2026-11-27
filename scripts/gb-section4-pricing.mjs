@@ -12,6 +12,12 @@ function planBlock(block,p,idx,pay){
   const name=esc(p.name||''),desc=esc(p.description||''),price=esc(p.price||''),count=(p.tools||[]).length;
   const previous=['Lite Plan','Ahrefs Combo','Mega Plan'][idx];
   block=block.replaceAll(previous,name);
+  // Popularity claims reflect CMS, not the unrelated reference site's labels.
+  if(!p.popular){
+    block=block.replace(/<p class="dv-bp-flag">[\s\S]*?<\/p>/,'');
+    block=block.replace(/<span class="dv-bp-tag is-best">[\s\S]*?<\/span>/,'');
+  }
+
   block=replaceTaggedContent(block,'dv-bp-tl',p.description||'');
   block=replaceTaggedContent(block,'dv-bp-count-n',String(count));
   block=replaceTaggedContent(block,'dv-bp-big',p.price||'');
