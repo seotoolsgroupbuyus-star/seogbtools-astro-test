@@ -11,7 +11,7 @@ function shelfOf(tool){
   if(/design|creative|video edit|video tool|graphic|photo/.test(c))return 2;
   return 3;
 }
-export function renderGbSection3({home,tools,setting,asset,link}){
+export function renderGbSection3({home,tools,setting,asset,link,ui}){
   const h=home.tools;
   const categories=Array.isArray(h.categories)?h.categories:[];
   if(!categories.length)return '';
@@ -35,7 +35,7 @@ export function renderGbSection3({home,tools,setting,asset,link}){
   const firstRows=initial.items.map(t=>`<li class="gb3-tool-row"><a class="gb3-tool-card" href="${escapeHtml(t.url)}" aria-label="${escapeHtml(t.name)} — ${escapeHtml(t.price||'View tool')}"><span class="gb3-tool-logo">${t.image?`<img src="${escapeHtml(t.image)}" alt="" loading="lazy" decoding="async">`:escapeHtml(t.name.slice(0,2).toUpperCase())}</span><span class="gb3-tool-name">${escapeHtml(t.name)}</span><span class="gb3-tool-link">${escapeHtml(t.price||'View tool')} <span aria-hidden="true">→</span></span></a></li>`).join('');
   const tabs=grouped.map((c,i)=>`<li class="gb3-shelf" data-gb3-shelf="${i}"><button type="button" class="gb3-shelf-button" aria-controls="gb3-console" aria-pressed="${i===0}"><span class="gb3-shelf-meta"><span>${String(i+1).padStart(2,'0')} / ${String(grouped.length).padStart(2,'0')}</span><span>${c.items.length} tools</span></span><span class="gb3-shelf-name"><span class="gb3-shelf-normal">${escapeHtml(c.title)}</span><span class="gb3-shelf-selected" aria-hidden="true">${escapeHtml(c.title)}</span></span><span class="gb3-shelf-chips">${c.items.slice(0,3).map(t=>`<span>${escapeHtml(t.name)}</span>`).join('')}</span></button><span class="gb3-shelf-progress" aria-hidden="true"></span></li>`).join('');
   const fallback=tools.filter(t=>t?.slug&&t?.name).map(t=>`<li><a href="${escapeHtml(link(t.slug))}">${escapeHtml(t.name)} — ${escapeHtml(t.price||'')}</a></li>`).join('');
-  return `<link rel="stylesheet" href="/assets/css/gb-home-tools-dv.css"><section id="gb3-collection" class="sgb-tools gb3" aria-labelledby="gb3-heading">
+  return `<link rel="stylesheet" href="/assets/css/gb-home-tools-dv.css"><section id="gb3-collection" class="sgb-tools gb3" aria-labelledby="gb3-heading" aria-label="${escapeHtml(ui?.misc?.toolsSectionAriaLabel||'Premium Marketing Tools Collection')}">
   <div class="gb3-container"><div class="gb3-heading-row"><div><p class="gb3-eyebrow">${escapeHtml(h.eyebrow||'')}</p><h2 id="gb3-heading">${heading}</h2></div><div class="gb3-intro"><p>${lead}</p><div class="gb3-instruction"><span aria-hidden="true">↓</span> Scroll, or pick a shelf</div></div></div>
   <div class="gb3-grid"><ol class="gb3-shelf-list" id="gb3-list">${tabs}</ol>
   <div class="gb3-console" id="gb3-console" aria-live="polite" aria-atomic="false"><div class="gb3-console-top"><span id="gb3-path">~/tools/${escapeHtml(initial.title.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}</span><span id="gb3-dots" class="gb3-dots">${grouped.map((_,i)=>`<i class="${i===0?'on':''}"></i>`).join('')}</span></div>
