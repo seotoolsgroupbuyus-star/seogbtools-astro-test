@@ -195,6 +195,7 @@ content:
       - { name: bgColor, type: string }
       - { name: description, type: text }
       - { name: category, type: string }
+      - { name: homepageShelf, label: Homepage Shelf (1 SEO / 2 Writing / 3 Creative / 4 Other), type: select, options: { values: ["1", "2", "3", "4"] } }
       - { name: features, type: string, list: true }
   - name: posts
     label: Blog Posts
