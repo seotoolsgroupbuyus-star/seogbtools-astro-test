@@ -12,7 +12,7 @@
 .dv-bp *{box-sizing:border-box}.dv-bp .dv-bp-table{grid-template-columns:minmax(160px,200px) repeat(3,minmax(0,1fr));align-items:end}.dv-bp [data-pack='medium'] .dv-bp-top{min-height:218px}.dv-bp [data-pack='megapack'] .dv-bp-top{min-height:302px}.dv-bp [data-pack='combo'] .dv-bp-top{min-height:334px}.dv-bp [data-pack='megapack'] .dv-bp-count-n{font-size:90px}.dv-bp [data-pack='combo'] .dv-bp-count-n{font-size:90px}
 .dv-bp .dv-bp-col.is-feat::after,.dv-bp .dv-bp-col.is-fits::before{border-radius:20px 20px 0 0}.dv-bp .is-combo .dv-bp-r{color:var(--c-ink-2)}.dv-bp .is-combo .dv-bp-r dd.is-yes{color:#7ce4b6}.dv-bp .dv-bp-nm .is-best{white-space:normal;vertical-align:3px}.dv-bp .dv-bp-flag{border-radius:20px 20px 0 0}.dv-bp .dv-bp-col.is-feat{border-top-left-radius:20px;border-top-right-radius:20px}.dv-bp .dv-bp-fit-opts{background:#e0efeb}.dv-bp .dv-bp-fit-in:checked+span{background:#10233e;color:white}
 .dv-bp .dv-bp-scroll{overflow:visible}.dv-bp .dv-bp-col:not(.dv-bp-labels):last-child{border-right:1px solid var(--rule)}
-.gb4-included{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:34px}.gb4-included-pack{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 18px}.gb4-included-pack summary{cursor:pointer;font-weight:700;color:var(--ink)}.gb4-included-pack ul{columns:1;padding:0 0 0 20px;font-size:14px;line-height:1.8;color:var(--ink-2)}
+.gb4-included{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:12px;margin-top:34px}.gb4-included-pack{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 18px}.gb4-included-pack summary{cursor:pointer;font-weight:700;color:var(--ink)}.gb4-included-pack ul{columns:1;padding:0 0 0 20px;font-size:14px;line-height:1.8;color:var(--ink-2)}
 @media(max-width:1180px){.dv-bp .dv-bp-scroll{overflow-x:auto;overflow-y:hidden;margin:12px calc(var(--g) * -1) 0;padding:14px var(--g) 12px}.dv-bp .dv-bp-table{grid-template-columns:132px repeat(3,240px);width:max-content}.dv-bp .dv-bp-labels{position:sticky;left:0}.gb4-included{grid-template-columns:1fr}}
 @media(max-width:520px){.dv-bp .dv-bp-table{grid-template-columns:112px repeat(3,204px)}.dv-bp .dv-bp-wrap{padding-top:52px}.dv-bp .dv-bp-h2{font-size:clamp(42px,11vw,58px)}.dv-bp .dv-bp-fit-opts{grid-template-columns:repeat(3,minmax(0,1fr))}.dv-bp .dv-bp-fit-opt span{padding:10px 6px;font-size:12px}.dv-bp .dv-bp-swipe{display:flex}}
 /* Avoid vertically clipping the scrolling plan names at all browser font metrics. */
@@ -20,3 +20,6 @@
 .dv-sig-band-track{min-height:clamp(82px,7.2vw,96px);padding-top:18px;padding-bottom:18px;line-height:1.28;align-items:center}
 .dv-sig-band-track>span{display:inline-flex;align-items:center;flex-shrink:0;line-height:1.28}
 .dv-sig-band-track .dv-sig-dot{display:inline-block}
+
+/* Keep closed plan disclosure cards compact when one other plan expands. */
+.gb4-included-pack{align-self:start;min-height:0}
