@@ -239,6 +239,7 @@ content:
     fields:
       - { name: name, type: string }
       - { name: price, type: string }
+      - { name: description, label: Plan Description, type: text }
       - { name: popular, type: boolean }
       - { name: tools, type: string, list: true }
       - { name: buyUrl, type: string }
