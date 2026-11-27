@@ -19,4 +19,4 @@
 .sgb-hero--toolsurf .sgb-hero__trust{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margin:20px 0 0;padding:0;list-style:none;color:var(--gb-text);font-size:14px;font-weight:600}
 .sgb-hero--toolsurf .sgb-hero__trust li{display:inline-flex;align-items:center;gap:7px}
 .sgb-hero--toolsurf .sgb-hero__trust svg{width:18px;height:18px;color:var(--gb-teal);flex:none}
-@media(max-width:700px){.sgb-hero--toolsurf .sgb-hero__copy{max-width:100%}.sgb-hero--toolsurf .sgb-hero__ctas{flex-direction:column;align-items:center}.sgb-hero--toolsurf .sgb-btn--primary{min-width:290px}.sgb-hero--toolsurf .sgb-btn--ghost{min-width:205px}.sgb-hero--toolsurf .sgb-hero__ts-pic{background-image:url("https://www.toolsurf.com/assets/home/hero-sea-light-phone-240-60f8c4.webp")}}
+@media(max-width:700px){.sgb-hero--toolsurf .sgb-hero__copy{max-width:100%}.sgb-hero--toolsurf .sgb-hero__ctas{flex-direction:column;align-items:center}.sgb-hero--toolsurf .sgb-btn--primary{min-width:290px}.sgb-hero--toolsurf .sgb-btn--ghost{min-width:205px}.sgb-hero--toolsurf .sgb-hero__ts-pic{background-image:url("https://www.toolsurf.com/assets/home/hero-sea-light-phone-240-60f8c42a.webp")}}
