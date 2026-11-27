@@ -1,0 +1,2 @@
+/* Original DigitaVision FAQ behavior: single open item, instant answer and 250ms icon rotation. */
+(()=>{const root=document.querySelector('.dv-faq-source');if(!root)return;const buttons=[...root.querySelectorAll('[data-dv-faq]')];function update(i){buttons.forEach((b,n)=>{const open=n===i;b.setAttribute('aria-expanded',String(open));const a=root.querySelector('#'+b.getAttribute('aria-controls'));if(a)a.hidden=!open})}buttons.forEach((b,i)=>b.addEventListener('click',()=>update(b.getAttribute('aria-expanded')==='true'?-1:i)));update(0)})();
