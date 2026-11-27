@@ -46,7 +46,7 @@ export function renderGbPricing({home,plans,setting,paymentHref}){
  });
  html=html.replace('Compare Lite, Ahrefs Combo and Mega.', 'Compare '+p.map(q=>q.name||'').join(', ')+'.');
  // Render complete lists from CMS exactly, even if plans are edited.
- const lists=p.map(q=>'<details class="gb4-included-pack"><summary>'+esc(q.name)+' — View all '+(q.tools||[]).length+' tools</summary><ul>'+(q.tools||[]).map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></details>').join('');
+ const lists=p.map(q=>'<details class="gb4-included-pack" name="gb4-pricing-tools"><summary>'+esc(q.name)+' — View all '+(q.tools||[]).length+' tools</summary><ul>'+(q.tools||[]).map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></details>').join('');
  html=html.replace(/(<div aria-label="Complete tool lists" class="gb4-included">)[\s\S]*?(<\/div>)(?=<\/div>\s*<\/section>)/,'$1'+lists+'$2');
  // Update all three source CTAs if the source price and name changed.
  html=html.replace(/<p class="dv-bp-fine">[\s\S]*?<\/p>/,'<p class="dv-bp-fine">All prices and tool lists shown are sourced from the SEOGBTools pricing data. Tool availability and access terms follow the applicable plan details.</p>');
