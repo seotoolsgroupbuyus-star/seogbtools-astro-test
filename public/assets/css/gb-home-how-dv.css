@@ -1,0 +1,16 @@
+/* Section 6 — approved DigitaVision "How access works" layout, scoped to homepage only. */
+#gb-how{--console:#121113;--c-ink:#f6f2eb;--c-ink-2:#aaa59d;--c-rule:#343133;--brand:#0d9488;--display:"Bricolage Grotesque",Inter,Arial,sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--console);color:var(--c-ink);padding:clamp(72px,8vw,120px) 0;scroll-margin-top:76px;font-family:var(--display)}
+#gb-how,#gb-how *{box-sizing:border-box}
+#gb-how .dv-how-wrap{max-width:1360px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+#gb-how .dv-how-intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(480px,100%),1fr));gap:24px 64px;align-items:end}
+#gb-how .dv-how-kicker{margin:0 0 20px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4cdbc8}
+#gb-how h2{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(42px,5.4vw,80px);line-height:.96;letter-spacing:-.035em;color:var(--c-ink)}
+#gb-how .dv-em-c{color:#4cdbc8;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.015em}
+#gb-how .dv-how-lead{margin:0;padding-bottom:8px;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:var(--c-ink-2);max-width:46ch;text-wrap:pretty}
+#gb-how .dv-how-steps{list-style:none;margin:clamp(48px,5vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:48px 28px}
+#gb-how .dv-how-step{position:relative;display:flex;flex-direction:column;gap:18px;padding-top:30px;border-top:1px solid var(--c-rule)}
+#gb-how .dv-how-dot{position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--brand)}
+#gb-how .dv-outline-c{font-family:var(--display);font-weight:800;font-size:112px;line-height:.8;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.3px #88827a}
+#gb-how h3{margin:0;font-family:var(--display);font-weight:700;font-size:30px;line-height:1.05;letter-spacing:-.025em;color:var(--c-ink)}
+#gb-how .dv-how-body{margin:0;font-size:16.5px;line-height:1.55;color:var(--c-ink-2);max-width:40ch}
+@media(max-width:720px){#gb-how{padding:76px 0 85px}#gb-how .dv-how-intro{gap:23px}#gb-how h2{font-size:clamp(42px,10.7vw,62px)}#gb-how .dv-how-steps{gap:43px}#gb-how .dv-outline-c{font-size:96px}#gb-how h3{font-size:28px}}
