@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=Geist+Mono:wght@500&display=swap');
+.dv-section,.dv-section *{box-sizing:border-box}
+.dv-section{--paper:#e6f4f0;--paper-2:#f1faf8;--card:#fffdfa;--ink:#10233e;--ink-2:#394c60;--ink-3:#627b7a;--ink-4:#819b98;--rule:#cbded9;--rule-2:#b7d7d1;--red:#0d9488;--red-ink:#0b766d;--display:'Bricolage Grotesque',Arial,sans-serif;--font:'Inter',Arial,sans-serif;--mono:'Geist Mono',monospace;--serif:'Instrument Serif',Georgia,serif;font-family:var(--font);color:var(--ink)}
+.dv-section .dv-em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--red)}
+.dv-section .dv-ledger{margin:56px 0 0;border-radius:24px;background:var(--card);border:1px solid var(--rule);overflow:hidden;box-shadow:0 30px 60px -46px rgba(16,35,62,.5)}
+.dv-section .dv-ledger-head,.dv-section .dv-edit{display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1.3fr)}
+.dv-section .dv-ledger-head{border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.dv-section .dv-ledger-head>span{padding:16px clamp(24px,3vw,40px)}
+.dv-section .dv-ledger-head>span:first-child{background:var(--paper)}
+.dv-section .dv-ledger-head>span:nth-child(2){padding:0;border-left:1px dashed var(--rule-2)}
+.dv-section .dv-ledger-head>span:last-child{color:var(--red-ink)}
+.dv-section .dv-edits{list-style:none;padding:0;margin:0;counter-reset:dv-edit}
+.dv-section .dv-edit{counter-increment:dv-edit}
+.dv-section .dv-edit+.dv-edit{border-top:1px solid var(--rule)}
+.dv-section .dv-edit-claim{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(24px,3vw,40px);background:var(--paper)}
+.dv-section .dv-edit-k{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.dv-section .dv-edit-s{align-self:flex-start;text-decoration:none;font-family:var(--display);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1.1;letter-spacing:-.03em;color:var(--ink-3)}
+.dv-section .dv-edit-ink{background:linear-gradient(var(--red),var(--red)) no-repeat 0 97%/100% .065em}
+.dv-section .dv-edit-arrow{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;border-left:1px dashed var(--rule-2);color:var(--red)}
+.dv-section .dv-edit-arrow svg{box-sizing:content-box;flex-shrink:0;padding:9px;border-radius:999px;background:var(--card);border:1px solid var(--rule)}
+.dv-section .dv-edit-fact{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:clamp(24px,3vw,40px)}
+.dv-section .dv-edit-lead{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(22px,2vw,28px);line-height:1.15;letter-spacing:-.025em;color:var(--ink);text-wrap:balance}
+.dv-section .dv-edit-body{margin:0;max-width:58ch;padding-left:14px;border-left:2px solid var(--red);font-size:clamp(15.5px,1.2vw,17px);line-height:1.55;color:var(--ink-2);text-wrap:pretty}
+@media(max-width:820px){.dv-section .dv-ledger-head{display:none}.dv-section .dv-edit{grid-template-columns:minmax(0,1fr)}.dv-section .dv-edit-k{position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}.dv-section .dv-edit-k-us{color:var(--red-ink)}.dv-section .dv-edit-arrow{height:0;border-left:0;border-top:1px dashed var(--rule-2)}.dv-section .dv-edit-arrow svg{rotate:90deg}.dv-section .dv-edit-fact{padding-top:32px}}
+@media(max-width:560px){.dv-section h2{font-size:clamp(42px,11.5vw,56px)!important}.dv-section .dv-edit-claim,.dv-section .dv-edit-fact{padding:23px}.dv-section .dv-ledger{margin-top:34px}}
+
+.dv-section h2,.dv-section .dv-edit-lead,.dv-section .dv-edit-s{font-family:var(--display)}
+.dv-section .dv-reveal{opacity:1;transform:none}
